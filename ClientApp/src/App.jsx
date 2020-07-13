@@ -6,6 +6,16 @@ export function App() {
     <main>
       <div class="sidenav">
         <ul>
+          <li className="logo">
+            <a href="#">
+              <img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                width="80rem"
+                height="80rem"
+                alt="GHLogo"
+              />
+            </a>
+          </li>
           <li>
             <a href="#">Gamer Card</a>{' '}
           </li>
@@ -23,10 +33,10 @@ export function App() {
           </li>
         </ul>
       </div>
+      {/* header start */}
       <header>
         <nav className="left-header">
-          <ul>
-            {/* <li className="logo">
+          {/* <li className="logo">
               <a href="#">
                 <img
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
@@ -36,13 +46,10 @@ export function App() {
                 />
               </a>
             </li> */}
-            <li className="title">
-              <h2>Evolution X</h2>
-            </li>
-            <li>
-              <small className="subtitle">Transform the Game</small>
-            </li>
-          </ul>
+
+          <h2>Evolution X</h2>
+
+          <small className="subtitle">Transform the Game</small>
         </nav>
         <nav className="right-header">
           <ul>
@@ -59,6 +66,7 @@ export function App() {
           </ul>
         </nav>
       </header>
+      {/* header finish */}
       <body>
         <p>yooooo</p>
       </body>

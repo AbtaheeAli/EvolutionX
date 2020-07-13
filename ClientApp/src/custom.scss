@@ -9,22 +9,24 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
 }
 
 ul {
   list-style: none;
 }
 
-.left-header ul {
+.left-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding-left: 0rem;
-}
-
-.title {
-  margin-top: 0.5rem;
-  padding-bottom: 1rem;
 }
 
 .right-header ul {
@@ -35,14 +37,16 @@ ul {
   padding-right: 0.5rem;
 }
 
-header li + li {
+.right-header li + li {
   margin-left: 1rem;
 }
 
+.left-header h2 {
+  margin-bottom: 0;
+}
+
 .subtitle {
-  display: flex;
-  margin-top: 2rem;
-  margin-left: -8.5rem;
+  padding-left: 2.5rem;
 }
 
 /* SideNav Start */
