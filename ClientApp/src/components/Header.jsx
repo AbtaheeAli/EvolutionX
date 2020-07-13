@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -10,9 +11,11 @@ export function Header() {
       <nav className="right-header">
         <ul>
           <li>
-            <button type="button" className="app btn btn-dark">
-              About the Application
-            </button>
+            <Link to="/">
+              <button type="button" className="app btn btn-dark">
+                About the Application
+              </button>
+            </Link>
           </li>
           <li>
             <button type="button" className="logout btn btn-dark">
