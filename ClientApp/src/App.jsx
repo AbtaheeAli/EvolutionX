@@ -22,23 +22,35 @@ export function App() {
           </article>
           <article>
             <div className="gamer-card-text">
-              <h3>Name</h3>
+              <h3 className="gamer-card-text-first-item">Name</h3>
               <h3>Gamerscore</h3>
             </div>
             <h2>GamerTag</h2>
             <div className="gamer-card-text">
-              <h4>Followers</h4>
-              <h4>Friends</h4>
-            </div>
-            <div className="gamer-card-text">
-              <p>#</p>
-              <p>#</p>
+              <div className="gamer-card-ff">
+                <h4 className="gamer-card-text-first-item">Friends</h4>
+                <p className="gamer-card-text-first-item">#</p>
+              </div>
+              <div className="gamer-card-ff">
+                <h4>Followers</h4>
+                <p>#</p>
+              </div>
             </div>
             <h4>Bio</h4>
             <h4>Location</h4>
           </article>
         </section>
       </body>
+      <footer>
+        <p>
+          © 2020 Evolution X - Created and owned by Cody Banks & Abtahee Ali
+        </p>
+        <p>
+          xapi.us is an unofficial API & Evolution X it is in no way endorsed or
+          affiliated to the Microsoft Corporation, Xbox, Xbox LIVE and any Xbox
+          images are registered trademarks of their respected owners.
+        </p>
+      </footer>
     </main>
   )
 }
