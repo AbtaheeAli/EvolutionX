@@ -31,10 +31,8 @@ export function App() {
               </article>
               <article className="friend-card-text">
                 <div>
-                  <h4 className="friendList">
-                    Friend's Gamertag: UNPROFESSI0NAL
-                  </h4>
-                  <h4 className="friendList">Xbox One Reputation: Good</h4>
+                  <h4 className="friendList">Gamertag: UNPROFESSI0NAL</h4>
+                  <h4 className="friendList">Reputation: Good</h4>
                   <h4 className="friendList">Gamerscore: 1230</h4>
                   <h4 className="friendList">TenureLevel: 2</h4>
                 </div>
@@ -54,8 +52,8 @@ export function App() {
               </article>
               <article className="friend-card-text">
                 <div>
-                  <h4 className="friendList">Friend's Gamertag: bob101</h4>
-                  <h4 className="friendList">Xbox One Reputation: Good</h4>
+                  <h4 className="friendList"> Gamertag: bob101</h4>
+                  <h4 className="friendList">Reputation: Good</h4>
                   <h4 className="friendList">Gamerscore: 1230</h4>
                   <h4 className="friendList">TenureLevel: 2</h4>
                 </div>

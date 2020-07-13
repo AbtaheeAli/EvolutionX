@@ -350,4 +350,23 @@ footer {
     justify-content: center;
     padding-left: 1.4rem;
   }
+  .friendList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 0.2rem;
+    font-size: 12px;
+    padding-bottom: 1rem;
+  }
+
+  .friend-card-text {
+    width: 12rem;
+    height: 13rem;
+  }
+
+  .friend-card-img {
+    width: 12rem;
+    height: 13rem;
+  }
 }
