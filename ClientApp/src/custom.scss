@@ -8,6 +8,7 @@ main {
 header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 ul {
@@ -22,7 +23,8 @@ ul {
 }
 
 .title {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .right-header ul {
@@ -30,14 +32,17 @@ ul {
   flex-direction: row;
   padding-right: 2rem;
   padding-top: 0.9rem;
+  padding-right: 0.5rem;
 }
 
-li + li {
+header li + li {
   margin-left: 1rem;
 }
 
 .subtitle {
   display: flex;
+  margin-top: 2rem;
+  margin-left: -8.5rem;
 }
 
 /* SideNav Start */
@@ -57,11 +62,16 @@ li + li {
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #818181;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 0.1rem solid rgb(212, 213, 214);
 }
-
+.sidenav ul {
+  padding-inline-start: 0;
+}
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
@@ -75,7 +85,7 @@ li + li {
     width: 100px;
   }
   .sidenav a {
-    font-size: 18px;
+    font-size: 12px;
   }
   main {
     margin-left: 100px; /* Same as the width of the sidebar */

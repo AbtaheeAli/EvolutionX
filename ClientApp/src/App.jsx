@@ -5,10 +5,23 @@ export function App() {
   return (
     <main>
       <div class="sidenav">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <ul>
+          <li>
+            <a href="#">Gamer Card</a>{' '}
+          </li>
+          <li>
+            <a href="#">Friends</a>
+          </li>
+          <li>
+            <a href="#">Message Inbox</a>
+          </li>
+          <li>
+            <a href="#">Recent Achievements</a>
+          </li>
+          <li>
+            <a href="#"> Xbox One Games</a>
+          </li>
+        </ul>
       </div>
       <header>
         <nav className="left-header">
@@ -25,6 +38,8 @@ export function App() {
             </li> */}
             <li className="title">
               <h2>Evolution X</h2>
+            </li>
+            <li>
               <small className="subtitle">Transform the Game</small>
             </li>
           </ul>
