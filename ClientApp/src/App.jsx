@@ -6,19 +6,12 @@ import HelloWorld from './pages/_template/HelloWorld'
 import HeyWorld from './pages/_template/HeyWorld'
 import NotFound from './pages/NotFound'
 import './custom.scss'
-export default class App extends Component {
+
+
+export function  App() {
   static displayName = App.name
 
   render() {
-    return (
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/counter" component={HelloWorld} />
-          <Route exact path="/typescript" component={HeyWorld} />
-          <Route exact path="*" component={NotFound} />
-        </Switch>
-      </Layout>
-    )
+    return <p>App!</p>
   }
 }
