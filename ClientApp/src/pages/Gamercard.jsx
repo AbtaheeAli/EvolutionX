@@ -6,6 +6,7 @@ export function Gamercard() {
       <article>
         <a href="#">
           <img
+            className="avatar"
             src="https://i.pcmag.com/imagery/articles/03q56RTgHk4cQvs07pQt4I9-1.fit_scale.size_2698x1517.v1569490700.jpg"
             width="300rem"
             height="300rem"

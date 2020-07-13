@@ -94,7 +94,7 @@ ul {
 footer {
   position: fixed;
   bottom: 0;
-  padding-left: 4rem;
+  padding-right: 3rem;
   text-align: center;
   font-size: 12px;
   padding-right: 4rem;
@@ -103,6 +103,8 @@ footer {
   justify-content: center;
   flex-direction: column;
 }
+
+// footer ends//
 
 /* GamerCard Start */
 
@@ -130,12 +132,59 @@ footer {
 
 /* GamerCard End */
 
+//friends starts//
+
+.friend-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.friendList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 0.2rem;
+  font-size: 20px;
+}
+
+.friendAvatar {
+  padding-right: 1rem;
+  border-radius: 50%;
+}
+
+.friend-card-img {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  border-top: 0.1rem solid;
+  border-left: 0.1rem solid;
+  border-bottom: 0.1rem solid;
+  width: auto;
+  height: auto;
+}
+
+.friend-card-text {
+  padding-top: 0.8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1.9rem;
+  border-top: 0.1rem solid;
+  border-right: 0.1rem solid;
+  border-bottom: 0.1rem solid;
+  width: 30rem;
+  height: auto;
+}
+
 @media (max-width: 500px) {
   .sidenav {
     padding-top: 15px;
     width: 100px;
   }
-  .sidenav a {
+  .sidenav .navLink {
     font-size: 12px;
   }
   main {
@@ -212,7 +261,7 @@ footer {
     padding-right: 0.5rem;
   }
 
-  article img {
+  .avatar {
     width: 10rem;
     height: 10rem;
     display: flex;
@@ -237,5 +286,68 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+}
+
+@media (max-width: 740px) {
+  .gamer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+  }
+
+  article h3 {
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  article h2 {
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  article h4 {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .score {
+    padding-left: 0.5rem;
+  }
+
+  .gamer {
+    padding-right: 0.5rem;
+  }
+
+  .gamer-card-ff {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .followers {
+    padding-right: 0.5rem;
+  }
+
+  .friends {
+    padding-right: 0.5rem;
+  }
+
+  .avatar {
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1.4rem;
   }
 }
