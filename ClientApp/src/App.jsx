@@ -13,7 +13,7 @@ export function App() {
       <Header />
       <body>
         <Switch>
-          <Route exact path="/gamer-card">
+          <Route exact path="/">
             <Gamercard />
           </Route>
           <Route path="/friends">
@@ -32,7 +32,7 @@ export function App() {
               <article className="friend-card-text">
                 <div>
                   <h4 className="friendList">Gamertag: UNPROFESSI0NAL</h4>
-                  <h4 className="friendList">Rep: Good</h4>
+                  <h4 className="friendList">Reputation: Good</h4>
                   <h4 className="friendList">Gamerscore: 1230</h4>
                   <h4 className="friendList">TenureLevel: 2</h4>
                 </div>
