@@ -97,6 +97,11 @@ footer {
   padding-left: 4rem;
   text-align: center;
   font-size: 12px;
+  padding-right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* GamerCard Start */
@@ -106,7 +111,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 10rem;
+  padding-top: 5rem;
 }
 
 .gamer-card-text {
@@ -149,10 +154,26 @@ footer {
   .app {
     display: none;
   }
+
+  footer {
+    font-size: 9px;
+  }
 }
 
 @media (max-width: 675px) {
   .app {
     display: none;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1370px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 }
