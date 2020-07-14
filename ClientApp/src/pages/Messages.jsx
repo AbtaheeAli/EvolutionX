@@ -15,8 +15,8 @@ export function Messages() {
         </a>
       </article>
       <article className="message-text">
-        <div className="message-item-text">
-          <strong>Sender</strong>
+        <div className="sender message-item-text">
+          <strong>Sender:TheAli</strong>
         </div>
         <div className=" date message-item-text">
           <strong>Sent: 07/12/2020</strong>
