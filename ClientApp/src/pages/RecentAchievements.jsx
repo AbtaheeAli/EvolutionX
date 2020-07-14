@@ -6,10 +6,10 @@ export function RecentAchievements() {
       <article className="achievement-title">
         <div>
           <img
-            className="avatar"
-            src="https://i.pcmag.com/imagery/articles/03q56RTgHk4cQvs07pQt4I9-1.fit_scale.size_2698x1517.v1569490700.jpg"
-            width="120rem"
-            height="120rem"
+            className="user-image"
+            src="https://images-eds-ssl.xboxlive.com//image?url=Hr2eiH8yWKd4q_oa.xgbMnOHX9HRDEMKjkwIswRQCT4jE324VJHdcCl8SxAtO7EP62tTan8jAaRQWIHkwOC9kjJqC2axhRCZody8xLNW7oGQhofiInwTIV_a9GIDBFb.Ryg7085c2rjCluALka9D.pFQ8ixTrj_g8.D_EURLv9g-&format=png"
+            width="100rem"
+            height="100rem"
             alt="GHLogo"
           />
         </div>
@@ -17,18 +17,16 @@ export function RecentAchievements() {
           <h3>UNPROFESSI0NAL</h3>
           <h4>unlocked an achievement</h4>
         </div>
-        <div className="achievement-date">
-          <p>date</p>
-        </div>
+        <div className="achievement-date">date</div>
       </article>
       <article className="achievement-image-container">
         <img
           className="achievement-image"
-          src="https://i.pcmag.com/imagery/articles/03q56RTgHk4cQvs07pQt4I9-1.fit_scale.size_2698x1517.v1569490700.jpg"
+          src="http://images-eds.xboxlive.com//image?url=27S1DHqE.cHkmFg4nspsdzzPtiJjO.eHkU64YiWae5H0v2Mjb38MsfaeMOG5B0KXW1JWq2sEq.UqlGL56HpSnch8IimM1pTb82YDXoRKJtGxAh22XoU0T4OFlHBWgpTjVbyF6e9Yvm38Y6KN2Kb3QQ--"
           alt="GHLogo"
         />
       </article>
-      <article>
+      <article className="achievement-footer">
         <div>
           Game Breaker: Halo: Reach: Kill 10 enemies while using a Jetpack
         </div>

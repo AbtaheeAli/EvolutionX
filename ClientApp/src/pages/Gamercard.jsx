@@ -7,7 +7,7 @@ export function Gamercard() {
         <a href="#">
           <img
             className="avatar"
-            src="https://i.pcmag.com/imagery/articles/03q56RTgHk4cQvs07pQt4I9-1.fit_scale.size_2698x1517.v1569490700.jpg"
+            src="https://images-eds-ssl.xboxlive.com//image?url=Hr2eiH8yWKd4q_oa.xgbMnOHX9HRDEMKjkwIswRQCT4jE324VJHdcCl8SxAtO7EP62tTan8jAaRQWIHkwOC9kjJqC2axhRCZody8xLNW7oGQhofiInwTIV_a9GIDBFb.Ryg7085c2rjCluALka9D.pFQ8ixTrj_g8.D_EURLv9g-&format=png"
             width="300rem"
             height="300rem"
             alt="GHLogo"
@@ -16,12 +16,14 @@ export function Gamercard() {
       </article>
       <article>
         <div className="gamer-card-text">
-          <h3 className="gamer-card-text-first-item score">Cody Banks</h3>
-          <h3 className="score gamer">G 46994</h3>
+          <h3 className="gamer-name-score gamer-card-text-first-item score">
+            Cody Banks
+          </h3>
+          <h3 className="gamer-name-score gamer score">G 46994</h3>
         </div>
-        <h2>UNPROFESSI0NAL</h2>
+        <h2 className="gamer-tag">UNPROFESSI0NAL</h2>
         <div className="gamer-card-text">
-          <div className="gamer-card-ff">
+          <div className="gamer-card-ff gamer-details">
             <h4 className="gamer-card-text-first-item friends">Friends</h4>
             <h4 className="gamer-card-text-first-item"># 136</h4>
           </div>

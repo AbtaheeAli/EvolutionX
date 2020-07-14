@@ -3,7 +3,7 @@ import React from 'react'
 export function Messages() {
   return (
     <section className="message-card">
-      <article classname="message-img">
+      <article className="message-img">
         <a href="#">
           <img
             className="friendAvatar"
