@@ -285,7 +285,68 @@ footer {
   font-size: 12px;
 }
 
-//mesages end//
+//mesages end
+
+//x1 games starts
+
+.xbox-one-game-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-left: 7rem;
+  margin-right: 7rem;
+  margin-top: 5rem;
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
+
+.xbox-one-game-card img {
+  padding-right: 1rem;
+  border-radius: 50%;
+  margin-right: 4rem;
+}
+
+.xbox-one-game-info {
+  font-size: 20px;
+  margin-top: 1rem;
+}
+
+//x1 game ends
+.about-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-left: 6rem;
+  margin-right: 7rem;
+  margin-top: 5rem;
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
+
+.about-box img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24rem;
+  padding-bottom: 1rem;
+}
+//about box starts
+
+//about box ends
 
 @media (max-width: 500px) {
   .sidenav {

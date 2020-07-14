@@ -11,7 +11,7 @@ export function Header() {
       <nav className="right-header">
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/about">
               <button type="button" className="app btn btn-dark">
                 About the Application
               </button>
