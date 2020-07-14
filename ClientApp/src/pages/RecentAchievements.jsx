@@ -8,16 +8,20 @@ export function RecentAchievements() {
           <img
             className="user-image"
             src="https://images-eds-ssl.xboxlive.com//image?url=Hr2eiH8yWKd4q_oa.xgbMnOHX9HRDEMKjkwIswRQCT4jE324VJHdcCl8SxAtO7EP62tTan8jAaRQWIHkwOC9kjJqC2axhRCZody8xLNW7oGQhofiInwTIV_a9GIDBFb.Ryg7085c2rjCluALka9D.pFQ8ixTrj_g8.D_EURLv9g-&format=png"
-            width="100rem"
-            height="100rem"
+            width="80rem"
+            height="80rem"
             alt="GHLogo"
           />
         </div>
-        <div>
-          <h3>UNPROFESSI0NAL</h3>
-          <h4>unlocked an achievement</h4>
+        <div className="achievement-text">
+          <div>
+            <p>
+              <strong>UNPROFESSI0NAL</strong>
+            </p>
+            <p>unlocked an achievement</p>
+          </div>
+          <div className="achievement-date">7/4/2020</div>
         </div>
-        <div className="achievement-date">date</div>
       </article>
       <article className="achievement-image-container">
         <img

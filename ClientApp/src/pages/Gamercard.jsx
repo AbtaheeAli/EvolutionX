@@ -32,8 +32,8 @@ export function Gamercard() {
             <h4># 146</h4>
           </div>
         </div>
-        <h4>Bio: Yo yo yo</h4>
-        <h4>Location: Florida</h4>
+        <h4 className="bio-location">Bio: Yo yo yo</h4>
+        <h4 className="bio-location"> Location: Florida</h4>
       </article>
     </section>
   )

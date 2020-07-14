@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header>
       <nav className="left-header">
-        <h2>Evolution X</h2>
+        <h2 className="header-title">Evolution X</h2>
         <small className="subtitle">Transform the Game</small>
       </nav>
       <nav className="right-header">

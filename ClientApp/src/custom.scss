@@ -16,7 +16,6 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.1rem solid rgb(212, 213, 214);
-  // box-shadow: 0 0.5rem 0.5rem rgba(239, 240, 242, 0.3);
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -200,6 +199,12 @@ footer {
 }
 
 .achievement-date {
+  padding-right: 1rem;
+}
+.achievement-text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .achievement-image {
@@ -279,6 +284,7 @@ footer {
     margin-left: 100px; /* Same as the width of the sidebar */
   }
 
+  //header starts
   header {
     padding-bottom: 0.96rem;
     padding-top: 1rem;
@@ -292,10 +298,14 @@ footer {
   .left-header small {
     padding-left: 0rem;
   }
+  //header ends
 
+  //footer starts
   footer {
     font-size: 9px;
   }
+  //footer ends
+
   //gamercard starts
   .gamer-card {
     display: flex;
@@ -310,11 +320,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 6.5rem;
   }
 
   .gamer-tag {
-    font-size: 23px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -322,6 +331,12 @@ footer {
 
   .gamer-card-ff {
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bio-location {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -343,8 +358,22 @@ footer {
     justify-content: center;
     padding-left: 1.4rem;
   }
-
   //gamercard ends
+
+  //friends starts
+  .friend-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  //friends ends
+
+  //achievements starts//
+
+  //achievements end//
 }
 
 @media (max-width: 675px) {
@@ -364,6 +393,8 @@ footer {
     width: 100%;
   }
 }
+
+//gamercard starts
 
 @media (max-width: 740px) {
   .gamer-card {
@@ -396,6 +427,12 @@ footer {
     justify-content: center;
   }
 
+  .bio-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .followers {
     padding-right: 0.5rem;
   }
@@ -412,23 +449,16 @@ footer {
     justify-content: center;
     padding-left: 1.4rem;
   }
-  .friendList {
+  //gamercard ends
+
+  //friend starts
+  .friend-card {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 0.2rem;
     font-size: 12px;
-    padding-bottom: 1rem;
   }
 
-  .friend-card-text {
-    width: 12rem;
-    height: 13rem;
-  }
-
-  .friend-card-img {
-    width: 12rem;
-    height: 13rem;
-  }
+  //friend ends
 }
