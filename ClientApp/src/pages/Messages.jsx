@@ -16,10 +16,10 @@ export function Messages() {
       </article>
       <article className="message-text">
         <div className="sender message-item-text">
-          <strong>Sender:TheAli</strong>
+          <strong>Sender:TheAliAesthetic</strong>
         </div>
         <div className=" date message-item-text">
-          <strong>Sent: 07/12/2020</strong>
+          <strong>Sent: 07/12/20</strong>
         </div>
         <div className="message-body-text">
           <p>
