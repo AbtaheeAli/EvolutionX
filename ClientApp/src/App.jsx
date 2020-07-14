@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import { Gamercard } from './pages/Gamercard'
 import { Friends } from './pages/Friends'
 import { RecentAchievements } from './pages/RecentAchievements'
+import { Messages } from './pages/Messages'
 
 export function App() {
   return (
@@ -21,7 +22,9 @@ export function App() {
           <Route path="/friends">
             <Friends />
           </Route>
-          <Route path="/message-inbox"></Route>
+          <Route path="/message-inbox">
+            <Messages />
+          </Route>
           <Route path="/recent-achievements">
             <RecentAchievements />
           </Route>
