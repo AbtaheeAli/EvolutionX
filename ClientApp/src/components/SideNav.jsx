@@ -6,7 +6,7 @@ export function SideNav() {
     <div class="sidenav">
       <ul>
         <li className="logo">
-          <Link className="navLink" to="/gamer-card">
+          <Link className="navLink" to="/">
             <img
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
               width="80rem"
@@ -16,7 +16,7 @@ export function SideNav() {
           </Link>
         </li>
         <li>
-          <Link className="navLink" to="/gamer-card">
+          <Link className="navLink" to="/">
             Gamer Card
           </Link>
         </li>
