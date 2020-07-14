@@ -2,6 +2,9 @@
 
 main {
   margin-left: 160px; /* Same as the width of the sidebar */
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 8rem;
 }
 
 body {
@@ -95,16 +98,17 @@ ul {
 
 // footer starts //
 footer {
-  position: fixed;
-  bottom: 0;
-  padding-right: 3rem;
   text-align: center;
-  font-size: 12px;
-  padding-right: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 12px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 // footer ends//
@@ -385,57 +389,57 @@ footer {
   //footer ends
 
   //gamercard starts
-  .gamer-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-  }
+  // .gamer-card {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding-top: 5rem;
+  // }
 
-  .gamer-name-score {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  // .gamer-name-score {
+  //   font-size: 18px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 
-  .gamer-tag {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  // .gamer-tag {
+  //   font-size: 20px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 
-  .gamer-card-ff {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  // .gamer-card-ff {
+  //   font-size: 15px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 
-  .bio-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  // .bio-location {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 
-  .followers {
-    padding-right: 0.5rem;
-  }
+  // .followers {
+  //   padding-right: 0.5rem;
+  // }
 
-  .friends {
-    padding-right: 0.5rem;
-  }
+  // .friends {
+  //   padding-right: 0.5rem;
+  // }
 
-  .avatar {
-    width: 10rem;
-    height: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 1.4rem;
-  }
+  // .avatar {
+  //   width: 50%;
+  //   height: 10rem;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding-left: 1.4rem;
+  // }
   //gamercard ends
 
   //friends starts
@@ -574,14 +578,6 @@ footer {
     margin-top: 2.3rem;
   }
 }
-@media (min-width: 1370px) {
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-}
-
 //gamercard starts
 
 @media (max-width: 740px) {

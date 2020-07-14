@@ -29,7 +29,7 @@ export function Gamercard() {
           </div>
           <div className="gamer-card-ff">
             <h4 className="followers">Followers</h4>
-            <h4># 146</h4>
+            <h4># 147</h4>
           </div>
         </div>
         <h4 className="bio-location">Bio: Yo yo yo</h4>
