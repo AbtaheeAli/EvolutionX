@@ -37,8 +37,8 @@ export function App() {
             <About />
           </Route>
         </Switch>
-        <Footer />
       </body>
+      <Footer />
     </main>
   )
 }
