@@ -144,6 +144,17 @@ footer {
   align-items: center;
   justify-content: center;
   padding-top: 5rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  padding-top: 0rem;
+  margin-top: 3rem;
+  border-width: auto;
+  background-color: white;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .friendList {
@@ -161,24 +172,11 @@ footer {
 }
 
 .friend-card-img {
-  padding-top: 2rem;
-  padding-left: 2rem;
-  padding-bottom: 2rem;
-  border-top: 0.1rem solid;
-  border-left: 0.1rem solid;
-  border-bottom: 0.1rem solid;
   width: auto;
   height: auto;
 }
 
 .friend-card-text {
-  padding-top: 0.8rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 1.9rem;
-  border-top: 0.1rem solid;
-  border-right: 0.1rem solid;
-  border-bottom: 0.1rem solid;
   width: 30rem;
   height: auto;
 }
