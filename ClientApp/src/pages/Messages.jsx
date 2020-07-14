@@ -18,7 +18,7 @@ export function Messages() {
         <div className="sender message-item-text">
           <strong>Sender:TheAliAesthetic</strong>
         </div>
-        <div className=" date message-item-text">
+        <div className=" date message-item-text k">
           <strong>Sent: 07/12/20</strong>
         </div>
         <div className="message-body-text">
