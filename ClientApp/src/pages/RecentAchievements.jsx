@@ -1,4 +1,5 @@
 import React from 'react'
+import RecentAchievementsData from '../RecentAchievements.json'
 
 export function RecentAchievements() {
   return (

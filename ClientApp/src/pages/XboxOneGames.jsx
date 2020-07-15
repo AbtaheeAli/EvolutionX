@@ -1,4 +1,5 @@
 import React from 'react'
+import XboxOneGamesData from '../XboxOneGames.json'
 
 export function XboxOneGames() {
   return (

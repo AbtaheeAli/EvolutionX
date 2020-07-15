@@ -1,0 +1,36 @@
+[
+  {
+    "header": {
+      "id": 61,
+      "isRead": true,
+      "senderXuid": 2535466102742745,
+      "sender": "TheAliAesthetic",
+      "sent": "2020-07-11 18:19:35",
+      "expiration": "2020-08-10 18:19:35",
+      "messageType": "User",
+      "hasText": true,
+      "hasPhoto": false,
+      "hasAudio": false,
+      "messageFolderType": "Inbox"
+    },
+    "messageSummary": "Yo yo",
+    "messageUrl": "https://xapi.us/v2/messages/61"
+  },
+  {
+    "header": {
+      "id": 59,
+      "isRead": true,
+      "senderXuid": 2535466102742745,
+      "sender": "TheAliAesthetic",
+      "sent": "2020-07-11 18:18:34",
+      "expiration": "2020-08-10 18:18:34",
+      "messageType": "User",
+      "hasText": true,
+      "hasPhoto": false,
+      "hasAudio": false,
+      "messageFolderType": "Inbox"
+    },
+    "messageSummary": "Hi",
+    "messageUrl": "https://xapi.us/v2/messages/59"
+  }
+]
