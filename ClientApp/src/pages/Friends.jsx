@@ -1,19 +1,9 @@
 import React from 'react'
 import FriendsData from '../Friends.json'
 
-export function Friends() {
+export function SingleFriend() {
   return (
     <div>
-      {/* {FriendsData.map(friend => (
-        <Friends
-          key={friend.id}
-          Gamertag={friend.Gamertag}
-          XboxOneRep={friend.XboxOneRep}
-          Gamerscore={friend.Gamerscore}
-          TenureLevel={friend.TenureLevel}
-          GameDisplayPicRaw={friend.GameDisplayPicRaw}
-        />
-      ))} */}
       <section className="friend-card">
         <article className="friend-card-img">
           <a href="#">
@@ -56,6 +46,24 @@ export function Friends() {
           </div>
         </article>
       </section>
+    </div>
+  )
+}
+
+export function Friends() {
+  return (
+    <div>
+      {/* {FriendsData.map(friend => (
+        <Friends
+          key={friend.id}
+          Gamertag={friend.Gamertag}
+          XboxOneRep={friend.XboxOneRep}
+          Gamerscore={friend.Gamerscore}
+          TenureLevel={friend.TenureLevel}
+          GameDisplayPicRaw={friend.GameDisplayPicRaw}
+        />
+      ))} */}
+      <SingleFriend />
     </div>
   )
 }

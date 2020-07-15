@@ -1,6 +1,12 @@
 import React from 'react'
 import RecentAchievementsData from '../RecentAchievements.json'
 
+export function SingleRecentAchievements() {
+  return (
+    
+  )
+}
+
 export function RecentAchievements() {
   return (
     <section>
