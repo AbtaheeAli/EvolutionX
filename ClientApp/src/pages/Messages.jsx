@@ -39,7 +39,6 @@ export function Messages() {
 
   return (
     <div>
-      <p>{messages.length}</p>
       {messages.map(message => (
         <SingleMessage
           key={message.header.id}
