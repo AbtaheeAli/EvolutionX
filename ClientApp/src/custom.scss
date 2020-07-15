@@ -535,7 +535,21 @@ footer {
   //message ends
 
   //x1 games starts
+  .xbox-one-game-card {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+  }
 
+  .xbox-one-game-card img {
+    width: 10em;
+    height: 10em;
+    margin-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .xbox-one-game-info {
+    font-size: 12px;
+  }
   //x1 games end
 }
 
@@ -571,7 +585,6 @@ footer {
     margin-top: 2.3rem;
   }
 }
-//gamercard starts
 
 @media (max-width: 740px) {
   .gamer-card {
