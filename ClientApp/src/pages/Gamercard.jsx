@@ -1,4 +1,5 @@
 import React from 'react'
+import GamercardData from '../Gamercard.json'
 
 export function Gamercard() {
   return (
@@ -7,7 +8,7 @@ export function Gamercard() {
         <a href="#">
           <img
             className="avatar"
-            src="https://images-eds-ssl.xboxlive.com//image?url=Hr2eiH8yWKd4q_oa.xgbMnOHX9HRDEMKjkwIswRQCT4jE324VJHdcCl8SxAtO7EP62tTan8jAaRQWIHkwOC9kjJqC2axhRCZody8xLNW7oGQhofiInwTIV_a9GIDBFb.Ryg7085c2rjCluALka9D.pFQ8ixTrj_g8.D_EURLv9g-&format=png"
+            src={GamercardData.avatarBodyImagePath}
             width="300rem"
             height="300rem"
             alt="GHLogo"
@@ -17,11 +18,13 @@ export function Gamercard() {
       <article>
         <div className="gamer-card-text">
           <h3 className="gamer-name-score gamer-card-text-first-item score">
-            Cody Banks
+            {GamercardData.name}
           </h3>
-          <h3 className="gamer-name-score gamer score">G 46994</h3>
+          <h3 className="gamer-name-score gamer score">
+            G {GamercardData.gamerscore}
+          </h3>
         </div>
-        <h2 className="gamer-tag">UNPROFESSI0NAL</h2>
+        <h2 className="gamer-tag">{GamercardData.gamertag}</h2>
         <div className="gamer-card-text">
           <div className="gamer-card-ff gamer-details">
             <h4 className="gamer-card-text-first-item friends">Friends</h4>
@@ -32,8 +35,8 @@ export function Gamercard() {
             <h4># 147</h4>
           </div>
         </div>
-        <h4 className="bio-location">Bio: Yo yo yo</h4>
-        <h4 className="bio-location"> Location: Florida</h4>
+        <h4 className="bio-location">Bio: {GamercardData.bio}</h4>
+        <h4 className="bio-location"> Location: {GamercardData.location}</h4>
       </article>
     </section>
   )

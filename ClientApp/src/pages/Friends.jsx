@@ -1,4 +1,5 @@
 import React from 'react'
+import Friends from '../Friends.json'
 
 export function Friends() {
   return (
