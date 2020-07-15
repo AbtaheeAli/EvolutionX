@@ -1,3 +1,3 @@
 # EvolutionX
 
-Work In Progress More to come soon :)
+Work in progress more to come soon :)
