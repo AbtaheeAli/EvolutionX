@@ -363,13 +363,15 @@ footer {
     font-size: 12px;
   }
   main {
-    margin-left: 100px; /* Same as the width of the sidebar */
+    margin-left: 100px;
+    overflow-x: hidden; /* Same as the width of the sidebar */
   }
 
   //header starts
   header {
     padding-bottom: 0.96rem;
     padding-top: 1rem;
+    margin-right: 0rem;
   }
 
   .left-header h2 {
@@ -531,6 +533,10 @@ footer {
     height: 10rem;
   }
   //message ends
+
+  //x1 games starts
+
+  //x1 games end
 }
 
 @media (max-width: 540px) {
@@ -547,20 +553,7 @@ footer {
   .message-item-text {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 8px;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
   }
-
-  .sender {
-    padding-left: 0.01rem;
-  }
-
-  .date {
-    padding-left: 3.6rem;
-  }
-  //message ends
 }
 
 @media (max-width: 850px) {
@@ -633,6 +626,7 @@ footer {
     justify-content: center;
     padding-left: 1.4rem;
   }
+
   //gamercard ends
 
   //message starts
