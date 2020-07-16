@@ -7,7 +7,7 @@ export function About() {
         <a href="#">
           <img
             className="Game"
-            src="https://i7.pngguru.com/preview/79/769/243/xbox-360-microsoft-studios-fable-legends-xbox-one-xbox-fitness-avatar-thumbnail.jpg"
+            src="https://lh3.googleusercontent.com/npEQKIiWJ4xmL7L9dFvVSl_LNUcCjPAVNkP1cTBJlGLWjFC89lCWoZedl8utaCQCkgmxSNUrXD4KEQmYhImdIgJJvuCwCoZpTdrCinowj3A8H991UqYvfOZO1-tjYtIvzYch6DtJIO8=w1920-h1080"
             width="200rem"
             height="200rem"
             alt="GHLogo"
