@@ -39,7 +39,6 @@ export function Friends() {
       .then(response => response.json())
       .then(apiData => {
         setFriends(apiData)
-        console.log(apiData)
       })
   }
 
