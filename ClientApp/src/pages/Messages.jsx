@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import MessageInbox from '../MessageInbox.json'
 
 function SingleMessage(props) {
   return (
@@ -33,8 +32,25 @@ function SingleMessage(props) {
 export function Messages() {
   const [messages, setMessages] = useState([])
 
+  function loadMessages() {
+    const url = `https://xapi.us/v2/messages`
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+      },
+    })
+      .then(response => response.json())
+      .then(apiData => {
+        console.log(apiData)
+        setMessages(apiData)
+      })
+  }
+
   useEffect(() => {
-    setMessages(MessageInbox)
+    loadMessages()
   }, [])
 
   return (

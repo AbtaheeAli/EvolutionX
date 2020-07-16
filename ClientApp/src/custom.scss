@@ -235,8 +235,12 @@ footer {
 .friend-list {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+}
+
+.friend-gt {
+  display: flex;
+  justify-content: center;
 }
 
 .friendAvatar {

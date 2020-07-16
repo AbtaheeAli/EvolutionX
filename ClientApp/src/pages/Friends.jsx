@@ -14,8 +14,9 @@ export function SingleFriend(props) {
         />
       </article>
       <article className="friend-list">
-        <h4>Gamertag: {props.Gamertag}</h4>
-        <h4>Reputation: {props.XboxOneRep}</h4>
+        <h4 className="friend-gt">
+          <strong>{props.Gamertag}</strong>
+        </h4>
         <h4>Gamerscore: {props.Gamerscore}</h4>
         <h4>TenureLevel: {props.TenureLevel}</h4>
       </article>
