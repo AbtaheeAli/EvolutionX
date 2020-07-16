@@ -17,12 +17,10 @@ function SingleXboxOneGame(props) {
       <article>
         <div className="xbox-one-game-info">
           <p>Title: {props.Title}</p>
-          <p>Current Gamerscore: 12 G</p>
-          <p>Max Gamerscore: 125000 G</p>
-          <p>
-            Last Unlock: Game Breaker: Halo: Reach: Kill 10 enemies while using
-            a Jetpack
-          </p>
+          <p>Total Earned Achievements: {props.EarnedAchievements}</p>
+          <p>Current Gamerscore: {props.CurrentGamerscore} G</p>
+          <p>Max Gamerscore: {props.MaxGamerscore} G</p>
+          <p>Last Unlock: {props.LastUnlockedAchievementDate}</p>
         </div>
       </article>
     </section>
@@ -59,6 +57,9 @@ export function XboxOneGames() {
           Key={game.titleId}
           Title={game.name}
           CurrentGamerscore={game.currentGamerscore}
+          MaxGamerscore={game.maxGamerscore}
+          LastUnlockedAchievementDate={game.lastUnlock}
+          EarnedAchievements={game.earnedAchievements}
         />
       ))}
     </section>
