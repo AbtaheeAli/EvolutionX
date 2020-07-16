@@ -1,7 +1,6 @@
-import React from 'react'
-import XboxOneGamesData from '../XboxOneGames.json'
+import React, { useState, useEffect } from 'react'
 
-export function XboxOneGames() {
+function SingleXboxOneGame(props) {
   return (
     <section className="xbox-one-game-card">
       <article>
@@ -17,15 +16,52 @@ export function XboxOneGames() {
       </article>
       <article>
         <div className="xbox-one-game-info">
-          <p>Title: Halo: Master Chief Collection</p>
-          <p>Current Gamerscore: 12 G</p>
-          <p>Max Gamerscore: 125000 G</p>
-          <p>
-            Last Unlock: Game Breaker: Halo: Reach: Kill 10 enemies while using
-            a Jetpack
-          </p>
+          <p>Title: {props.Title}</p>
+          <p>Total Earned Achievements: {props.EarnedAchievements}</p>
+          <p>Current Gamerscore: {props.CurrentGamerscore} G</p>
+          <p>Max Gamerscore: {props.MaxGamerscore} G</p>
+          <p>Last Unlock: {props.LastUnlockedAchievementDate}</p>
         </div>
       </article>
+    </section>
+  )
+}
+
+export function XboxOneGames() {
+  const [games, setGames] = useState([])
+
+  function loadGames() {
+    const url = `https://xapi.us/v2/2533274825461278/xboxonegames/`
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+      },
+    })
+      .then(response => response.json())
+      .then(apiData => {
+        setGames(apiData.titles)
+      })
+  }
+
+  useEffect(() => {
+    loadGames()
+  }, [])
+
+  return (
+    <section>
+      {games.map(game => (
+        <SingleXboxOneGame
+          Key={game.titleId}
+          Title={game.name}
+          CurrentGamerscore={game.currentGamerscore}
+          MaxGamerscore={game.maxGamerscore}
+          LastUnlockedAchievementDate={game.lastUnlock}
+          EarnedAchievements={game.earnedAchievements}
+        />
+      ))}
     </section>
   )
 }

@@ -1,7 +1,6 @@
-import React from 'react'
-import RecentAchievementsData from '../RecentAchievements.json'
+import React, { useState, useEffect } from 'react'
 
-export function SingleRecentAchievement(props) {
+function SingleRecentAchievement(props) {
   return (
     <section className="achievement">
       <article className="achievement-title">
@@ -41,11 +40,33 @@ export function SingleRecentAchievement(props) {
 }
 
 export function RecentAchievements() {
+  const [achievements, setAchievements] = useState([])
+
+  function loadAchievements() {
+    const url = `https://xapi.us/v2/2533274825461278/activity`
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+      },
+    })
+      .then(response => response.json())
+      .then(apiData => {
+        setAchievements(apiData.activityItems)
+      })
+  }
+
+  useEffect(() => {
+    loadAchievements()
+  }, [])
+
   return (
     <section>
-      {RecentAchievementsData.activityItems.map(achievement => (
+      {achievements.map(achievement => (
         <SingleRecentAchievement
-          key={achievement.achievementId}
+          Key={achievement.achievementId}
           GamerTag={achievement.gamertag}
           ShortDescription={achievement.shortDescription}
           AchievementIcon={achievement.achievementIcon}
