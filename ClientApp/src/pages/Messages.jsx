@@ -44,7 +44,6 @@ export function Messages() {
     })
       .then(response => response.json())
       .then(apiData => {
-        console.log(apiData)
         setMessages(apiData)
       })
   }
