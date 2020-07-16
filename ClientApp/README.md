@@ -9,11 +9,8 @@ const [message, setMessage] = useState([
 headerId: header.id
 headerSender: header.sender
 headerSentDate: header.sent
+X-AUTH: 1043a66f8177cfafd16c780666f7ebb48d2b4a78
 Summary: messageSummary
-])
-
-const fetchMessage = async () => {
-const response = await fetch('https://xapi.us/v2/messages')
 const apiData = await response.json()
 curl -s -H "X-AUTH: 1043a66f8177cfafd16c780666f7ebb48d2b4a78" https://xapi.us/v2/accountxuid
 
