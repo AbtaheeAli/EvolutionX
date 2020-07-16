@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import RecentAchievementsData from '../RecentAchievements.json'
 
-export function SingleRecentAchievement(props) {
+function SingleRecentAchievement(props) {
   return (
     <section className="achievement">
       <article className="achievement-title">
