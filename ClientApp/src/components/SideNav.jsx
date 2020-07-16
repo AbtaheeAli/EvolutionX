@@ -8,9 +8,9 @@ export function SideNav() {
         <li className="logo">
           <article className="navLogo">
             <img
-              src="https://lh3.googleusercontent.com/XURI0lS_tprI-7v9KqvLS8RvRHfxlEzWvwlARHUAGML6NW6Jn4DBXsABsoPGQMTc_GbCw5XXuGMTzPgevN7cNsZPdMVvykV6BxWZYo8oaDxgP-QC4KI7_m2LEdkknBBgSBhJ3ae3crA=w600-h315-p-k"
-              width="140rem"
-              height="90rem"
+              src="https://lh3.googleusercontent.com/xu-mhdu9qDSlyTzNsNBCrKXss4LRfyB95ElQymkF3jSF1UJ3I6mbvoey6_QADDtmUeDHiReUurfIGqYG-r0qlhZrSgyhvsgnKpeyYgrNgVDlR88NYcYLL_S7YCFdmVCVFsTZDY2AOo0=w1920-h1080"
+              width="130rem"
+              height="80rem"
               alt="GHLogo"
             />
           </article>
