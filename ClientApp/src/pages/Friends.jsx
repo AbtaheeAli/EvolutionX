@@ -38,8 +38,8 @@ export function Friends() {
     })
       .then(response => response.json())
       .then(apiData => {
-        console.log(apiData)
         setFriends(apiData)
+        console.log(apiData)
       })
   }
 
