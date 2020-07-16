@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import FriendsData from '../Friends.json'
 
 export function SingleFriend(props) {
@@ -25,9 +25,31 @@ export function SingleFriend(props) {
 }
 
 export function Friends() {
+  const [friends, setFriends] = useState([])
+
+  function loadFriends() {
+    const url = `https://xapi.us/v2/2533274825461278/friends`
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+      },
+    })
+      .then(response => response.json())
+      .then(apiData => {
+        console.log(apiData)
+        setFriends(apiData)
+      })
+  }
+
+  useEffect(() => {
+    loadFriends()
+  }, [])
+
   return (
     <div className="friend-cards">
-      {FriendsData.map(friend => (
+      {friends.map(friend => (
         <SingleFriend
           key={friend.id}
           Gamertag={friend.Gamertag}
