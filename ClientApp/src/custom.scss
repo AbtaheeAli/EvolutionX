@@ -49,6 +49,16 @@ ul {
   color: #111;
 }
 
+.title {
+  color: #111;
+}
+
+.title:hover {
+  color: rgb(176, 42, 33);
+  text-decoration: none;
+  transition: 0.8s;
+}
+
 .right-header ul {
   display: flex;
   flex-direction: row;
@@ -68,8 +78,14 @@ ul {
 }
 
 .btn {
-  background-color: rgb(176, 42, 33);
-  color: black;
+  background-color: rgb(130, 18, 18);
+  color: rgb(240, 240, 240);
+}
+
+.btn:hover {
+  background-color: #111;
+  color: rgb(240, 240, 240);
+  transition: 0.8s;
 }
 
 //header finish

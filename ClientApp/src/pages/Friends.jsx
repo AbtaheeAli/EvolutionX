@@ -5,15 +5,13 @@ export function SingleFriend(props) {
   return (
     <section className="friend-card">
       <article className="friend-card-img">
-        <a href="#">
-          <img
-            className="friendAvatar"
-            src={props.GameDisplayPicRaw}
-            width="120rem"
-            height="120rem"
-            alt="friend-image"
-          />
-        </a>
+        <img
+          className="friendAvatar"
+          src={props.GameDisplayPicRaw}
+          width="120rem"
+          height="120rem"
+          alt="friend-image"
+        />
       </article>
       <article className="friend-list">
         <h4>Gamertag: {props.Gamertag}</h4>
