@@ -6,14 +6,14 @@ export function SideNav() {
     <div class="sidenav">
       <ul>
         <li className="logo">
-          <Link className="navLink" to="/">
+          <article className="navLogo">
             <img
               src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
               width="80rem"
               height="80rem"
               alt="GHLogo"
             />
-          </Link>
+          </article>
         </li>
         <li>
           <Link className="navLink" to="/">

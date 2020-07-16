@@ -11,17 +11,15 @@ export function SingleFriend(props) {
             src={props.GameDisplayPicRaw}
             width="120rem"
             height="120rem"
-            alt="GHLogo"
+            alt="friend-image"
           />
         </a>
       </article>
-      <article className="friend-card-text">
-        <div>
-          <h4 className="friendList">Gamertag: {props.Gamertag}</h4>
-          <h4 className="friendList">Reputation: {props.XboxOneRep}</h4>
-          <h4 className="friendList">Gamerscore: {props.Gamerscore}</h4>
-          <h4 className="friendList">TenureLevel: {props.TenureLevel}</h4>
-        </div>
+      <article className="friend-list">
+        <h4>Gamertag: {props.Gamertag}</h4>
+        <h4>Reputation: {props.XboxOneRep}</h4>
+        <h4>Gamerscore: {props.Gamerscore}</h4>
+        <h4>TenureLevel: {props.TenureLevel}</h4>
       </article>
     </section>
   )
@@ -29,7 +27,7 @@ export function SingleFriend(props) {
 
 export function Friends() {
   return (
-    <div>
+    <div className="friend-cards">
       {FriendsData.map(friend => (
         <SingleFriend
           key={friend.id}
