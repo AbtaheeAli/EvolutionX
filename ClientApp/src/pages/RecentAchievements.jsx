@@ -66,7 +66,7 @@ export function RecentAchievements() {
     <section>
       {achievements.map(achievement => (
         <SingleRecentAchievement
-          key={achievement.achievementId}
+          Key={achievement.achievementId}
           GamerTag={achievement.gamertag}
           ShortDescription={achievement.shortDescription}
           AchievementIcon={achievement.achievementIcon}

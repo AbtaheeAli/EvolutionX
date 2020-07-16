@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function SingleXboxOneGame() {
+function SingleXboxOneGame(props) {
   return (
     <section className="xbox-one-game-card">
       <article>
@@ -16,7 +16,7 @@ function SingleXboxOneGame() {
       </article>
       <article>
         <div className="xbox-one-game-info">
-          <p>Title: Halo: Master Chief Collection</p>
+          <p>Title: {props.Title}</p>
           <p>Current Gamerscore: 12 G</p>
           <p>Max Gamerscore: 125000 G</p>
           <p>
@@ -52,5 +52,15 @@ export function XboxOneGames() {
     loadGames()
   }, [])
 
-  return <section></section>
+  return (
+    <section>
+      {games.map(game => (
+        <SingleXboxOneGame
+          Key={game.titleId}
+          Title={game.name}
+          CurrentGamerscore={game.currentGamerscore}
+        />
+      ))}
+    </section>
+  )
 }
