@@ -8,9 +8,9 @@ export function SideNav() {
         <li className="logo">
           <article className="navLogo">
             <img
-              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-              width="80rem"
-              height="80rem"
+              src="https://lh3.googleusercontent.com/XURI0lS_tprI-7v9KqvLS8RvRHfxlEzWvwlARHUAGML6NW6Jn4DBXsABsoPGQMTc_GbCw5XXuGMTzPgevN7cNsZPdMVvykV6BxWZYo8oaDxgP-QC4KI7_m2LEdkknBBgSBhJ3ae3crA=w600-h315-p-k"
+              width="140rem"
+              height="90rem"
               alt="GHLogo"
             />
           </article>
