@@ -167,6 +167,17 @@ footer {
   align-items: center;
   justify-content: center;
   padding-top: 5rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgb(31, 31, 31);
+  color: rgb(240, 240, 240);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 20px;
+  margin-top: 7rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
 }
 
 .gamer-card img {
