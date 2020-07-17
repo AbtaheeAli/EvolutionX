@@ -6,28 +6,14 @@ const dateFormat = `MMMM do, yyyy`
 function SingleMessage(props) {
   return (
     <section className="message-card">
-      <article className="message-img">
-        <a href="#">
-          <img
-            className="friendAvatar"
-            src="https://i.pcmag.com/imagery/articles/03q56RTgHk4cQvs07pQt4I9-1.fit_scale.size_2698x1517.v1569490700.jpg"
-            width="120rem"
-            height="120rem"
-            alt="GHLogo"
-          />
-        </a>
-      </article>
+      <article className="message-img"></article>
       <article className="message-text">
-        <div className="sender message-item-text">
-          <strong>Sender: {props.Sender}</strong>
-        </div>
-        <div className=" date message-item-text k">
-          <strong>Sent: {format(new Date(props.Sent), dateFormat)}</strong>
-        </div>
-        <div className="message-body-text">
-          <p>{props.Summary}</p>
-        </div>
+        <strong>From: {props.Sender}</strong>
+        <strong>{format(new Date(props.Sent), dateFormat)}</strong>
       </article>
+      <div className="message-body-text">
+        <p>{props.Summary}</p>
+      </div>
     </section>
   )
 }
@@ -56,7 +42,7 @@ export function Messages() {
   }, [])
 
   return (
-    <div>
+    <div className="message-cards">
       {messages.map(message => (
         <SingleMessage
           key={message.header.id}
