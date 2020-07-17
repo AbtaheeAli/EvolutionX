@@ -49,7 +49,7 @@ export function Gamercard() {
     <div className="gamer-card-container">
       <section className="gamer-card">
         <h4>
-          {account.presenceState} : {account.presenceText}
+          {account.presenceState} - {account.presenceText}
         </h4>
         <div className="gamer-card-text">
           <h3 className="gamer-name-score gamer-card-text-first-item score">
@@ -62,6 +62,7 @@ export function Gamercard() {
         </div>
         <h2>{account.gamertag}</h2>
         <img
+          className="gamer-card-img"
           src={account.displayPicRaw}
           width="300rem"
           height="300rem"
@@ -69,13 +70,11 @@ export function Gamercard() {
         />
         <div className="gamer-card-text">
           <div>
-            <h4 className="gamer-card-text-first-item">Friends</h4>
-            <h4 className="gamer-card-text-first-item">
-              # {accountDetails.followingCount}
-            </h4>
+            <h4>Friends</h4>
+            <h4># {accountDetails.followingCount}</h4>
           </div>
-          <div className="gamer-card-ff">
-            <h4 className="followers">Followers</h4>
+          <div>
+            <h4>Followers</h4>
             <h4># {accountDetails.followerCount}</h4>
           </div>
         </div>

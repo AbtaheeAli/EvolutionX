@@ -174,20 +174,19 @@ footer {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   background-color: rgb(31, 31, 31);
   color: rgb(240, 240, 240);
+  padding: 1rem;
 }
 
-.gamer-card img {
+.gamer-card-img {
   border-radius: 50%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .gamer-card-text {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.gamer-card-text-first-item {
-  padding-right: 1rem;
 }
 
 /* GamerCard End */
