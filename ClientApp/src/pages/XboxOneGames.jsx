@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import format from 'date-fns/format'
+
+const dateFormat = `MMMM do, yyyy`
 
 function SingleXboxOneGame(props) {
   return (
@@ -20,7 +23,10 @@ function SingleXboxOneGame(props) {
           <p>Total Earned Achievements: {props.EarnedAchievements}</p>
           <p>Current Gamerscore: {props.CurrentGamerscore} G</p>
           <p>Max Gamerscore: {props.MaxGamerscore} G</p>
-          <p>Last Unlock: {props.LastUnlockedAchievementDate}</p>
+          <p>
+            Last Unlock:{' '}
+            {format(new Date(props.LastUnlockedAchievementDate), dateFormat)}
+          </p>
         </div>
       </article>
     </section>
