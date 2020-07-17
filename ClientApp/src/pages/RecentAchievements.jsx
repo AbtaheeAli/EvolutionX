@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function SingleRecentAchievement(props) {
   return (
-    <section className="achievement">
+    <section className="achievement-card">
       <article className="achievement-title">
         <div>
           <img
@@ -66,21 +66,25 @@ export function RecentAchievements() {
   }, [])
 
   return (
-    <section>
-      {achievements.map(achievement => (
-        <SingleRecentAchievement
-          Key={achievement.achievementId}
-          GamerTag={achievement.gamertag}
-          ShortDescription={achievement.shortDescription}
-          AchievementIcon={achievement.achievementIcon}
-          AchievementName={achievement.achievementName}
-          AchievementDescriptionOfActivity={achievement.achievementDescription}
-          AchievementContentTitle={achievement.contentTitle}
-          UserImg={achievement.userImageUri}
-          GamerScore={achievement.gamerscore}
-          Date={achievement.date}
-        />
-      ))}
+    <section className="achievement-cards">
+      {achievements
+        .filter(activity => activity.activityItemType === 'Achievement')
+        .map(achievement => (
+          <SingleRecentAchievement
+            Key={achievement.achievementId}
+            GamerTag={achievement.gamertag}
+            ShortDescription={achievement.shortDescription}
+            AchievementIcon={achievement.achievementIcon}
+            AchievementName={achievement.achievementName}
+            AchievementDescriptionOfActivity={
+              achievement.achievementDescription
+            }
+            AchievementContentTitle={achievement.contentTitle}
+            UserImg={achievement.userImageUri}
+            GamerScore={achievement.gamerscore}
+            Date={achievement.date}
+          />
+        ))}
     </section>
   )
 }
