@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import format from 'date-fns/format'
+
+const dateFormat = `MMMM do, yyyy`
 
 function SingleMessage(props) {
   return (
@@ -19,7 +22,7 @@ function SingleMessage(props) {
           <strong>Sender: {props.Sender}</strong>
         </div>
         <div className=" date message-item-text k">
-          <strong>Sent: {props.Sent}</strong>
+          <strong>Sent: {format(new Date(props.Sent), dateFormat)}</strong>
         </div>
         <div className="message-body-text">
           <p>{props.Summary}</p>

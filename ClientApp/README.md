@@ -17,3 +17,8 @@ Step 2: let EF core know about it
 - dotnet ef migrations add AddUser
 - dotnet ef database update
 - dotnet aspnet-codegenerator controller --model User -name UsersController --useAsyncActions -api --dataContext DatabaseContext --relativeFolderPath Controllers
+
+day 4 video is user log in
+time: 30 mins into video
+
+step 3:
