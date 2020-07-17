@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import format from 'date-fns/format'
+
+const dateFormat = `MMMM do, yyyy`
 
 function SingleRecentAchievement(props) {
   return (
@@ -18,7 +21,9 @@ function SingleRecentAchievement(props) {
             <strong>{props.GamerTag}</strong>
             <p>{props.ShortDescription}</p>
           </div>
-          <div className="achievement-date">{props.Date}</div>
+          <div className="achievement-date">
+            {format(new Date(props.Date), dateFormat)}
+          </div>
         </div>
       </article>
       <article className="achievement-image-container">
