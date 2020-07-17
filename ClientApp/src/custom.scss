@@ -468,4 +468,28 @@ footer {
   footer {
     font-size: 10px;
   }
+
+  // Gamercard starts
+  .gamer-card-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .gamer-card-header h4 {
+    font-size: 1rem;
+  }
+
+  .gamer-card-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .gamer-card-gamertag h2 {
+    font-size: 1.5rem;
+  }
+
+  .gamer-card-footer h4 {
+    font-size: 1.3rem;
+  }
+
+  // Gamercard ends
 }
