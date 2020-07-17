@@ -160,41 +160,55 @@ footer {
 
 .gamer-card-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  flex-flow: wrap;
   padding-top: 7rem;
 }
 
 .gamer-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5rem;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   background-color: rgb(31, 31, 31);
   color: rgb(240, 240, 240);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-right: 2.5rem;
-  border-radius: 20px;
+  padding: 1rem;
 }
 
-.gamer-card img {
-  padding-right: 1rem;
+.gamer-card-header {
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+}
+
+.gamer-card-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gamer-card-img {
   border-radius: 50%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .gamer-card-text {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
 }
 
-.gamer-card-text-first-item {
-  padding-right: 1rem;
+.gamer-card-gamertag {
+  display: flex;
+  justify-content: center;
+}
+
+.gamer-card-friends-followers {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+}
+
+.gamer-card-footer {
+  padding-top: 0.5rem;
 }
 
 /* GamerCard End */
@@ -451,60 +465,6 @@ footer {
   }
   //footer ends
 
-  //gamercard starts
-  // .gamer-card {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-  //   padding-top: 5rem;
-  // }
-
-  // .gamer-name-score {
-  //   font-size: 18px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-  // .gamer-tag {
-  //   font-size: 20px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-  // .gamer-card-ff {
-  //   font-size: 15px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-  // .bio-location {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-  // .followers {
-  //   padding-right: 0.5rem;
-  // }
-
-  // .friends {
-  //   padding-right: 0.5rem;
-  // }
-
-  // .avatar {
-  //   width: 50%;
-  //   height: 10rem;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   padding-left: 1.4rem;
-  // }
-  //gamercard ends
-
   //message inbox starts
 
   .message-card {
@@ -635,42 +595,6 @@ footer {
 }
 
 @media (max-width: 740px) {
-  .gamer-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-  }
-
-  .gamer-name-score {
-    font-size: 21px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 2rem;
-  }
-
-  .gamer-tag {
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .gamer-card-ff {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .bio-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .followers {
     padding-right: 0.5rem;
   }
@@ -678,17 +602,6 @@ footer {
   .friends {
     padding-right: 0.5rem;
   }
-
-  .avatar {
-    width: 13rem;
-    height: 13rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 1.4rem;
-  }
-
-  //gamercard ends
 
   //message starts
   .message-item-text {
