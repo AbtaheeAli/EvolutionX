@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function SingleRecentAchievement(props) {
   return (
-    <section className="achievement">
+    <section className="achievement-card">
       <article className="achievement-title">
         <div>
           <img
@@ -66,7 +66,7 @@ export function RecentAchievements() {
   }, [])
 
   return (
-    <section>
+    <section className="achievement-cards">
       {achievements.map(achievement => (
         <SingleRecentAchievement
           Key={achievement.achievementId}

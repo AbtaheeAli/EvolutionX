@@ -247,12 +247,19 @@ footer {
 
 //achievements starts//
 
-.achievement {
+.achievement-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievement-card {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  justify-content: center;
   color: white;
+  max-width: 50rem;
 }
 
 .achievement-title {
