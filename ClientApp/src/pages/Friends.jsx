@@ -17,8 +17,14 @@ export function SingleFriend(props) {
         <h4 className="friend-gt">
           <strong>{props.Gamertag}</strong>
         </h4>
-        <h4>Gamerscore: {props.Gamerscore}</h4>
-        <h4>TenureLevel: {props.TenureLevel}</h4>
+        <h4>
+          <span className="gamerscore">Gamer Score: </span>
+          {props.Gamerscore}
+        </h4>
+        <h4>
+          <span className="tenure">Tenure Level: </span>
+          {props.TenureLevel}
+        </h4>
       </article>
     </section>
   )
