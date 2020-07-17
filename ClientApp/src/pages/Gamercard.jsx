@@ -82,8 +82,10 @@ export function Gamercard() {
             <h4># {accountDetails.followerCount}</h4>
           </div>
         </div>
-        <h4>Bio: {gamerCard.bio}</h4>
-        <h4>Location: {gamerCard.location}</h4>
+        <div className="gamer-card-footer">
+          <h4>Location: {gamerCard.location}</h4>
+          <h4>Bio: {gamerCard.bio}</h4>
+        </div>
       </section>
     </div>
   )
