@@ -574,42 +574,6 @@ footer {
 }
 
 @media (max-width: 740px) {
-  .gamer-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-  }
-
-  .gamer-name-score {
-    font-size: 21px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 2rem;
-  }
-
-  .gamer-tag {
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .gamer-card-ff {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .bio-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .followers {
     padding-right: 0.5rem;
   }
@@ -617,17 +581,6 @@ footer {
   .friends {
     padding-right: 0.5rem;
   }
-
-  .avatar {
-    width: 13rem;
-    height: 13rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 1.4rem;
-  }
-
-  //gamercard ends
 
   //message starts
   .message-item-text {
