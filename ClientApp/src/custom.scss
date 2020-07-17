@@ -427,7 +427,7 @@ footer {
 
 //about box ends
 
-@media (max-width: 500px) {
+@media (max-width: 715px) {
   .sidenav {
     padding-top: 15px;
     width: 100px;
@@ -457,48 +457,10 @@ footer {
   }
   //header ends
 
-  //footer starts
-  footer {
-    font-size: 9px;
-  }
-  //footer ends
-
   //message inbox starts
 
-  .message-card {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  .message-body-text {
-    font-size: 12px;
-    margin-top: 2.3rem;
-  }
-
-  .message-item-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 1.2rem;
-    padding-left: 1.2rem;
-  }
-
-  .sender {
-    padding-left: 1.5rem;
-  }
-
-  .date {
-    padding-left: 3.6rem;
-  }
-
-  .message-img {
-    width: 10rem;
-    height: 10rem;
-  }
-
   //message inbox ends
-}
 
-@media (max-width: 675px) {
   .app {
     display: none;
   }
@@ -506,139 +468,4 @@ footer {
   footer {
     font-size: 10px;
   }
-
-  //message start
-  .message-card {
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-  }
-  .message-body-text {
-    font-size: 12px;
-    margin-top: 2.3rem;
-  }
-
-  .message-item-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .sender {
-    padding-left: 0.1rem;
-  }
-
-  .date {
-    padding-left: 3.6rem;
-  }
-
-  .message-img {
-    width: 10rem;
-    height: 10rem;
-  }
-  //message ends
-
-  //x1 games starts
-  .xbox-one-game-card {
-    margin-left: 0.4rem;
-    margin-right: 0.4rem;
-  }
-
-  .xbox-one-game-card img {
-    width: 10em;
-    height: 10em;
-    margin-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  .xbox-one-game-info {
-    font-size: 12px;
-  }
-  //x1 games end
-}
-
-@media (max-width: 540px) {
-  .message-card {
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-  }
-
-  .message-body-text {
-    font-size: 10px;
-    margin-top: 2.3rem;
-  }
-
-  .message-item-text {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (max-width: 850px) {
-  .message-item-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .message-body-text {
-    font-size: 12px;
-    margin-top: 2.3rem;
-  }
-}
-
-@media (max-width: 740px) {
-  .followers {
-    padding-right: 0.5rem;
-  }
-
-  .friends {
-    padding-right: 0.5rem;
-  }
-
-  //message starts
-  .message-item-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .message-body-text {
-    font-size: 12px;
-    margin-top: 2.3rem;
-  }
-  //message ends
-
-  //friend starts
-  .friend-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  //friend ends
-}
-
-@media (min-width: 1000px) {
-  // .achievement {
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding: 1rem;
-  //   justify-content: center;
-  //   color: white;
-  //   position: fixed;
-  //   align-items: center;
-  // }
-  // .achievement-image {
-  //   max-width: 50rem;
-  //   max-height: 50rem;
-  // }
 }
