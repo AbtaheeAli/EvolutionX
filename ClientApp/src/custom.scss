@@ -165,16 +165,21 @@ footer {
 }
 
 .gamer-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   background-color: rgb(31, 31, 31);
   color: rgb(240, 240, 240);
   padding: 1rem;
+}
+
+.gamer-card-header {
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+}
+
+.gamer-card-img-container {
+  display: flex;
+  justify-content: center;
 }
 
 .gamer-card-img {
@@ -187,6 +192,19 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.gamer-card-gamertag {
+  display: flex;
+  justify-content: center;
+}
+
+.gamer-card-friends-followers {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
 
 /* GamerCard End */
