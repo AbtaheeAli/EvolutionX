@@ -4,6 +4,22 @@ import GamercardData from '../Gamercard.json'
 export function Gamercard() {
   const [account, setAccount] = useState({})
   const [accountDetails, setAccountDetails] = useState({})
+  const [gamerCard, setGamerCard] = useState({})
+
+  function loadGamerCard() {
+    const url = `https://xapi.us/v2/2533274825461278/gamercard`
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+      },
+    })
+      .then(response => response.json())
+      .then(gamerCardInfo => {
+        setGamerCard(gamerCardInfo)
+      })
+  }
 
   function loadAccountInfo() {
     const url = `https://xapi.us/v2/2533274825461278/new-profile`
@@ -23,6 +39,10 @@ export function Gamercard() {
 
   useEffect(() => {
     loadAccountInfo()
+  }, [])
+
+  useEffect(() => {
+    loadGamerCard()
   }, [])
 
   return (
@@ -61,8 +81,8 @@ export function Gamercard() {
               <h4># {accountDetails.followerCount}</h4>
             </div>
           </div>
-          <h4 className="bio-location">Bio: {GamercardData.bio}</h4>
-          <h4 className="bio-location"> Location: {GamercardData.location}</h4>
+          <h4 className="bio-location">Bio: {gamerCard.bio}</h4>
+          <h4 className="bio-location"> Location: {gamerCard.location}</h4>
         </article>
       </section>
     </div>
