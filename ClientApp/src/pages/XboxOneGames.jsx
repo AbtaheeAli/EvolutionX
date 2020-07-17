@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import format from 'date-fns/format'
+import { format, addYears, differenceInDays } from 'date-fns/'
 
 const dateFormat = `MMMM do, yyyy`
 
 function SingleXboxOneGame(props) {
+  // const todaysDate = Date.now()
+  // const achieveDate = new Date(props.LastUnlockedAchievementDate)
+  // const daysBetween = differenceInDays(todaysDate, achieveDate)
+
+  // console.log(daysBetween)
   return (
     <section className="xbox-one-game-card">
       <article>
