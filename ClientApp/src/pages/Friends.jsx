@@ -18,10 +18,12 @@ export function SingleFriend(props) {
       </article>
       <article className="friend-list">
         <h4>
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACvElEQVRYhc2YOU9VQRiGnzGgooBRWbRwK4xYqFErbIh7YmHsbbTXELfY2RiDSyz9DZhY21pKIBdcGo2FsXIFEiAKGuGxOOfK8XDhzrlcEt/kFmdmvvc8Z2buNwv8Rwq1BKmdQDfQBbQBLcAU8A14CwyEEL7WC7ISQKvaq5bUOZfWXNquV22pJ0SjelMdrwKwmMbVG2rjckH2qq9rhMjrpbqnVpAT6mSdQMqaUI/XAjJTZ5CyZtQjsSB7rX+P5PVZ3V4NZLX6aoVByho2N6lX5XiuAPuLDOkydAjozRb8TXpqK/AB2FjQdBr4CjQBHQVjx4GdIYQp+LdnLhYEGQJOA60hhJ0hhE5gB3AH+BnpsQm4sKA0HcNYPTFJhlvUW+pj9ZF6KvXqMf7fOJQH6bR6ii/rg9qs7lNHK9TfSz1vR/rNqe1ZmHORgapX05jSEubd6sECnmdhfs50xU4U4Kl6ADi8SH0AngMjBTy7sjDtSzTMahZ4Bxws8KIYdQA0pA9NkUFTIQTVDbny78DVCu0fAs0RvuuyMNORMM1qACZy5b+B4czzpxDCR/VOJMwPmB+m2F1ZA7AbeJEr3wCUMr/zaXnsxupLFuZtZBDAmRDCqwpAZQk8M9m7rIn0nH+/2mF8nnmvrlf3q2MV6vtSz/uRfrNq27+fs3jeqKR+tUHdapKB+9UH6tHU64T6K9JrcGHfJpvnIhpQT6oNGY9d6t0CIKqXyvH1WLVnSCZgM7C5YOwYsGvBqh1CmAT6CpoBrCVZrYuCAPSVQRbIZCV+WXC4alXJascXdY/JLn4l9UndFtV36jFX7nQwbezpIAPUnX5BPfVN7SkEkgHaro7UCaRk7NAsAdSoXrdyto3RqHrN5Z61c1At6mV1yOpLx6w6mLaPWbWB2u9n2pm/n2kHWoFJkvuZNyT3M6O1eP83+gMJZOrdi4YA4AAAAABJRU5ErkJggg==" />{' '}
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAADYUlEQVRIic2XXWhcRRTHf2d23U27O7uJCNoaobUVP+qbsW0SNZRWxYJQU8QnFXws2FdFsIRCqQhiH7S++5wmT/oibYzQLBVBSlGCaOtHmtpScHcnF81m7xwfsjdu13bnpq7oH+7DPTPn/Gbmzpk5F/4jSdqOc7BBrN0HjKnqJkQGAVBdQGQRmMW50yPwe0/AZ8vlbcb7CVUdR2RjoHsEnMoYM7GrVrt0W+AZ6MsXi8cROQTkQgPsUEPhg5pzb+2H5dTgr6y9qwGngKfWCexUJev9+M4o+jUI/rJQuKdpTAXY8g+hiS4Z74d3R9HVdqNpf5mBvqYxUz2EAmz1xkx9CvlbgvPF4nFguIfQRCMD1h5rN6wt9blyeWvs/Tzr30hp1VBjHhmt1X4AyCZW7/3RlNBIRT4GKoAC20X1ZeD+gF9OvD8CvAqtpZ6DDQovpIDOayazI6v6NoCobvRxPJ1z7iEV+SiF//gM9EFrxmLtPoVCwGnZwwHj/d0xfC2qAwAZY2hY+87lev31QWuHgMe7xCjmSqW91OufGABNka+qOjnq3HeongQGOprfGLT2eYEvQnFEdQySb6x6L9L99DQin1UKhUeBx24WD5jWEDVhrYFFNoX6x6o/G2O2d5gjoNH2ngVs10Aim6Ejj9ctkUMjzt2ZPF7kmaDLaiasLfWV4FIbc18cx+czpm2sqifnrD0BoCKHxftfQnFU9QokMxa5HByp6tNPRNEF4Ps2c4HVjdYvcXwekQdDcVRk4S8wzAYd4MVzpdI2hVeA39qavIgcG46ib4DXUoBnIVlq505jbUT3XM571ek7ms3nNJt9oCmy36jmY9XKonPzFIvvA7sC3KWVev0MtGbcKlemQqMFdjSz2W+9yNHV4Ws9AwcGrb2gIodDzgqTe+APaLskKv39WzSO5+m4vnqoRmzMw0/WahehLZ2Gq9UfFT78l6AonEigN4AB8s69SYqNdhs6W3PuSLvhBvAQrBjvXwK6Vojr1EVVHe8s+v52cu2Ooqs52ElvZj5nvB8ZXVq61tlw0yNzyLnrVeeeFXiPW5SnAS0rvFt2bk9nkZcoWNC3SqIJ4CDhO3tJYZJMZmK0Wv2pW8fUvzAz0JcrlfaK6piqbpbWL4yqLojIohf5fKVeP5Pk6f9WfwIdOkqVO/LVMgAAAABJRU5ErkJggg==" />
           {props.Gamerscore}
         </h4>
-        <h4>Tenure: {props.TenureLevel}</h4>
+        <h4>
+          <span className="tenure"> Tenure: </span> {props.TenureLevel}
+        </h4>
       </article>
     </section>
   )
