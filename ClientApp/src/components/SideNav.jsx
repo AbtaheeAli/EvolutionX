@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export function SideNav() {
   return (
-    <div class="sidenav">
+    <div className="sidenav">
       <ul>
         <li className="logo">
           <article className="navLogo">
