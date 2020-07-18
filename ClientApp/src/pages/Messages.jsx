@@ -8,7 +8,9 @@ function SingleMessage(props) {
     <section className="message-card">
       <article className="message-img"></article>
       <article className="message-text">
-        <strong>From: {props.Sender}</strong>
+        <strong>
+          From: <span className="message-sender">{props.Sender}</span>
+        </strong>
         <strong>{format(new Date(props.Sent), dateFormat)}</strong>
       </article>
       <div className="message-body-text">
