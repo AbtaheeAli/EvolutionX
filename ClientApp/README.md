@@ -22,3 +22,5 @@ day 4 video is user log in
 time: 30 mins into video
 
 step 3:
+
+video marked off at 1:12:28
