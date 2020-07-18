@@ -159,7 +159,7 @@ footer {
 .gamer-card-container {
   display: flex;
   justify-content: center;
-  padding-top: 5rem;
+  padding-top: 2.3rem;
 }
 
 .gamer-card {
@@ -169,6 +169,12 @@ footer {
   background-color: rgb(31, 31, 31);
   color: rgb(240, 240, 240);
   padding: 1rem;
+  border-radius: 20px;
+}
+
+.gamercard-gamertag {
+  color: rgb(198, 13, 13);
+  font-weight: 1000;
 }
 
 .gamer-card-header {
@@ -245,8 +251,9 @@ footer {
   border-radius: 50%;
 }
 
-.tenure {
+.friend-gt {
   color: rgb(198, 13, 13);
+  font-weight: 1000;
 }
 //friends end//
 
@@ -359,6 +366,10 @@ footer {
 .message-item-text {
   float: left;
   width: 50%;
+}
+
+.message-sender {
+  color: rgb(198, 13, 13);
 }
 
 .date {

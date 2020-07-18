@@ -61,7 +61,7 @@ export function Gamercard() {
           </h3>
         </div>
         <div className="gamer-card-gamertag">
-          <h2>{account.gamertag}</h2>
+          <h2 className="gamercard-gamertag">{account.gamertag}</h2>
         </div>
         <div className="gamer-card-img-container">
           <img
