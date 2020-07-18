@@ -16,7 +16,7 @@ export function SideNav() {
           </article>
         </li>
         <li>
-          <Link className="navLink" to="/">
+          <Link className="navLink" to="/gamercard">
             Gamer Card
           </Link>
         </li>

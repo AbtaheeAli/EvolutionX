@@ -10,15 +10,21 @@ import { RecentAchievements } from './pages/RecentAchievements'
 import { Messages } from './pages/Messages'
 import { XboxOneGames } from './pages/XboxOneGames'
 import { About } from './pages/About'
+import { SignUp } from './pages/SignUp'
 
 export function App() {
   return (
     <main>
+      <Switch>
+        <Route exact path="/">
+          <SignUp />
+        </Route>
+      </Switch>
       <SideNav />
       <Header />
       <body>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/gamercard">
             <Gamercard />
           </Route>
           <Route path="/friends">

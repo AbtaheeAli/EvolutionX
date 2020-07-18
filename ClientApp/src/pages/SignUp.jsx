@@ -6,7 +6,7 @@ export function SignUp() {
 
   const [errorMessage, setErrorMessage] = useState()
 
-  const [newUser, setNewUser] = useState({,
+  const [newUser, setNewUser] = useState({
     email: '',
     password: '',
     userName: '',

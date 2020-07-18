@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header>
       <nav className="left-header">
-        <Link className="title" to="/">
+        <Link className="title" to="/gamercard">
           <h2 className="header-title">Evolution X</h2>
         </Link>
         <small className="subtitle">Transform the Game</small>
