@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { isLoggedIn, logout } from '../auth'
 
 export function Header() {
+  const handleLogout = () => {
+    logout()
+    window.location = '/'
+  }
+
   return (
     <header>
       <nav className="left-header">
@@ -20,9 +26,33 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <button type="button" className="logout btn">
-              Log Out
-            </button>
+            {isLoggedIn() || (
+              <Link className="btn btn-success mr-2" to="/signin">
+                Sign in
+              </Link>
+            )}
+          </li>
+          <li>
+            {isLoggedIn() || (
+              <Link className="btn btn-success mr-2" to="/signup">
+                Sign up
+              </Link>
+            )}
+          </li>
+        </ul>
+        <ul>
+          <li>
+            {isLoggedIn() && (
+              <Link>
+                <button
+                  type="button"
+                  className="logout btn"
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </button>
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
