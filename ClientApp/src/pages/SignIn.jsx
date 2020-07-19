@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { recordAuthentication } from '../auth'
+import { Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 export function SignIn() {
   const history = useHistory()
@@ -35,7 +37,7 @@ export function SignIn() {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
           recordAuthentication(apiResponse)
-          window.location = '/'
+          window.location = '/gamercard'
         }
       })
   }

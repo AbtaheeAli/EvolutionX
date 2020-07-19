@@ -5,7 +5,7 @@ import { isLoggedIn, logout } from '../auth'
 export function Header() {
   const handleLogout = () => {
     logout()
-    window.location = '/'
+    window.location = '/about'
   }
 
   return (
@@ -26,22 +26,6 @@ export function Header() {
             </Link>
           </li>
           <li>
-            {isLoggedIn() || (
-              <Link className="btn btn-success mr-2" to="/signin">
-                Sign in
-              </Link>
-            )}
-          </li>
-          <li>
-            {isLoggedIn() || (
-              <Link className="btn btn-success mr-2" to="/signup">
-                Sign up
-              </Link>
-            )}
-          </li>
-        </ul>
-        <ul>
-          <li>
             {isLoggedIn() && (
               <Link>
                 <button
@@ -51,6 +35,20 @@ export function Header() {
                 >
                   Log Out
                 </button>
+              </Link>
+            )}
+          </li>
+          <li>
+            {isLoggedIn() || (
+              <Link className="btn" to="/signin">
+                Sign in
+              </Link>
+            )}
+          </li>
+          <li>
+            {isLoggedIn() || (
+              <Link className="btn" to="/signup">
+                Sign up
               </Link>
             )}
           </li>
