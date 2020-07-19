@@ -19,7 +19,7 @@ namespace EvolutionX.Models
         public string ApiKey { get; set; }
 
         [Required]
-        public int XboxProfileUserId { get; set; }
+        public string XboxProfileUserId { get; set; }
 
 
         [JsonIgnore]

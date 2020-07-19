@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
+import { isNumber } from 'util'
 
 export function SignUp() {
   const history = useHistory()
@@ -96,11 +97,11 @@ export function SignUp() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Xbox Profile User Id</label>
+            <label htmlFor="xboxProfileUserId">Xbox Profile User Id</label>
             <input
-              type="text"
+              type="integer"
               className="form-control"
-              id="xboxUserProfileId"
+              id="xboxProfileUserId"
               value={newUser.xboxProfileUserId}
               onChange={handleFieldChange}
             />
