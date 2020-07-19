@@ -15,13 +15,13 @@ import { SignUp } from './pages/SignUp'
 export function App() {
   return (
     <main>
+      <SideNav />
+      <Header />
       <Switch>
         <Route exact path="/">
           <SignUp />
         </Route>
       </Switch>
-      <SideNav />
-      <Header />
       <body>
         <Switch>
           <Route exact path="/gamercard">
