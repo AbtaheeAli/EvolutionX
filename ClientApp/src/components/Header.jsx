@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { isLoggedIn, logout } from '../auth'
 
 export function Header() {
+  const handleLogout = () => {
+    logout()
+    window.location = '/about'
+  }
+
   return (
     <header>
       <nav className="left-header">
@@ -20,9 +26,31 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <button type="button" className="logout btn">
-              Log Out
-            </button>
+            {isLoggedIn() && (
+              <Link>
+                <button
+                  type="button"
+                  className="logout btn"
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </button>
+              </Link>
+            )}
+          </li>
+          <li>
+            {isLoggedIn() || (
+              <Link className="btn" to="/signin">
+                Sign in
+              </Link>
+            )}
+          </li>
+          <li>
+            {isLoggedIn() || (
+              <Link className="btn" to="/signup">
+                Sign up
+              </Link>
+            )}
           </li>
         </ul>
       </nav>

@@ -11,17 +11,18 @@ import { Messages } from './pages/Messages'
 import { XboxOneGames } from './pages/XboxOneGames'
 import { About } from './pages/About'
 import { SignUp } from './pages/SignUp'
+import { SignIn } from './pages/SignIn'
 
 export function App() {
   return (
     <main>
-      <Switch>
+      <SideNav />
+      <Header />
+      {/* <Switch>
         <Route exact path="/">
           <SignUp />
         </Route>
-      </Switch>
-      <SideNav />
-      <Header />
+      </Switch> */}
       <body>
         <Switch>
           <Route exact path="/gamercard">
@@ -41,6 +42,12 @@ export function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/signin">
+            <SignIn />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
           </Route>
         </Switch>
       </body>

@@ -1,50 +1,50 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { isNumber } from 'util'
+import { recordAuthentication } from '../auth'
+import { Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
-export function SignUp() {
+export function SignIn() {
   const history = useHistory()
 
   const [errorMessage, setErrorMessage] = useState()
 
-  const [newUser, setNewUser] = useState({
+  const [loginUser, setLoginUser] = useState({
     email: '',
     password: '',
-    userName: '',
-    apiKey: '',
-    xboxProfileUserId: '',
   })
 
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
 
-    const updatedUser = { ...newUser, [fieldName]: value }
+    const updatedUser = { ...loginUser, [fieldName]: value }
 
-    setNewUser(updatedUser)
+    setLoginUser(updatedUser)
   }
 
   const handleFormSubmit = event => {
     event.preventDefault()
 
-    fetch('/api/Users', {
+    fetch('/api/Sessions', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(loginUser),
     })
       .then(response => response.json())
       .then(apiResponse => {
         if (apiResponse.status === 400) {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
-          history.push('/')
+          recordAuthentication(apiResponse)
+          window.location = '/gamercard'
         }
       })
   }
 
   return (
     <div className="card">
-      <div className="card-header">Create an Account</div>
+      <div className="card-header">Login</div>
       <div className="card-body">
         {errorMessage && (
           <div className="alert alert-danger" role="alert">
@@ -53,23 +53,12 @@ export function SignUp() {
         )}
         <form onSubmit={handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="userName">User Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="userName"
-              value={newUser.userName}
-              onChange={handleFieldChange}
-            />
-          </div>
-
-          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
               className="form-control"
               id="email"
-              value={newUser.email}
+              value={loginUser.email}
               onChange={handleFieldChange}
             />
           </div>
@@ -80,29 +69,7 @@ export function SignUp() {
               type="password"
               className="form-control"
               id="password"
-              value={newUser.password}
-              onChange={handleFieldChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="apiKey">API Key</label>
-            <input
-              type="text"
-              className="form-control"
-              id="apiKey"
-              value={newUser.apiKey}
-              onChange={handleFieldChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="xboxProfileUserId">Xbox Profile User Id</label>
-            <input
-              type="integer"
-              className="form-control"
-              id="xboxProfileUserId"
-              value={newUser.xboxProfileUserId}
+              value={loginUser.password}
               onChange={handleFieldChange}
             />
           </div>
