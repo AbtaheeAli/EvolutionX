@@ -76,7 +76,7 @@ ul {
 }
 
 .btn {
-  background-color: 1;
+  background-color: rgb(198, 13, 13);
   color: rgb(240, 240, 240);
 }
 
@@ -503,6 +503,7 @@ footer {
   box-sizing: border-box;
   height: 30px;
 }
+
 .login-form-group img {
   top: 0.5px;
   left: 5px;
@@ -515,6 +516,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-or {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+  flex-direction: column;
 }
 
 // login finish
