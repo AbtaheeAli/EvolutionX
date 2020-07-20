@@ -518,12 +518,25 @@ footer {
   align-items: center;
 }
 
-.login-or {
+.login-or-signup {
   display: flex;
   justify-content: center;
   padding-top: 1.5rem;
   align-items: center;
   flex-direction: column;
+}
+
+.login-page-signup {
+  color: white;
+  text-decoration: none;
+}
+
+.signup-link {
+  padding-top: 0.6rem;
+}
+
+.login-page-signup:hover {
+  color: rgb(198, 13, 13);
 }
 
 // login finish
