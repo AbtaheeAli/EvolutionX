@@ -15,7 +15,7 @@ export function About() {
         </a>
         <p>
           Evolution X is an application that uses an third-party API, XAPI, to
-          access the users Xbox Live Account. Once the users are signed in, they
+          access an users Xbox Live Account. Once the users are signed in, they
           are able to view their gamer card, Xbox Live friends, messages, recent
           achievement, and their Xbox One Games.
         </p>
