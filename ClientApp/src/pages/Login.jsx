@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { recordAuthentication } from '../auth'
+import { Link } from 'react-router-dom'
 
 export function Login() {
   const history = useHistory()
@@ -89,8 +90,14 @@ export function Login() {
               Login
             </button>
           </form>
-          <div className="login-or">- or - </div>
-          <a href="/foobar">Click here!</a>
+          <div className="login-or-signup">
+            - OR -
+            <Link className="signup-link" to="/signup">
+              <a className="login-page-signup" href="/foobar">
+                Sign Up!
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
