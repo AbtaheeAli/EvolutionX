@@ -13,7 +13,7 @@ import { SignUp } from '../pages/SignUp'
 import { SignIn } from '../pages/SignIn'
 export function MainPage() {
   return (
-    <div>
+    <div className="main">
       <SideNav />
       <Header />
       <body>

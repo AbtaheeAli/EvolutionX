@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
 main {
+  font-family: 'ABeeZee', sans-serif;
+}
+.main {
   margin-left: 160px; /* Same as the width of the sidebar */
   position: relative;
   min-height: 100vh;
   padding-bottom: 8rem;
-  font-family: 'ABeeZee', sans-serif;
 }
 
 body {
@@ -448,6 +450,10 @@ footer {
 //about box starts
 
 //about box ends
+
+// login start
+
+// login finish
 
 @media (max-width: 715px) {
   .sidenav {
