@@ -4,6 +4,7 @@
 main {
   font-family: 'ABeeZee', sans-serif;
 }
+
 .main {
   margin-left: 160px; /* Same as the width of the sidebar */
   position: relative;
@@ -75,7 +76,7 @@ ul {
 }
 
 .btn {
-  background-color: rgb(198, 13, 13);
+  background-color: 1;
   color: rgb(240, 240, 240);
 }
 
@@ -452,6 +453,69 @@ footer {
 //about box ends
 
 // login start
+
+.login-card-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+}
+
+.card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgb(31, 31, 31);
+  color: rgb(240, 240, 240);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-img {
+  display: flex;
+  justify-content: center;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.login-form-group {
+  position: relative;
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+}
+
+.login-form-group input {
+  border: none;
+  background-color: #fff;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+}
+.login-form-group img {
+  top: 0.5px;
+  left: 5px;
+  padding-right: 0.5rem;
+}
+
+.login-btn {
+  background-color: rgb(198, 13, 13);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // login finish
 
