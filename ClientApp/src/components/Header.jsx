@@ -5,7 +5,7 @@ import { isLoggedIn, logout } from '../auth'
 export function Header() {
   const handleLogout = () => {
     logout()
-    window.location = '/about'
+    window.location = '/'
   }
 
   return (
