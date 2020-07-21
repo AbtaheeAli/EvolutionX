@@ -4,6 +4,8 @@ import { MainPage } from './components/MainPage'
 import { Route, Switch } from 'react-router-dom'
 import { Login } from './pages/Login'
 import { SignUp } from './pages/SignUp'
+import { isLoggedIn, logout } from './auth'
+
 export function App() {
   return (
     <main>
@@ -14,7 +16,7 @@ export function App() {
         <Route path="/signup">
           <SignUp />
         </Route>
-        <MainPage />
+        {isLoggedIn() && <MainPage />}
       </Switch>
     </main>
   )
