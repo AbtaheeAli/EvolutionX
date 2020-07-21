@@ -410,9 +410,6 @@ footer {
 }
 .xbox-one-game-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -424,12 +421,32 @@ footer {
   padding: 1rem;
 }
 
-.game-img {
-  border-radius: 50%;
+.xbox-one-game-achievements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.game-img-container {
-  padding-right: 1rem;
+.xbox-one-game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.game-img {
+  border-radius: 5%;
+}
+
+.xbox-one-game-lastPlayed {
+  text-align: center;
+}
+
+.xbox-one-game-title {
+  color: rgb(198, 13, 13);
+  text-align: center;
 }
 
 //x1 game ends
