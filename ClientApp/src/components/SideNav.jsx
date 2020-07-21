@@ -48,6 +48,15 @@ export function SideNav() {
             </Link>
           </li>
         </ul>
+        <ul className="about-button">
+          <li>
+            <Link to="/about">
+              <button type="button" className="about btn ">
+                About the Application
+              </button>
+            </Link>
+          </li>
+        </ul>
         <ul className="logout-button">
           <li className="logout">
             {isLoggedIn() && (
