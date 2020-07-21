@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { format, addYears, differenceInDays } from 'date-fns/'
+import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -47,14 +48,16 @@ function SingleXboxOneGame(props) {
 export function XboxOneGames() {
   const [games, setGames] = useState([])
 
+  const user = getUser()
+
   function loadGames() {
-    const url = `https://xapi.us/v2/2533274825461278/xboxonegames/`
+    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/xboxonegames/`
 
     fetch(url, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
