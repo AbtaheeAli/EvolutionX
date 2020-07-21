@@ -316,6 +316,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
+  color: white;
 }
 
 .achievement-image {
@@ -324,9 +325,10 @@ footer {
 }
 
 .achievement-footer {
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
   padding-left: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 0.1rem solid rgb(212, 213, 214);
 }
 
