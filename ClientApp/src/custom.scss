@@ -697,12 +697,14 @@ footer {
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
   .logout {
     width: 5\3rem;
     height: 1.5rem;
     font-size: 8px;
+    margin-top: 0.4rem;
   }
 
   .main {
