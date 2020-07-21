@@ -676,6 +676,18 @@ footer {
     height: 3rem;
     margin-bottom: 0.25rem;
   }
+  .logout-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logout {
+    width: 5\3rem;
+    height: 1.5rem;
+    font-size: 8px;
+  }
+
   .main {
     margin-left: 90px;
     overflow-x: hidden; /* Same as the width of the sidebar */
@@ -761,4 +773,17 @@ footer {
     width: 22rem;
   }
   //mesage cards end
+
+  //about me starts
+
+  .about-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .about-box img {
+    width: 8rem;
+    height: 8rem;
+  }
 }
