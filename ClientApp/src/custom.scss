@@ -261,6 +261,12 @@ footer {
   padding-bottom: 1rem;
 }
 
+.friend-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .friendAvatar {
   border-radius: 50%;
 }
