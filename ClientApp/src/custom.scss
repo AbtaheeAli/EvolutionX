@@ -284,14 +284,14 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  color: white;
+  color: rgb(31, 31, 31);
   max-width: 50rem;
 }
 
 .achievement-title {
   display: flex;
   flex-direction: row;
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
   align-items: center;
 }
 
@@ -333,6 +333,10 @@ footer {
 .user-image {
   border-radius: 50%;
   padding: 0.8rem;
+}
+
+.achievement-gamertag {
+  color: rgb(198, 13, 13);
 }
 
 //achievements end//
