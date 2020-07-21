@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import FriendsData from '../Friends.json'
+import { getUser } from '../auth'
 
 export function SingleFriend(props) {
   return (
@@ -32,13 +32,15 @@ export function SingleFriend(props) {
 export function Friends() {
   const [friends, setFriends] = useState([])
 
+  const user = getUser()
+
   function loadFriends() {
-    const url = `https://xapi.us/v2/2533274825461278/friends`
+    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
 
     fetch(url, {
       method: 'GET',
       headers: {
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
