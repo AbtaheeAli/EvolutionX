@@ -498,7 +498,7 @@ footer {
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   color: rgb(31, 31, 31);
-  color: rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
   padding: 1rem;
   border-radius: 20px;
 }
@@ -559,7 +559,7 @@ footer {
 }
 
 .login-page-signup {
-  color: white;
+  color: rgb(31, 31, 31);
   text-decoration: none;
 }
 
