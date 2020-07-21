@@ -137,6 +137,10 @@ ul {
   text-align: center;
 }
 
+.about {
+  display: none;
+}
+
 // .logout:hover {
 //   background-color: rgb(245, 6, 6);
 //   color: rgb(240, 240, 240);
@@ -669,6 +673,19 @@ footer {
   }
   .sidenav .navLink {
     font-size: 12px;
+  }
+
+  .about {
+    display: block;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 8px;
+  }
+
+  .about-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .sidenav .navLogo img {
