@@ -39,9 +39,6 @@ export function MainPage() {
           <Route path="/signin">
             <SignIn />
           </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
         </Switch>
       </body>
       <Footer />
