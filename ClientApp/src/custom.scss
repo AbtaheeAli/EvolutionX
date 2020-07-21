@@ -251,13 +251,13 @@ footer {
   background-color: rgb(245, 245, 245);
   width: 15rem;
   margin: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 30px;
 }
 
 .friend-card-img {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 
@@ -646,8 +646,8 @@ footer {
 
 @media (max-width: 715px) {
   .sidenav {
-    padding-top: 15px;
-    width: 100px;
+    padding-top: 5px;
+    width: 90px;
   }
   .sidenav .navLink {
     font-size: 12px;
@@ -655,38 +655,60 @@ footer {
 
   .sidenav .navLogo img {
     width: 100%;
-    height: 4rem;
-    margin-bottom: 1rem;
+    height: 3rem;
+    margin-bottom: 0.25rem;
   }
   .main {
-    margin-left: 100px;
+    margin-left: 90px;
     overflow-x: hidden; /* Same as the width of the sidebar */
   }
 
+  // friends start
+
+  .friend-card {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .friend-gt {
+    font-size: 1.1rem;
+  }
+
+  .friendAvatar {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .friend-list h4 {
+    font-size: 1rem;
+  }
+
+  // friends end
+
   //header starts
   header {
-    padding-bottom: 0.96rem;
-    padding-top: 1rem;
-    margin-right: 0rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   .left-header h2 {
     font-size: 22px;
-    padding-right: 3rem;
+    padding-right: 2rem;
   }
 
   .left-header small {
     padding-left: 0rem;
+  }
+
+  .right-header {
+    display: none;
   }
   //header ends
 
   //message inbox starts
 
   //message inbox ends
-
-  .app {
-    display: none;
-  }
 
   footer {
     font-size: 10px;
