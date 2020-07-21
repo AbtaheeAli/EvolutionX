@@ -9,8 +9,7 @@ import { RecentAchievements } from '../pages/RecentAchievements'
 import { Messages } from '../pages/Messages'
 import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
-import { SignUp } from '../pages/SignUp'
-import { SignIn } from '../pages/SignIn'
+
 export function MainPage() {
   return (
     <div className="main">
@@ -35,9 +34,6 @@ export function MainPage() {
           </Route>
           <Route path="/about">
             <About />
-          </Route>
-          <Route path="/signin">
-            <SignIn />
           </Route>
         </Switch>
       </body>

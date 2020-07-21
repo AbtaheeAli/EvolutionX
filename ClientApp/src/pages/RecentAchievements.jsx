@@ -19,7 +19,7 @@ function SingleRecentAchievement(props) {
         </div>
         <div className="achievement-text">
           <div>
-            <strong>{props.GamerTag}</strong>
+            <strong className="achievement-gamertag">{props.GamerTag}</strong>
             <p>{props.ShortDescription}</p>
           </div>
           <div className="achievement-date">
