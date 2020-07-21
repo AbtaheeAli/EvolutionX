@@ -36,7 +36,7 @@ export function Login() {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
           recordAuthentication(apiResponse)
-          window.location = '/'
+          window.location = '/gamercard'
         }
       })
   }
