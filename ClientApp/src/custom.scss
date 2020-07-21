@@ -353,13 +353,13 @@ footer {
 .message-card {
   display: flex;
   flex-direction: column;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   padding: 1rem;
   border-width: auto;
-  background-color: rgb(31, 31, 31);
-  color: white;
+  color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
   border-radius: 20px;
   margin-top: 2rem;
   width: 25rem;
