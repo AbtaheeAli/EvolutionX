@@ -53,7 +53,9 @@ export function SignUp() {
             alt="GHLogo"
           />
         </div>
-        <div className="signup-title">Evolution X</div>
+        <div className="signup-title">
+          <h2>Evolution X</h2>
+        </div>
         <div className="card-body">
           {errorMessage && (
             <div className="alert alert-danger" role="alert">
@@ -74,7 +76,7 @@ export function SignUp() {
             </div>
 
             <div className="signup-form-group">
-              <img src="data:image/png;base64,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" />
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAADoklEQVQ4jY2UXYiUZRTHf+d5J2133ufdyUxTg0izD00RTMvRIiEk14ssQSq6sKK7LjJKJMUbISjrrpuuIjAiRdE+tgxDsJ3XD3aFwLAbBTNFdP2Yefcjd2eefxfODLOTa/6vDuf8z//5n/PwPMYEOFQoFCbVai+Z2WqkBcB0IAauGlwM0mFzrmdZpXLAQO391p7ogckF7zcCm4B7BAMGJZldMOkfYIpgjsFSYBJw0sw2LatUfppQuM/7qaOwF3gG6QTOffh3pXJwPdTaDfw+fXp+aGhoA2abgVmCHcUs2/wf94cKhULq/anUe6XefyRwE62pFce8vzdNkoP1vh3jigKXev9D6r2OxPGWOxFsRQodqfd9qfcqxfE6qK8iTZLXkL4WfFfMsrWt4xxJktUhhI1mtrjO/95Vq1tCLrcPaX9xcHA7QOr9Y8BJ4GxXlj3udkGEtA2o4tx7raKlON4qqcfMliL9LKlH0B1yuT3AYpnFDW4xy/40s93A7HKSrMzNTJIlSI9itnt5uXy61amk7cCpUKs9v2J4+AJAb2fnTIuiP+rjXm5dSQhhv5m9YiF0OxfCKgCTfhy3d+ljIJhzrzdEAerxfgDMLrX2RM711/MPOzNbCFCDow3C0Xx+IbAAOLysXD7RflkGF2/lOBdFlwAE05xgKoAza5Jqzj1VJxxvF63n7wOotfQAhNHRjno45pA8wI1KZbjpSLr/5kR27lbCwAwAnBu3ipDLzaqH5x3OXQW4q7NzyvhpwUKotivugkiwBODujo6BccIhLKqHx5xJFwFyUTS7qWp2FiDAvHbhB+L4ZYMCAFnW2VZ+E6hSrX7jJPUCBGllozpWq/0CjJnZht+6upoHHuvqekjOfYbZFwBj0rONWpok7wJFpM+LIyPnrVQoPGi12hng9I0sm7cSqgBHkmS7pK3AFWCfgROsQ/oyRNFOF8JxYADYCTwCrDE4pCxbU4QRt/z69bNI3wJzJ3n/RsPB05XKNuADmQ0DbwlWIX16Y3Dw/RXlcp+kd4AxYCPwBNK2JMteKMJIczFHk2Ru6n2WxvFQKZ9fRBt2QdSea2CiX7D5H6ferwX2ANcJYX1xaOjXicTuBM3Tilm2z6RXgck4dyD1/qveOJ5/u+beOJ5f8v7t2zpuJUdmnwi6AWR2zqR+g8syG0WaIZhmMIebD6W/mGVP/q9wA6V8fpEze1FmzyHNpv705dwVC2HAzM7IrDdE0d4V16791d7/LwjCgQLAekmAAAAAAElFTkSuQmCC" />{' '}
               <input
                 type="email"
                 className="form-control"
@@ -122,7 +124,7 @@ export function SignUp() {
             </div>
             <div className="signup-btn-container">
               <button type="submit" className="btn signup-btn">
-                Submit
+                Sign Up
               </button>
             </div>
           </form>
