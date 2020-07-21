@@ -416,11 +416,11 @@ footer {
 }
 .xbox-one-game-card {
   display: flex;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: rgb(31, 31, 31);
-  color: white;
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
+  color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
   border-radius: 20px;
   width: 33rem;
   margin: 1rem;
@@ -464,9 +464,9 @@ footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 1rem;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   margin-left: 6rem;
   margin-right: 7rem;
   margin-top: 5rem;
