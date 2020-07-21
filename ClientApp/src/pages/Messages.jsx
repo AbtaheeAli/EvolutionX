@@ -7,7 +7,6 @@ const dateFormat = `MMMM do, yyyy`
 function SingleMessage(props) {
   return (
     <section className="message-card">
-      <article className="message-img"></article>
       <article className="message-text">
         <strong>
           From: <span className="message-sender">{props.Sender}</span>
