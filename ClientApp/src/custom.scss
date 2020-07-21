@@ -132,6 +132,10 @@ ul {
 .sidenav ul {
   padding-inline-start: 0;
 }
+
+.logout {
+  text-align: center;
+}
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   background-color: rgb(198, 13, 13);
@@ -169,7 +173,7 @@ footer {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: rgb(31, 31, 31);
+  background-color: #1e3231;
   color: rgb(240, 240, 240);
   padding: 1rem;
   border-radius: 20px;

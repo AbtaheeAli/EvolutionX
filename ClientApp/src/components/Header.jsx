@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { isLoggedIn, logout } from '../auth'
 
 export function Header() {
-  const handleLogout = () => {
-    logout()
-    window.location = '/'
-  }
+  //   const handleLogout = () => {
+  //     logout()
+  //     window.location = '/'
+  //   }
 
   return (
     <header>
@@ -25,7 +25,7 @@ export function Header() {
               </button>
             </Link>
           </li>
-          <li>
+          {/* <li>
             {isLoggedIn() && (
               <Link>
                 <button
@@ -35,10 +35,10 @@ export function Header() {
                 >
                   Log Out
                 </button>
-              </Link>
-            )}
-          </li>
-          <li>
+              </Link> */}
+          {/* )}
+          </li> */}
+          {/* <li>
             {isLoggedIn() || (
               <Link className="btn" to="/signin">
                 Sign in
@@ -51,7 +51,7 @@ export function Header() {
                 Sign up
               </Link>
             )}
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
