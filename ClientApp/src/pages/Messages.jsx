@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
+import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -23,6 +24,9 @@ function SingleMessage(props) {
 export function Messages() {
   const [messages, setMessages] = useState([])
 
+  const user = getUser()
+  console.log(user)
+
   function loadMessages() {
     const url = `https://xapi.us/v2/messages`
 
@@ -30,7 +34,7 @@ export function Messages() {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
