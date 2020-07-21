@@ -71,8 +71,8 @@ export function Gamercard() {
           <img
             className="gamer-card-img"
             src={account.displayPicRaw}
-            width="300rem"
-            height="300rem"
+            width="280rem"
+            height="280rem"
             alt="GHLogo"
           />
         </div>
