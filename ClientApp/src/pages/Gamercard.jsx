@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import GamercardData from '../Gamercard.json'
+import { getUser } from '../auth'
 
 export function Gamercard() {
   const [account, setAccount] = useState({})
+
   const [accountDetails, setAccountDetails] = useState({})
+
   const [gamerCard, setGamerCard] = useState({})
 
+  const user = getUser()
+
   function loadGamerCard() {
-    const url = `https://xapi.us/v2/2533274825461278/gamercard`
+    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/gamercard`
 
     fetch(url, {
       method: 'GET',
       headers: {
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
@@ -22,12 +26,12 @@ export function Gamercard() {
   }
 
   function loadAccountInfo() {
-    const url = `https://xapi.us/v2/2533274825461278/new-profile`
+    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
 
     fetch(url, {
       method: 'GET',
       headers: {
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
