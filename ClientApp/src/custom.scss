@@ -134,8 +134,17 @@ ul {
 }
 
 .logout {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }
+
+// .logout:hover {
+//   background-color: rgb(245, 6, 6);
+//   color: rgb(240, 240, 240);
+//   transition: 0.8s;
+// }
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   background-color: rgb(198, 13, 13);
@@ -173,7 +182,7 @@ footer {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: #1e3231;
+  background-color: #2d3047;
   color: rgb(240, 240, 240);
   padding: 1rem;
   border-radius: 20px;
