@@ -25,7 +25,6 @@ export function Messages() {
   const [messages, setMessages] = useState([])
 
   const user = getUser()
-  console.log(user)
 
   function loadMessages() {
     const url = `https://xapi.us/v2/messages`

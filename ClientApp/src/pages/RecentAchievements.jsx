@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
+import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -50,14 +51,16 @@ function SingleRecentAchievement(props) {
 export function RecentAchievements() {
   const [achievements, setAchievements] = useState([])
 
+  const user = getUser()
+
   function loadAchievements() {
-    const url = `https://xapi.us/v2/2533274825461278/activity`
+    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
 
     fetch(url, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'X-AUTH': '1043a66f8177cfafd16c780666f7ebb48d2b4a78',
+        'X-AUTH': user.apiKey,
       },
     })
       .then(response => response.json())
