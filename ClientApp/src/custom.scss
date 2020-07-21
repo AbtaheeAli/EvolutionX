@@ -99,9 +99,9 @@ ul {
   background-color: rgb(255, 255, 255); /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   border-right: 0.1rem solid rgb(233, 230, 230);
-  -webkit-box-shadow: 0 4px 5px -5px black;
-  -moz-box-shadow: 0 4px 5px -5px black;
-  box-shadow: 0 4px 5px -5px black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* The navigation menu links */
