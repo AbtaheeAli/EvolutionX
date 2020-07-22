@@ -777,12 +777,16 @@ footer {
 
   // Gamercard starts
 
+  .gamer-card {
+    margin: 1rem;
+  }
+
   .gamer-card-header h4 {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .gamer-card-text h3 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .gamer-card-gamertag h2 {
@@ -790,10 +794,10 @@ footer {
   }
 
   .gamer-card-footer h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .gamer-card-friends-followers h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .gamer-card-img {
@@ -803,10 +807,6 @@ footer {
 
   .gamer-card-text img {
     width: 20px;
-  }
-
-  .gamer-card-text h3 {
-    padding-left: 1rem;
   }
 
   // Gamercard ends
