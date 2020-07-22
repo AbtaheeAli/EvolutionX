@@ -19,10 +19,13 @@ export function Header() {
                 About the Application
               </button>
             </Link>
-            <Link to="/settings"></Link>
-            <button type="button" className="app btn">
-              Settings
-            </button>
+          </li>
+          <li>
+            <Link to="/settings">
+              <button type="button" className="app btn">
+                Settings
+              </button>
+            </Link>
           </li>
         </ul>
       </nav>
