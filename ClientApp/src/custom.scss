@@ -490,6 +490,7 @@ footer {
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   color: rgb(31, 31, 31);
   background-color: rgb(245, 245, 245);
+  border-radius: 20px;
 }
 
 .about-box img {
@@ -680,12 +681,18 @@ footer {
     width: 4.5rem;
     height: 2rem;
     font-size: 8px;
+    text-decoration: none;
+  }
+
+  .about:hover {
+    text-decoration: none;
   }
 
   .about-button {
     align-items: center;
     display: flex;
     justify-content: center;
+    text-decoration: none;
   }
 
   .sidenav .navLogo img {
