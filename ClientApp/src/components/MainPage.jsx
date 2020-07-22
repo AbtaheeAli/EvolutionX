@@ -10,8 +10,11 @@ import { Messages } from '../pages/Messages'
 import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
+import { UpdateAccount } from '../pages/UpdateAccount'
+import { getUser } from '../auth'
 
 export function MainPage() {
+  const user = getUser()
   return (
     <div className="main">
       <SideNav />
@@ -21,23 +24,26 @@ export function MainPage() {
           <Route exact path="/gamercard">
             <Gamercard />
           </Route>
-          <Route path="/friends">
+          <Route exact path="/friends">
             <Friends />
           </Route>
-          <Route path="/message-inbox">
+          <Route exact path="/message-inbox">
             <Messages />
           </Route>
-          <Route path="/recent-achievements">
+          <Route exact path="/recent-achievements">
             <RecentAchievements />
           </Route>
-          <Route path="/xbox-one-games">
+          <Route exact path="/xbox-one-games">
             <XboxOneGames />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/settings">
+          <Route exact path="/settings">
             <UserSettings />
+          </Route>
+          <Route exact path={`/settings/${user.id}/edit`}>
+            <UpdateAccount />
           </Route>
         </Switch>
       </body>

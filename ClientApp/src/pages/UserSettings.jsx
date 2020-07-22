@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { getUser, authHeader } from '../auth'
 import { useHistory } from 'react-router'
 
@@ -70,9 +71,14 @@ export function UserSettings() {
             {user.xboxProfileUserId}
           </li>
         </ul>
+
+        <Link className="btn" to={`/settings/${user.id}/edit`}>
+          Update Account
+        </Link>
         <button className="btn" onClick={handleDelete}>
           Delete
         </button>
+        
       </div>
     </section>
   )
