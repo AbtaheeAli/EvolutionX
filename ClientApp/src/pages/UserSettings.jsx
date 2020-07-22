@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../auth'
+import { useHistory } from 'react-router'
 
 export function UserSettings() {
   const user = getUser()
@@ -33,7 +34,7 @@ export function UserSettings() {
   const handleDelete = event => {
     event.preventDefault()
 
-    fetch(`/api/Users/${id}`, {
+    fetch(`/api/Users/${user.id}`, {
       method: 'DELETE',
       // headers: authHeader(),
       // headers: { ...authHeader() },
