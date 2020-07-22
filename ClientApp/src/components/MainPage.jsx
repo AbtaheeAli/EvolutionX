@@ -9,6 +9,7 @@ import { RecentAchievements } from '../pages/RecentAchievements'
 import { Messages } from '../pages/Messages'
 import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
+import { UserSettings } from '../pages/UserSettings'
 
 export function MainPage() {
   return (
@@ -34,6 +35,9 @@ export function MainPage() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/settings">
+            <UserSettings />
           </Route>
         </Switch>
       </body>
