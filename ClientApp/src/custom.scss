@@ -118,7 +118,7 @@ ul {
 }
 
 .sidenav .navLogo {
-  padding: 6px 8px 6px 16px;
+  padding: 0px 8px 0px 12px;
   text-decoration: none;
   font-size: 20px;
   color: #111;
@@ -482,6 +482,10 @@ footer {
   margin-right: 5rem;
 }
 
+.about-box img {
+  padding-bottom: 4rem;
+}
+
 .about-box {
   display: flex;
   flex-direction: column;
@@ -545,7 +549,6 @@ footer {
 .login-title {
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
 }
 
 .login-form-group {

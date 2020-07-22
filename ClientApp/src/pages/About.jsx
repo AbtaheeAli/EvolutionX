@@ -1,4 +1,5 @@
 import React from 'react'
+import about from '../images/aboutLogo.png'
 
 export function About() {
   return (
@@ -7,9 +8,9 @@ export function About() {
         {/* <article> */}
         <img
           className="Game"
-          src="https://lh3.googleusercontent.com/yZvD0AGX3REhD9Qon0D23Dspbym1wx4uiJhKeIrqHC0lE-AEwXxD2z-c-HPjNmbuVKBVQePfcOcBR1zyhAQHMLWESECqTLyhqATL4QipPYOo0S7rNUZpPIIewCZB19TOkmASj_UkTXM=w1920-h1080"
-          width="200rem"
-          height="200rem"
+          src={about}
+          width="600rem"
+          height="300rem"
           alt="GHLogo"
         />
         <p>
