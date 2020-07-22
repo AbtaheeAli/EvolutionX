@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { isNumber } from 'util'
+import logo from '../images/logo.png'
 
 export function SignUp() {
   const history = useHistory()
@@ -46,12 +47,7 @@ export function SignUp() {
     <div className="signup-card-container">
       <section className="signup-card">
         <div className="signup-img">
-          <img
-            src="https://lh3.googleusercontent.com/xu-mhdu9qDSlyTzNsNBCrKXss4LRfyB95ElQymkF3jSF1UJ3I6mbvoey6_QADDtmUeDHiReUurfIGqYG-r0qlhZrSgyhvsgnKpeyYgrNgVDlR88NYcYLL_S7YCFdmVCVFsTZDY2AOo0=w1920-h1080"
-            width="130rem"
-            height="80rem"
-            alt="GHLogo"
-          />
+          <img src={logo} width="130rem" height="150em" alt="GHLogo" />
         </div>
         <div className="signup-title">
           <h2>Evolution X</h2>

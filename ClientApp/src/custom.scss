@@ -482,6 +482,10 @@ footer {
   margin-right: 5rem;
 }
 
+.about-box img {
+  padding-bottom: 4rem;
+}
+
 .about-box {
   display: flex;
   flex-direction: column;
@@ -545,7 +549,6 @@ footer {
 .login-title {
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
 }
 
 .login-form-group {
