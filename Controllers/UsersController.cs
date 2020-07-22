@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EvolutionX.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace EvolutionX.Controllers
 {
@@ -41,10 +43,42 @@ namespace EvolutionX.Controllers
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            // Find this user by looking for the specific id
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                // There wasn't a user with that id so return a `404` not found
+                return NotFound();
+            }
+
+            // Tell the database we want to remove this record
+            _context.Users.Remove(user);
+
+            // Tell the database to perform the deletion
+            await _context.SaveChangesAsync();
+
+            // return NoContent to indicate the update was done. Alternatively you can use the
+            // following to send back a copy of the deleted data.
+            //
+            // return Ok(user)
+            //
+            return NoContent();
+        }
+
+
         // Private helper method that looks up an existing user by the supplied id
         private bool UserExists(int id)
         {
             return _context.Users.Any(user => user.Id == id);
+        }
+
+        private int GetCurrentUserId()
+        {
+            // Get the User Id from the claim and then parse it as an integer.
+            return int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id").Value);
         }
     }
 }
