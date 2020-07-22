@@ -24,33 +24,6 @@ export function Header() {
               Settings
             </button>
           </li>
-          {/* <li>
-            {isLoggedIn() && (
-              <Link>
-                <button
-                  type="button"
-                  className="logout btn"
-                  onClick={handleLogout}
-                >
-                  Log Out
-                </button>
-              </Link> */}
-          {/* )}
-          </li> */}
-          {/* <li>
-            {isLoggedIn() || (
-              <Link className="btn" to="/signin">
-                Sign in
-              </Link>
-            )}
-          </li>
-          <li>
-            {isLoggedIn() || (
-              <Link className="btn" to="/signup">
-                Sign up
-              </Link>
-            )}
-          </li> */}
         </ul>
       </nav>
     </header>
