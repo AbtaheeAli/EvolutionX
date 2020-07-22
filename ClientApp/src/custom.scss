@@ -671,6 +671,31 @@ footer {
 
 //signup page finish
 
+// user settings start
+
+.account-settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
+  background-color: rgb(245, 245, 245);
+  color: rgb(31, 31, 31);
+  margin-top: 3rem;
+}
+
+.user-card {
+}
+.user-account-img-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+//user settings finish
+
 @media (max-width: 715px) {
   .sidenav {
     padding-top: 5px;
