@@ -673,20 +673,23 @@ footer {
 
 // user settings start
 
-.account-settings-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.account-settings-card {
   -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   background-color: rgb(245, 245, 245);
   color: rgb(31, 31, 31);
   margin-top: 3rem;
+  padding-right: 1.5rem;
+  border-radius: 20px;
 }
 
-.user-card {
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .user-account-img-name {
   display: flex;
   flex-direction: column;

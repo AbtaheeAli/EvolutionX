@@ -29,8 +29,8 @@ export function UserSettings() {
   }, [])
 
   return (
-    <section className="user-card">
-      <div className="account-settings-container">
+    <section className="user-container">
+      <div className="account-settings-card">
         <div className="user-account-img-name">
           <img
             className="gamer-card-img"
