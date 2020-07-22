@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import classnames from 'classnames'
 
 export function Header() {
   return (
@@ -19,38 +18,14 @@ export function Header() {
                 About the Application
               </button>
             </Link>
-            <Link to="/settings"></Link>
-            <button type="button" className="app btn">
-              Settings
-            </button>
-          </li>
-          {/* <li>
-            {isLoggedIn() && (
-              <Link>
-                <button
-                  type="button"
-                  className="logout btn"
-                  onClick={handleLogout}
-                >
-                  Log Out
-                </button>
-              </Link> */}
-          {/* )}
-          </li> */}
-          {/* <li>
-            {isLoggedIn() || (
-              <Link className="btn" to="/signin">
-                Sign in
-              </Link>
-            )}
           </li>
           <li>
-            {isLoggedIn() || (
-              <Link className="btn" to="/signup">
-                Sign up
-              </Link>
-            )}
-          </li> */}
+            <Link to="/settings">
+              <button type="button" className="app btn">
+                Settings
+              </button>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
