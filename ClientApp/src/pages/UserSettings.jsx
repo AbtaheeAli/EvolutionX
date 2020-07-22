@@ -6,6 +6,8 @@ export function UserSettings() {
 
   const [account, setAccount] = useState({})
 
+  const history = useHistory()
+
   const [accountDetails, setAccountDetails] = useState({})
 
   function loadAccountInfo() {
@@ -27,6 +29,20 @@ export function UserSettings() {
   useEffect(() => {
     loadAccountInfo()
   }, [])
+
+  const handleDelete = event => {
+    event.preventDefault()
+
+    fetch(`/api/Users/${id}`, {
+      method: 'DELETE',
+      // headers: authHeader(),
+      // headers: { ...authHeader() },
+    }).then(response => {
+      if (response.status === 204) {
+        history.push('/')
+      }
+    })
+  }
 
   return (
     <section className="user-container">
@@ -53,7 +69,9 @@ export function UserSettings() {
             {user.xboxProfileUserId}
           </li>
         </ul>
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </section>
   )
