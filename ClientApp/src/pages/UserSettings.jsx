@@ -53,7 +53,7 @@ export function UserSettings() {
             src={account.displayPicRaw}
             width="180rem"
             height="180rem"
-            alt="UserLogo"
+            alt="UserXboxLogo"
           />
           <h3>{user.userName}</h3>
         </div>
