@@ -5,7 +5,7 @@ export function UserSettings() {
   const user = getUser()
 
   return (
-    <section>
+    <section className="account-settings-container">
       <h3>{user.userName}</h3>
       <ul>
         <li>Email: {user.email}</li>
