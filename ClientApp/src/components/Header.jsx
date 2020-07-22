@@ -19,6 +19,10 @@ export function Header() {
                 About the Application
               </button>
             </Link>
+            <Link to="/settings"></Link>
+            <button type="button" className="app btn">
+              Settings
+            </button>
           </li>
           {/* <li>
             {isLoggedIn() && (
