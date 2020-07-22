@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../auth'
+import { getUser, authHeader } from '../auth'
 import { useHistory } from 'react-router'
 
 export function UserSettings() {
@@ -36,8 +36,8 @@ export function UserSettings() {
 
     fetch(`/api/Users/${user.id}`, {
       method: 'DELETE',
-      // headers: authHeader(),
-      // headers: { ...authHeader() },
+
+      headers: { ...authHeader() },
     }).then(response => {
       if (response.status === 204) {
         history.push('/')
