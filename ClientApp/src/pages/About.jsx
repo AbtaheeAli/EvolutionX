@@ -9,7 +9,7 @@ export function About() {
         <img
           className="Game"
           src={about}
-          width="600rem"
+          width="500rem"
           height="300rem"
           alt="GHLogo"
         />
