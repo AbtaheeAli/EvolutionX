@@ -1,13 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { isLoggedIn, logout } from '../auth'
+import classnames from 'classnames'
 
 export function Header() {
-  //   const handleLogout = () => {
-  //     logout()
-  //     window.location = '/'
-  //   }
-
   return (
     <header>
       <nav className="left-header">
