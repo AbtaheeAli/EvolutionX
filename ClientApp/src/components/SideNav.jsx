@@ -15,7 +15,7 @@ export function SideNav() {
         <ul>
           <li className="logo">
             <article className="navLogo">
-              <img src={logo} width="130rem" height="80rem" alt="GHLogo" />
+              <img src={logo} width="120rem" height="92.5rem" alt="GHLogo" />
             </article>
           </li>
           <li>
