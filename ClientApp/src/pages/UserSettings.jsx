@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../auth'
 import { Link } from 'react-router-dom'
+import { getUser, authHeader } from '../auth'
+import { useHistory } from 'react-router'
 
 export function UserSettings() {
   const user = getUser()
 
   const [account, setAccount] = useState({})
+
+  const history = useHistory()
 
   const [accountDetails, setAccountDetails] = useState({})
 
@@ -28,6 +31,20 @@ export function UserSettings() {
   useEffect(() => {
     loadAccountInfo()
   }, [])
+
+  const handleDelete = event => {
+    event.preventDefault()
+
+    fetch(`/api/Users/${user.id}`, {
+      method: 'DELETE',
+
+      headers: { ...authHeader() },
+    }).then(response => {
+      if (response.status === 204) {
+        history.push('/')
+      }
+    })
+  }
 
   return (
     <section className="user-container">
@@ -54,10 +71,14 @@ export function UserSettings() {
             {user.xboxProfileUserId}
           </li>
         </ul>
-        <button className="btn">Delete</button>
+
         <Link className="btn" to={`/settings/${user.id}/edit`}>
           Update Account
         </Link>
+        <button className="btn" onClick={handleDelete}>
+          Delete
+        </button>
+        
       </div>
     </section>
   )

@@ -44,6 +44,7 @@ namespace EvolutionX.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> DeleteUser(int id)
         {
             // Find this user by looking for the specific id
@@ -54,6 +55,10 @@ namespace EvolutionX.Controllers
                 return NotFound();
             }
 
+            if (user.Id != GetCurrentUserId())
+            {
+                return NotFound();
+            }
             // Tell the database we want to remove this record
             _context.Users.Remove(user);
 
