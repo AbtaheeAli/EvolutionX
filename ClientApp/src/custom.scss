@@ -197,6 +197,8 @@ footer {
 
 .gamer-card-header {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
+  display: flex;
+  flex-direction: row;
 }
 
 .gamer-card-img-container {
@@ -870,7 +872,7 @@ footer {
   }
 
   .gamer-card-header h4 {
-    font-size: 15px;
+    font-size: 11px;
   }
 
   .gamer-card-text h3 {
@@ -882,10 +884,10 @@ footer {
   }
 
   .gamer-card-footer h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
   .gamer-card-friends-followers h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .gamer-card-img {
