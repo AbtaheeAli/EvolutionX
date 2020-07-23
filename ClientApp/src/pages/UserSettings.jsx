@@ -78,7 +78,6 @@ export function UserSettings() {
         <button className="btn" onClick={handleDelete}>
           Delete
         </button>
-        
       </div>
     </section>
   )

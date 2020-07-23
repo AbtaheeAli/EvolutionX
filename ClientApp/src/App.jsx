@@ -13,7 +13,7 @@ export function App() {
         <Route exact path="/">
           <Login />
         </Route>
-        <Route path="/signup">
+        <Route exact path="/signup">
           <SignUp />
         </Route>
         {isLoggedIn() && <MainPage />}
