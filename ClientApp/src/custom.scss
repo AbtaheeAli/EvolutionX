@@ -293,9 +293,11 @@ footer {
 .achievement-card {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   color: rgb(31, 31, 31);
   max-width: 50rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .achievement-title {
@@ -344,7 +346,7 @@ footer {
 
 .user-image {
   border-radius: 50%;
-  padding: 0.8rem;
+  margin: 0.8rem;
 }
 
 .achievement-gamertag {
@@ -841,6 +843,51 @@ footer {
   }
 
   // Gamercard ends
+
+  //achievements starts//
+  .achievement-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .achievement-title {
+    flex-direction: row-reverse;
+    padding-left: 0.5rem;
+    align-items: unset;
+  }
+
+  .achievement-text {
+    flex-direction: column;
+    justify-content: unset;
+    font-size: 15px;
+    padding-top: 0.5rem;
+  }
+
+  .achievement-gamertag {
+    font-size: 15px;
+  }
+
+  .achievement-text p {
+    font-size: 10px;
+    margin-block-end: 0;
+    margin-bottom: 0.2rem;
+  }
+
+  .achievement-date {
+    font-size: 10px;
+  }
+
+  .user-image {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .achievement-footer {
+    font-size: 11px;
+    padding-left: 0.5rem;
+  }
+
+  //achievements end//
 
   //about me starts
 

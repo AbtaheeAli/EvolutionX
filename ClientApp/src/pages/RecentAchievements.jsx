@@ -12,8 +12,8 @@ function SingleRecentAchievement(props) {
           <img
             className="user-image"
             src={props.UserImg}
-            width="75rem"
-            height="75rem"
+            width="65rem"
+            height="65rem"
             alt="GHLogo"
           />
         </div>
