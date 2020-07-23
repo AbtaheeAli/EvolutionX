@@ -690,6 +690,17 @@ footer {
 
 //user settings finish
 
+//instructions page start
+
+.instructions-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+}
+
+// instructions page end
+
 @media (max-width: 630px) {
   .sidenav {
     padding-top: 5px;
