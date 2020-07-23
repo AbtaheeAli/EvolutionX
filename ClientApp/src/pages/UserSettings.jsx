@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser, authHeader } from '../auth'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export function UserSettings() {
   const user = getUser()
@@ -72,6 +73,9 @@ export function UserSettings() {
         <button className="btn" onClick={handleDelete}>
           Delete
         </button>
+        <Link className="btn" to={`/settings/${user.id}/edit`}>
+          Update Account
+        </Link>
       </div>
     </section>
   )

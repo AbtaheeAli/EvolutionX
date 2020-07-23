@@ -12,7 +12,7 @@ export function UpdateAccount() {
     userName: '',
     apiKey: '',
     xboxProfileUserId: '',
-    hashedPassword: user.hashedPassword,
+    hashedPassword: '',
   })
 
   console.log(updatingUser)
@@ -46,6 +46,7 @@ export function UpdateAccount() {
   const handleFormSubmit = event => {
     event.preventDefault()
     console.log(updatingUser)
+
     fetch(`/api/Users/${user.id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
