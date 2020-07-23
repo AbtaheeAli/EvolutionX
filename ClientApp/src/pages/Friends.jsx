@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../auth'
+import { Link } from 'react-router-dom'
 
 export function SingleFriend(props) {
   return (
@@ -26,10 +27,12 @@ export function SingleFriend(props) {
   )
 }
 
-export function Friends() {
+export function Friends(props) {
   const [friends, setFriends] = useState([])
 
   const user = getUser()
+
+  const [filterText, setFilterText] = useState('')
 
   function loadFriends() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
@@ -52,6 +55,17 @@ export function Friends() {
 
   return (
     <div className="friend-cards">
+      <div className="search-bar">
+        <form className=" form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={event => setFilterText(event.target.value)}
+          />
+        </form>
+      </div>
       {friends.map(friend => (
         <SingleFriend
           key={friend.id}
