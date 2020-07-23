@@ -902,6 +902,24 @@ footer {
 
   //achievements end//
 
+  //x1 games starts
+
+  .xbox-one-game-card {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .xbox-one-game-info {
+    padding-left: 0;
+  }
+
+  .game-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  //x1 game ends
+
   //about me starts
 
   .about-container {
