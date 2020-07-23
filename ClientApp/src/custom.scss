@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.1rem solid rgb(220, 214, 214);
-  padding-bottom: 1rem;
+  padding-bottom: 0.9rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -119,12 +119,8 @@ ul {
 
 .sidenav .navLogo {
   padding: 0px 8px 0px 12px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #111;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
@@ -779,8 +775,8 @@ footer {
 
   //header starts
   header {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
     padding-left: 0.5rem;
   }
 
