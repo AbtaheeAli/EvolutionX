@@ -909,8 +909,25 @@ footer {
     align-items: center;
   }
 
+  .xbox-one-game-title h3 {
+    font-size: 20px;
+  }
+
+  .xbox-one-game-achievements p {
+    font-size: 12px;
+  }
+
+  .xbox-one-game-achievements img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   .xbox-one-game-info {
     padding-left: 0;
+  }
+
+  .xbox-one-game-lastPlayed {
+    font-size: 12px;
   }
 
   .game-img {
