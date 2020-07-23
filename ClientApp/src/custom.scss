@@ -727,6 +727,17 @@ footer {
   padding-top: 1rem;
 }
 
+.instructions-link {
+  color: rgb(198, 13, 13);
+}
+
+.last-instruction {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 1rem;
+}
+
 // instructions page end
 
 @media (max-width: 630px) {
