@@ -51,17 +51,32 @@ export function Friends() {
   }, [])
 
   return (
-    <div className="friend-cards">
-      {friends.map(friend => (
-        <SingleFriend
-          key={friend.id}
-          Gamertag={friend.Gamertag}
-          XboxOneRep={friend.XboxOneRep}
-          Gamerscore={friend.Gamerscore}
-          TenureLevel={friend.TenureLevel}
-          GameDisplayPicRaw={friend.GameDisplayPicRaw}
-        />
-      ))}
+    <div className="firends-container">
+      <div className="search-bar">
+        <form className="form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <span className="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </span>
+        </form>
+      </div>
+      <div className="friend-cards">
+        {friends.map(friend => (
+          <SingleFriend
+            key={friend.id}
+            Gamertag={friend.Gamertag}
+            XboxOneRep={friend.XboxOneRep}
+            Gamerscore={friend.Gamerscore}
+            TenureLevel={friend.TenureLevel}
+            GameDisplayPicRaw={friend.GameDisplayPicRaw}
+          />
+        ))}
+      </div>
     </div>
   )
 }
