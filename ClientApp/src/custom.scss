@@ -218,7 +218,6 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding-top: 0.5rem;
-  width: 20rem;
 }
 
 .gamer-card-gamertag {
@@ -873,11 +872,7 @@ footer {
   }
 
   .gamer-card-header h4 {
-    font-size: 15px;
-  }
-
-  .gamer-card-text {
-    width: unset;
+    font-size: 12px;
   }
 
   .gamer-card-text h3 {
@@ -889,10 +884,10 @@ footer {
   }
 
   .gamer-card-footer h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
   .gamer-card-friends-followers h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .gamer-card-img {

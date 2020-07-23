@@ -53,7 +53,7 @@ export function Gamercard() {
     <div className="gamer-card-container">
       <section className="gamer-card">
         <div className="gamer-card-header">
-          <h4>{account.presenceState} </h4>
+          <h4>{account.presenceState}</h4>
           {account.presenceText === 'Offline' || (
             <h4> - {account.presenceText}</h4>
           )}
