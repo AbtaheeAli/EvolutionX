@@ -42,7 +42,9 @@ function SingleRecentAchievement(props) {
         <div>
           {props.AchievementName} - {props.AchievementDescriptionOfActivity}
         </div>
-        <div>{props.AchievementContentTitle}</div>
+        <div>
+          <strong>{props.AchievementContentTitle}</strong>
+        </div>
       </article>
     </section>
   )

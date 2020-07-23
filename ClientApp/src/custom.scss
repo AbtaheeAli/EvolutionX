@@ -338,7 +338,7 @@ footer {
 
 .achievement-footer {
   background-color: rgb(245, 245, 245);
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 0.1rem solid rgb(212, 213, 214);
@@ -690,7 +690,7 @@ footer {
 
 //user settings finish
 
-@media (max-width: 715px) {
+@media (max-width: 630px) {
   .sidenav {
     padding-top: 5px;
     width: 90px;
@@ -771,6 +771,9 @@ footer {
     padding-bottom: 0.15rem;
     padding-left: 0.5rem;
   }
+  .right-header {
+    display: none;
+  }
 
   .left-header h2 {
     font-size: 22px;
@@ -781,9 +784,6 @@ footer {
     padding-left: 0rem;
   }
 
-  .right-header {
-    display: none;
-  }
   //header ends
 
   //message inbox starts
@@ -799,6 +799,7 @@ footer {
   }
 
   .message-body-text {
+    padding-top: 0.25rem;
     font-size: 12px;
   }
 
@@ -887,6 +888,15 @@ footer {
     padding-left: 0.5rem;
   }
 
+  .achievement-gamerscore {
+    font-size: 12px;
+  }
+
+  .achievement-gamerscore img {
+    width: 40%;
+    height: 40%;
+  }
+
   //achievements end//
 
   //about me starts
@@ -900,5 +910,19 @@ footer {
   .about-box img {
     width: 8rem;
     height: 8rem;
+  }
+}
+
+@media (min-width: 631px) and (max-width: 715px) {
+  .right-header {
+    display: none;
+  }
+
+  .left-header {
+    padding-top: 0.9rem;
+  }
+
+  header {
+    padding-bottom: 1.2rem;
   }
 }
