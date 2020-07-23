@@ -1,27 +1,65 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { getUser } from '../auth'
+import { useParams } from 'react-router-dom'
+import { useHistory } from 'react-router'
 
 export function UpdateAccount() {
+  const user = getUser()
   const [errorMessage, setErrorMessage] = useState()
 
-  const [newUser, setNewUser] = useState({
+  const [updatingUser, setUpdatingUser] = useState({
     email: '',
-    password: '',
     userName: '',
     apiKey: '',
     xboxProfileUserId: '',
+    hashedPassword: user.hashedPassword,
   })
 
+  console.log(updatingUser)
+
+  const history = useHistory()
+
+  const params = useParams()
+
+  const id = parseInt(params.id)
+
+  useEffect(() => {
+    fetchUser()
+  }, [user.id])
+
+  const fetchUser = async () => {
+    const response = await fetch(`/api/Users/${user.id}`)
+    const apiData = await response.json()
+
+    setUpdatingUser(apiData)
+  }
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
 
-    const updatedUser = { ...newUser, [fieldName]: value }
+    const updatedUser = { ...updatingUser, [fieldName]: value }
 
-    setNewUser(updatedUser)
+    setUpdatingUser(updatedUser)
+    console.log(updatedUser)
   }
 
-  const handleFormSubmit = () => {
-    // .......
+  const handleFormSubmit = event => {
+    event.preventDefault()
+    console.log(updatingUser)
+    fetch(`/api/Users/${user.id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(updatingUser),
+    })
+      .then(response => response.json())
+      .then(apiResponse => {
+        if (apiResponse.status === 400) {
+          setErrorMessage(Object.values(apiResponse.errors).join(' '))
+        } else {
+          history.push('/settings')
+          console.log(user)
+        }
+      })
   }
 
   return (
@@ -51,7 +89,7 @@ export function UpdateAccount() {
                 type="text"
                 className="form-control"
                 id="userName"
-                value={newUser.userName}
+                value={updatingUser.userName}
                 placeholder="User Name"
                 onChange={handleFieldChange}
               />
@@ -63,20 +101,8 @@ export function UpdateAccount() {
                 type="email"
                 className="form-control"
                 id="email"
-                value={newUser.email}
+                value={updatingUser.email}
                 placeholder="Email"
-                onChange={handleFieldChange}
-              />
-            </div>
-
-            <div className="signup-form-group">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAB8UlEQVRIidWUz2vTcBjGnydmSbrlm7QXL6t/gE4QxcMcO0zxIg7UgycVT/YieNe/xAkevQviL9yUgc1JEBR/7CKIQzyUrku6bq3d9/VglZombVK2g88pvL8+z/uGBNhncVTBE8AueV5FRK4AONprei/kAz8M780AnbEBQaEwTdN8LMCxxAKRt1rrxflW63vaDGOY877hnwS4qG3b07btAbgEYA3kccMwHn0ArGFGE1X1vFuBUhIo9fFNqeTH86+KxWKg1OdAKQlc92buDfj75hDg9smNjc14/nSj0aDIHQAgeTU3AMARABDbfplqwrKWeyZmxgG4ADBfq0VpBbP1eth7VKkm4oGq552nyBKA6SHwJK2TrJwKw6f9wYENKHJ3jOEAUNbAUjyYdKJyQmwNIgtWFFl+FNnQ+iyALwnmDmUBDEjIa3PN5mrX9xcarjs7t7W1IiI3svSOBoi0jN1dP1BqUWv9jORzAbjZbFazAMyRFeSkkC/6gKsEpDo1dXhvAP/qnXacy68dR3Fn536Whkzv4I9E6+s/a7Vto91+CPLEXgO2tWl+dZQ6B+BM1qY8Jyoc0LouORqAfBv86IocJHBhvwDdyYmJjpDtPICkE60j+Wsud7rdWkoPAEDIb/HY4L+IrPQgWQ39HU6gkpb/f/ULNY+pKBeKFisAAAAASUVORK5CYII="></img>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                value={newUser.password}
-                placeholder="Password"
                 onChange={handleFieldChange}
               />
             </div>
@@ -87,7 +113,7 @@ export function UpdateAccount() {
                 type="text"
                 className="form-control"
                 id="apiKey"
-                value={newUser.apiKey}
+                value={updatingUser.apiKey}
                 placeholder="API Key"
                 onChange={handleFieldChange}
               />
@@ -99,7 +125,7 @@ export function UpdateAccount() {
                 type="integer"
                 className="form-control"
                 id="xboxProfileUserId"
-                value={newUser.xboxProfileUserId}
+                value={updatingUser.xboxProfileUserId}
                 placeholder="Xbox User Profile ID"
                 onChange={handleFieldChange}
               />

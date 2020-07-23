@@ -7,11 +7,13 @@ const dateFormat = `MMMM do, yyyy`
 function SingleMessage(props) {
   return (
     <section className="message-card">
-      <article className="message-text">
+      <article className="message-header">
         <strong>
           From: <span className="message-sender">{props.Sender}</span>
         </strong>
-        <strong>{format(new Date(props.Sent), dateFormat)}</strong>
+        <strong className="message-date">
+          {format(new Date(props.Sent), dateFormat)}
+        </strong>
       </article>
       <div className="message-body-text">
         <p>{props.Summary}</p>
