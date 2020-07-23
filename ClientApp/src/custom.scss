@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.1rem solid rgb(220, 214, 214);
-  padding-bottom: 1rem;
+  padding-bottom: 0.9rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -119,12 +119,8 @@ ul {
 
 .sidenav .navLogo {
   padding: 0px 8px 0px 12px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #111;
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
@@ -297,9 +293,11 @@ footer {
 .achievement-card {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   color: rgb(31, 31, 31);
   max-width: 50rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .achievement-title {
@@ -340,7 +338,7 @@ footer {
 
 .achievement-footer {
   background-color: rgb(245, 245, 245);
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 0.1rem solid rgb(212, 213, 214);
@@ -348,7 +346,7 @@ footer {
 
 .user-image {
   border-radius: 50%;
-  padding: 0.8rem;
+  margin: 0.8rem;
 }
 
 .achievement-gamertag {
@@ -372,15 +370,19 @@ footer {
   -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
-  padding: 1rem;
-  border-width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: rgb(31, 31, 31);
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   width: 25rem;
 }
-.message-text {
+.message-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -389,26 +391,8 @@ footer {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
 
-.message-sender-sent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.5rem;
-}
-
-.message-item-text {
-  float: left;
-  width: 50%;
-}
-
 .message-sender {
   color: rgb(198, 13, 13);
-}
-
-.date {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .message-body-text {
@@ -416,6 +400,10 @@ footer {
   display: flex;
   justify-content: flex-start;
   padding-top: 0.5rem;
+}
+
+.message-body-text p {
+  margin-block-end: 0;
 }
 
 //mesages end
@@ -702,7 +690,7 @@ footer {
 
 //user settings finish
 
-@media (max-width: 715px) {
+@media (max-width: 630px) {
   .sidenav {
     padding-top: 5px;
     width: 90px;
@@ -779,9 +767,12 @@ footer {
 
   //header starts
   header {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
     padding-left: 0.5rem;
+  }
+  .right-header {
+    display: none;
   }
 
   .left-header h2 {
@@ -793,12 +784,24 @@ footer {
     padding-left: 0rem;
   }
 
-  .right-header {
-    display: none;
-  }
   //header ends
 
   //message inbox starts
+
+  .message-card {
+    width: 12rem;
+  }
+
+  .message-header {
+    flex-direction: column-reverse;
+    font-size: 15px;
+    align-items: unset;
+  }
+
+  .message-body-text {
+    padding-top: 0.25rem;
+    font-size: 12px;
+  }
 
   //message inbox ends
 
@@ -842,11 +845,59 @@ footer {
 
   // Gamercard ends
 
-  //message cards starts
-  .message-card {
-    width: 22rem;
+  //achievements starts//
+  .achievement-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
-  //mesage cards end
+
+  .achievement-title {
+    flex-direction: row-reverse;
+    padding-left: 0.5rem;
+    align-items: unset;
+  }
+
+  .achievement-text {
+    flex-direction: column;
+    justify-content: unset;
+    font-size: 15px;
+    padding-top: 0.5rem;
+  }
+
+  .achievement-gamertag {
+    font-size: 15px;
+  }
+
+  .achievement-text p {
+    font-size: 10px;
+    margin-block-end: 0;
+    margin-bottom: 0.2rem;
+  }
+
+  .achievement-date {
+    font-size: 10px;
+  }
+
+  .user-image {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .achievement-footer {
+    font-size: 11px;
+    padding-left: 0.5rem;
+  }
+
+  .achievement-gamerscore {
+    font-size: 12px;
+  }
+
+  .achievement-gamerscore img {
+    width: 40%;
+    height: 40%;
+  }
+
+  //achievements end//
 
   //about me starts
 
@@ -859,5 +910,19 @@ footer {
   .about-box img {
     width: 8rem;
     height: 8rem;
+  }
+}
+
+@media (min-width: 631px) and (max-width: 715px) {
+  .right-header {
+    display: none;
+  }
+
+  .left-header {
+    padding-top: 0.9rem;
+  }
+
+  header {
+    padding-bottom: 1.2rem;
   }
 }

@@ -12,8 +12,8 @@ function SingleRecentAchievement(props) {
           <img
             className="user-image"
             src={props.UserImg}
-            width="75rem"
-            height="75rem"
+            width="65rem"
+            height="65rem"
             alt="GHLogo"
           />
         </div>
@@ -42,7 +42,9 @@ function SingleRecentAchievement(props) {
         <div>
           {props.AchievementName} - {props.AchievementDescriptionOfActivity}
         </div>
-        <div>{props.AchievementContentTitle}</div>
+        <div>
+          <strong>{props.AchievementContentTitle}</strong>
+        </div>
       </article>
     </section>
   )

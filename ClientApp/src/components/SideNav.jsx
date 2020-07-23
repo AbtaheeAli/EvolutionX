@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { isLoggedIn, logout } from '../auth'
-import logo from '../images/logo.png'
+import logo from '../images/small-logo.png'
 
 export function SideNav() {
   {
@@ -13,10 +13,8 @@ export function SideNav() {
     return (
       <div className="sidenav">
         <ul>
-          <li className="logo">
-            <article className="navLogo">
-              <img src={logo} width="120rem" height="92.5rem" alt="GHLogo" />
-            </article>
+          <li className="navLogo">
+            <img src={logo} width="130rem" height="90rem" alt="GHLogo" />
           </li>
           <li>
             <Link className="navLink" to="/gamercard">
