@@ -368,15 +368,19 @@ footer {
   -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
-  padding: 1rem;
-  border-width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: rgb(31, 31, 31);
   background-color: rgb(245, 245, 245);
   border-radius: 20px;
   margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   width: 25rem;
 }
-.message-text {
+.message-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -385,26 +389,8 @@ footer {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
 
-.message-sender-sent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.5rem;
-}
-
-.message-item-text {
-  float: left;
-  width: 50%;
-}
-
 .message-sender {
   color: rgb(198, 13, 13);
-}
-
-.date {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .message-body-text {
@@ -412,6 +398,10 @@ footer {
   display: flex;
   justify-content: flex-start;
   padding-top: 0.5rem;
+}
+
+.message-body-text p {
+  margin-block-end: 0;
 }
 
 //mesages end
@@ -796,6 +786,20 @@ footer {
 
   //message inbox starts
 
+  .message-card {
+    width: 12rem;
+  }
+
+  .message-header {
+    flex-direction: column-reverse;
+    font-size: 15px;
+    align-items: unset;
+  }
+
+  .message-body-text {
+    font-size: 12px;
+  }
+
   //message inbox ends
 
   footer {
@@ -837,12 +841,6 @@ footer {
   }
 
   // Gamercard ends
-
-  //message cards starts
-  .message-card {
-    width: 22rem;
-  }
-  //mesage cards end
 
   //about me starts
 
