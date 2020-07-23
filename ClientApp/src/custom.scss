@@ -699,6 +699,34 @@ footer {
   align-items: center;
 }
 
+.instructions-card {
+  -webkit-box-shadow: 4.5px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4.5px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
+  color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
+  padding: 1rem;
+  border-radius: 20px;
+  margin: 3rem;
+}
+
+.instructions-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  color: rgb(198, 13, 13);
+}
+
+.instructions-subtitle h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions-list li + li {
+  padding-top: 1rem;
+}
+
 // instructions page end
 
 @media (max-width: 630px) {
