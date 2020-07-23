@@ -793,9 +793,12 @@ footer {
   }
 
   .message-header {
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-size: 15px;
     align-items: unset;
+  }
+  .message-date {
+    font-size: 12px;
   }
 
   .message-body-text {
