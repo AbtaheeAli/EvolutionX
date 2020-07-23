@@ -12,7 +12,7 @@ export function Instructions() {
           <ul>
             <li>
               {' '}
-              Step 1: Go to{' '}
+              Step 2: Go to{' '}
               <a
                 className="aboutme-links"
                 href="https://xapi.us/"
