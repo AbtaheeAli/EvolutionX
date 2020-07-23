@@ -12,7 +12,6 @@ export function UpdateAccount() {
     userName: '',
     apiKey: '',
     xboxProfileUserId: '',
-    hashedPassword: user.hashedPassword,
   })
 
   console.log(updatingUser)
@@ -46,6 +45,7 @@ export function UpdateAccount() {
   const handleFormSubmit = event => {
     event.preventDefault()
     console.log(updatingUser)
+
     fetch(`/api/Users/${user.id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
@@ -57,7 +57,6 @@ export function UpdateAccount() {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
           history.push('/settings')
-          console.log(user)
         }
       })
   }
@@ -132,7 +131,7 @@ export function UpdateAccount() {
             </div>
             <div className="signup-btn-container">
               <button type="submit" className="btn signup-btn">
-                Sign Up
+                Update
               </button>
             </div>
           </form>

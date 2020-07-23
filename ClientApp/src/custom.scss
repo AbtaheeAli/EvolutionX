@@ -197,6 +197,8 @@ footer {
 
 .gamer-card-header {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
+  display: flex;
+  flex-direction: row;
 }
 
 .gamer-card-img-container {
@@ -278,6 +280,12 @@ footer {
 .friend-gt {
   color: rgb(198, 13, 13);
   font-weight: 1000;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 //friends end//
 
@@ -690,6 +698,56 @@ footer {
 
 //user settings finish
 
+//instructions page start
+
+.instructions-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+}
+
+.instructions-card {
+  -webkit-box-shadow: 4.5px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4.5px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
+  color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
+  padding: 1rem;
+  border-radius: 20px;
+  margin: 3rem;
+}
+
+.instructions-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  color: rgb(198, 13, 13);
+}
+
+.instructions-subtitle h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions-list li + li {
+  padding-top: 1rem;
+}
+
+.instructions-link {
+  color: rgb(198, 13, 13);
+}
+
+.last-instruction {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 1rem;
+}
+
+// instructions page end
+
 @media (max-width: 630px) {
   .sidenav {
     padding-top: 5px;
@@ -748,6 +806,7 @@ footer {
   .friend-card {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    width: 11rem;
   }
 
   .friend-gt {
@@ -819,7 +878,7 @@ footer {
   }
 
   .gamer-card-header h4 {
-    font-size: 15px;
+    font-size: 11px;
   }
 
   .gamer-card-text h3 {
@@ -831,10 +890,10 @@ footer {
   }
 
   .gamer-card-footer h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
   .gamer-card-friends-followers h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .gamer-card-img {
@@ -901,6 +960,42 @@ footer {
   }
 
   //achievements end//
+
+  //x1 games starts
+
+  .xbox-one-game-card {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .xbox-one-game-title h3 {
+    font-size: 20px;
+  }
+
+  .xbox-one-game-achievements p {
+    font-size: 12px;
+  }
+
+  .xbox-one-game-achievements img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .xbox-one-game-info {
+    padding-left: 0;
+  }
+
+  .xbox-one-game-lastPlayed {
+    font-size: 12px;
+  }
+
+  .game-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  //x1 game ends
 
   //about me starts
 

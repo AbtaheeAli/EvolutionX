@@ -17,7 +17,7 @@ export function App() {
         <Route exact path="/signup">
           <SignUp />
         </Route>
-        <Route path="/instructions">
+        <Route exact path="/instructions">
           <Instructions />
         </Route>
         {isLoggedIn() && <MainPage />}

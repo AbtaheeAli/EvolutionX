@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export function Instructions() {
   return (
@@ -6,13 +7,15 @@ export function Instructions() {
       <section className="instructions-card">
         <div className="instructions-title">
           <h2>XAPI Sign-Up Instructions</h2>
+        </div>
+        <div className="instructions-subtitle">
           <h5>It is FREE!</h5>
         </div>
         <div className="instructions-body">
-          <ul>
+          <ul className="instructions-list">
             <li>
               {' '}
-              Step 2: Go to{' '}
+              Step 1: Go to{' '}
               <a
                 className="aboutme-links"
                 href="https://xapi.us/"
@@ -24,10 +27,10 @@ export function Instructions() {
             <li>Step 2: Click on Sign in on top left corner of the page</li>
             <li>
               Step 3: Click on "Register" and fill out the form. Go to the email
-              you aigned up with and activate your account
+              you signed up with and activate your account
             </li>
             <li>
-              Step 4:Once you are signed in, you will be directed to connect
+              Step 4: Once you are signed in, you will be directed to connect
               your Xbox Live Account with XAPI.
             </li>
             <li>
@@ -36,14 +39,30 @@ export function Instructions() {
               page where your account information is displayed
             </li>
             <li>
-              Step 6: Locatr your API Key and Xbox Profile User ID and copy them
+              Step 6: Locate your API Key and Xbox Profile User ID and copy them
               to your clipboard
             </li>
             <li>
-              Step 7: Now you are ready to make an accoutn with Evolution X by
+              Step 7: Now you are ready to make an account with Evolution X by
               pasting the API Key and Xbox Profile User ID to the necessary
               forms in our sign-up page
             </li>
+            <div className="last-instruction">
+              <li>
+                {' '}
+                Congratulations! You are now equipped to sign up for Evolution
+                X.{' '}
+                <Link to="/signup">
+                  <a
+                    className="login-page-signup instructions-link"
+                    href="/foobar"
+                  >
+                    {' '}
+                    Click here to Transform the Game.
+                  </a>
+                </Link>
+              </li>
+            </div>
           </ul>
         </div>
       </section>
