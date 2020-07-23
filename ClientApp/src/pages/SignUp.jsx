@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { isNumber } from 'util'
 import logo from '../images/logo.png'
+import { Link } from 'react-router-dom'
 
 export function SignUp() {
   const history = useHistory()
@@ -124,6 +124,14 @@ export function SignUp() {
               </button>
             </div>
           </form>
+          <div className="login-or-signup">
+            - OR -<div>Have Not Signed Up XAPI?</div>
+            <Link className="signup-link" to="/instructions">
+              <a className="login-page-signup" href="/foobar">
+                Click Here For Instructions
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

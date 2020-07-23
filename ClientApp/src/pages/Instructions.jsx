@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export function Instructions() {
   return (
@@ -46,6 +47,22 @@ export function Instructions() {
               pasting the API Key and Xbox Profile User ID to the necessary
               forms in our sign-up page
             </li>
+            <div className="last-instruction">
+              <li>
+                {' '}
+                Congratulations! You are now equipped to sign up for Evolution
+                X.{' '}
+                <Link to="/signup">
+                  <a
+                    className="login-page-signup instructions-link"
+                    href="/foobar"
+                  >
+                    {' '}
+                    Click here to Transform the Game.
+                  </a>
+                </Link>
+              </li>
+            </div>
           </ul>
         </div>
       </section>
