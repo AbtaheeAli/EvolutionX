@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser, authHeader } from '../auth'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export function UserSettings() {
   const user = getUser()
@@ -9,7 +10,7 @@ export function UserSettings() {
 
   const history = useHistory()
 
-  const [accountDetails, setAccountDetails] = useState({})
+  const [userDetails, setUserDetails] = useState({})
 
   function loadAccountInfo() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
@@ -23,13 +24,25 @@ export function UserSettings() {
       .then(response => response.json())
       .then(account => {
         setAccount(account)
-        setAccountDetails(account.detail)
       })
+  }
+
+  const fetchUser = async () => {
+    const response = await fetch(`/api/Users/${user.id}`)
+    const apiData = await response.json()
+
+    setUserDetails(apiData)
   }
 
   useEffect(() => {
     loadAccountInfo()
   }, [])
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
+
+  console.log(userDetails)
 
   const handleDelete = event => {
     event.preventDefault()
@@ -55,23 +68,26 @@ export function UserSettings() {
             height="180rem"
             alt="UserXboxLogo"
           />
-          <h3>{user.userName}</h3>
+          <h3>{userDetails.userName}</h3>
         </div>
         <ul>
           <li>
-            <strong>Email:</strong> {user.email}
+            <strong>Email:</strong> {userDetails.email}
           </li>
           <li>
-            <strong> X API Key:</strong> {user.apiKey}
+            <strong> X API Key:</strong> {userDetails.apiKey}
           </li>
           <li>
             <strong>Xbox Profile User ID: </strong>
-            {user.xboxProfileUserId}
+            {userDetails.xboxProfileUserId}
           </li>
         </ul>
         <button className="btn" onClick={handleDelete}>
           Delete
         </button>
+        <Link className="btn" to={`/settings/${user.id}/edit`}>
+          Update Account
+        </Link>
       </div>
     </section>
   )

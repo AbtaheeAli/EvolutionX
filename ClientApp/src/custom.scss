@@ -197,6 +197,8 @@ footer {
 
 .gamer-card-header {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
+  display: flex;
+  flex-direction: row;
 }
 
 .gamer-card-img-container {
@@ -804,6 +806,7 @@ footer {
   .friend-card {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    width: 11rem;
   }
 
   .friend-gt {
@@ -875,7 +878,7 @@ footer {
   }
 
   .gamer-card-header h4 {
-    font-size: 15px;
+    font-size: 11px;
   }
 
   .gamer-card-text h3 {
@@ -887,10 +890,10 @@ footer {
   }
 
   .gamer-card-footer h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
   .gamer-card-friends-followers h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .gamer-card-img {
@@ -957,6 +960,42 @@ footer {
   }
 
   //achievements end//
+
+  //x1 games starts
+
+  .xbox-one-game-card {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .xbox-one-game-title h3 {
+    font-size: 20px;
+  }
+
+  .xbox-one-game-achievements p {
+    font-size: 12px;
+  }
+
+  .xbox-one-game-achievements img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .xbox-one-game-info {
+    padding-left: 0;
+  }
+
+  .xbox-one-game-lastPlayed {
+    font-size: 12px;
+  }
+
+  .game-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  //x1 game ends
 
   //about me starts
 
