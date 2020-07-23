@@ -24,7 +24,7 @@ function SingleXboxOneGame(props) {
       <article className="xbox-one-game-info">
         <div className="xbox-one-game-title">
           <h3>
-            <bold>{props.Title}</bold>
+            <strong>{props.Title}</strong>
           </h3>
         </div>
         <div className="xbox-one-game-achievements">
