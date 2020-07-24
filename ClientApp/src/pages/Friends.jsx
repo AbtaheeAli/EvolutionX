@@ -54,7 +54,7 @@ export function Friends(props) {
   }, [])
 
   return (
-    <div className="friend-cards">
+    <section className="friend-page">
       <div className="search-bar">
         <form className=" form-inline my-2 my-lg-0">
           <input
@@ -66,18 +66,21 @@ export function Friends(props) {
           />
         </form>
       </div>
-      {friends
-        .filter(friend => friend.Gamertag.includes(filterText))
-        .map(friend => (
-          <SingleFriend
-            key={friend.id}
-            Gamertag={friend.Gamertag}
-            XboxOneRep={friend.XboxOneRep}
-            Gamerscore={friend.Gamerscore}
-            TenureLevel={friend.TenureLevel}
-            GameDisplayPicRaw={friend.GameDisplayPicRaw}
-          />
-        ))}
-    </div>
+
+      <div className="friend-cards">
+        {friends
+          .filter(friend => friend.Gamertag.includes(filterText))
+          .map(friend => (
+            <SingleFriend
+              key={friend.id}
+              Gamertag={friend.Gamertag}
+              XboxOneRep={friend.XboxOneRep}
+              Gamerscore={friend.Gamerscore}
+              TenureLevel={friend.TenureLevel}
+              GameDisplayPicRaw={friend.GameDisplayPicRaw}
+            />
+          ))}
+      </div>
+    </section>
   )
 }
