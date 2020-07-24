@@ -54,6 +54,7 @@ export function RecentAchievements() {
   const [achievements, setAchievements] = useState([])
 
   const user = getUser()
+  const [filterText, setFilterText] = useState('')
 
   function loadAchievements() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
@@ -76,25 +77,39 @@ export function RecentAchievements() {
   }, [])
 
   return (
-    <section className="achievement-cards">
-      {achievements
-        .filter(activity => activity.activityItemType === 'Achievement')
-        .map(achievement => (
-          <SingleRecentAchievement
-            Key={achievement.achievementId}
-            GamerTag={achievement.gamertag}
-            ShortDescription={achievement.shortDescription}
-            AchievementIcon={achievement.achievementIcon}
-            AchievementName={achievement.achievementName}
-            AchievementDescriptionOfActivity={
-              achievement.achievementDescription
-            }
-            AchievementContentTitle={achievement.contentTitle}
-            UserImg={achievement.userImageUri}
-            GamerScore={achievement.gamerscore}
-            Date={achievement.date}
+    <section className="achievements-page">
+      <div className="search-bar">
+        <form className=" form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={event => setFilterText(event.target.value)}
           />
-        ))}
+        </form>
+      </div>
+      <section className="achievement-cards">
+        {achievements
+          .filter(achievement => achievement.contentTitle.includes(filterText))
+          .filter(activity => activity.activityItemType === 'Achievement')
+          .map(achievement => (
+            <SingleRecentAchievement
+              Key={achievement.achievementId}
+              GamerTag={achievement.gamertag}
+              ShortDescription={achievement.shortDescription}
+              AchievementIcon={achievement.achievementIcon}
+              AchievementName={achievement.achievementName}
+              AchievementDescriptionOfActivity={
+                achievement.achievementDescription
+              }
+              AchievementContentTitle={achievement.contentTitle}
+              UserImg={achievement.userImageUri}
+              GamerScore={achievement.gamerscore}
+              Date={achievement.date}
+            />
+          ))}
+      </section>
     </section>
   )
 }
