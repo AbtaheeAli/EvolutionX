@@ -53,6 +53,8 @@ export function XboxOneGames() {
 
   const [filterText, setFilterText] = useState('')
 
+  const [loading, setLoading] = useState(false)
+
   function loadGames() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/title-history/`
 
@@ -66,6 +68,7 @@ export function XboxOneGames() {
       .then(response => response.json())
       .then(apiData => {
         setGames(apiData.titles)
+        setLoading(true)
       })
   }
 
@@ -75,24 +78,33 @@ export function XboxOneGames() {
 
   return (
     <section className="games-page">
-      <div className="search-bar">
-        <form className=" form-inline my-2 my-lg-0">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                &#x1F50D;
-              </span>
+      {loading === true && (
+        <div className="search-bar">
+          <form className=" form-inline my-2 my-lg-0">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  &#x1F50D;
+                </span>
+              </div>
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search For Game"
+                aria-label="Search"
+                onChange={event => setFilterText(event.target.value)}
+              />
             </div>
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search For Game"
-              aria-label="Search"
-              onChange={event => setFilterText(event.target.value)}
-            />
+          </form>
+        </div>
+      )}
+      {loading === false && (
+        <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
           </div>
-        </form>
-      </div>
+        </div>
+      )}
       <section className="xbox-one-games-card">
         {games
           .filter(game => game.name.includes(filterText))
