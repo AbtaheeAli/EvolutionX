@@ -56,17 +56,15 @@ export function Friends(props) {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <div className="friend-cards">
-      {loading === false && (
-        <div className="spinner-border text-primary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      )}
-=======
     <section className="friend-page">
->>>>>>> cdb60b3a8bc4b9b722f4464697d485da570f3105
       <div className="search-bar">
+        {loading === false && (
+          <div className="spinner">
+            <div className="spinner-border text-danger" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
         <form className=" form-inline my-2 my-lg-0">
           <div class="input-group">
             <div class="input-group-prepend">
