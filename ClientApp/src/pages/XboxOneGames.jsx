@@ -51,6 +51,8 @@ export function XboxOneGames() {
 
   const user = getUser()
 
+  const [filterText, setFilterText] = useState('')
+
   function loadGames() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/title-history/`
 
@@ -72,18 +74,33 @@ export function XboxOneGames() {
   }, [])
 
   return (
-    <section className="xbox-one-games-card">
-      {games.map(game => (
-        <SingleXboxOneGame
-          Key={game.titleId}
-          Title={game.name}
-          GameImage={game.displayImage}
-          CurrentGamerscore={game.achievement.currentGamerscore}
-          MaxGamerscore={game.achievement.totalGamerscore}
-          LastPlayed={game.titleHistory.lastTimePlayed}
-          EarnedAchievements={game.achievement.currentAchievements}
-        />
-      ))}
+    <section className="games-page">
+      <div className="search-bar">
+        <form className=" form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={event => setFilterText(event.target.value)}
+          />
+        </form>
+      </div>
+      <section className="xbox-one-games-card">
+        {games
+          .filter(game => game.name.includes(filterText))
+          .map(game => (
+            <SingleXboxOneGame
+              Key={game.titleId}
+              Title={game.name}
+              GameImage={game.displayImage}
+              CurrentGamerscore={game.achievement.currentGamerscore}
+              MaxGamerscore={game.achievement.totalGamerscore}
+              LastPlayed={game.titleHistory.lastTimePlayed}
+              EarnedAchievements={game.achievement.currentAchievements}
+            />
+          ))}
+      </section>
     </section>
   )
 }
