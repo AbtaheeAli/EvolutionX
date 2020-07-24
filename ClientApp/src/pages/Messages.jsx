@@ -25,6 +25,8 @@ function SingleMessage(props) {
 export function Messages() {
   const [messages, setMessages] = useState([])
 
+  const [filterText, setFilterText] = useState('')
+
   const user = getUser()
 
   function loadMessages() {
@@ -48,15 +50,37 @@ export function Messages() {
   }, [])
 
   return (
-    <div className="message-cards">
-      {messages.map(message => (
-        <SingleMessage
-          key={message.header.id}
-          Sender={message.header.sender}
-          Sent={message.header.sent}
-          Summary={message.messageSummary}
-        />
-      ))}
-    </div>
+    <section className="messages-page">
+      <div className="search-bar">
+        <form className=" form-inline my-2 my-lg-0">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                &#x1F50D;
+              </span>
+            </div>
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search For Sender"
+              aria-label="Search"
+              onChange={event => setFilterText(event.target.value)}
+            />
+          </div>
+        </form>
+      </div>
+      <div className="message-cards">
+        {messages
+          .filter(sender => sender.header.sender.includes(filterText))
+          .map(message => (
+            <SingleMessage
+              key={message.header.id}
+              Sender={message.header.sender}
+              Sent={message.header.sent}
+              Summary={message.messageSummary}
+            />
+          ))}
+      </div>
+    </section>
   )
 }
