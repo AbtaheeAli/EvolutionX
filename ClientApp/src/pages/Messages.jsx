@@ -29,6 +29,8 @@ export function Messages() {
 
   const user = getUser()
 
+  const [loading, setLoading] = useState(false)
+
   function loadMessages() {
     const url = `https://xapi.us/v2/messages`
 
@@ -42,6 +44,7 @@ export function Messages() {
       .then(response => response.json())
       .then(apiData => {
         setMessages(apiData)
+        setLoading(true)
       })
   }
 
@@ -51,24 +54,33 @@ export function Messages() {
 
   return (
     <section className="messages-page">
-      <div className="search-bar">
-        <form className=" form-inline my-2 my-lg-0">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                &#x1F50D;
-              </span>
+      {loading === true && (
+        <div className="search-bar">
+          <form className=" form-inline my-2 my-lg-0">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  &#x1F50D;
+                </span>
+              </div>
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search For Sender"
+                aria-label="Search"
+                onChange={event => setFilterText(event.target.value)}
+              />
             </div>
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search For Sender"
-              aria-label="Search"
-              onChange={event => setFilterText(event.target.value)}
-            />
+          </form>
+        </div>
+      )}
+      {loading === false && (
+        <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
           </div>
-        </form>
-      </div>
+        </div>
+      )}
       <div className="message-cards">
         {messages
           .filter(sender => sender.header.sender.includes(filterText))
