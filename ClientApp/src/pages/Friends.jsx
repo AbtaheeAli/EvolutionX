@@ -66,16 +66,18 @@ export function Friends(props) {
           />
         </form>
       </div>
-      {friends.map(friend => (
-        <SingleFriend
-          key={friend.id}
-          Gamertag={friend.Gamertag}
-          XboxOneRep={friend.XboxOneRep}
-          Gamerscore={friend.Gamerscore}
-          TenureLevel={friend.TenureLevel}
-          GameDisplayPicRaw={friend.GameDisplayPicRaw}
-        />
-      ))}
+      {friends
+        .filter(friend => friend.Gamertag.includes(filterText))
+        .map(friend => (
+          <SingleFriend
+            key={friend.id}
+            Gamertag={friend.Gamertag}
+            XboxOneRep={friend.XboxOneRep}
+            Gamerscore={friend.Gamerscore}
+            TenureLevel={friend.TenureLevel}
+            GameDisplayPicRaw={friend.GameDisplayPicRaw}
+          />
+        ))}
     </div>
   )
 }
