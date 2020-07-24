@@ -66,7 +66,6 @@ export function Friends(props) {
           />
         </form>
       </div>
-
       <div className="friend-cards">
         {friends
           .filter(friend => friend.Gamertag.includes(filterText))
