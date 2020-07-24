@@ -62,7 +62,7 @@ export function Messages() {
             <input
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Search"
+              placeholder="Search For Sender"
               aria-label="Search"
               onChange={event => setFilterText(event.target.value)}
             />
