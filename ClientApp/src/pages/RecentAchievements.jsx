@@ -80,13 +80,20 @@ export function RecentAchievements() {
     <section className="achievements-page">
       <div className="search-bar">
         <form className=" form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            onChange={event => setFilterText(event.target.value)}
-          />
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                &#x1F50D;
+              </span>
+            </div>
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={event => setFilterText(event.target.value)}
+            />
+          </div>
         </form>
       </div>
       <section className="achievement-cards">
