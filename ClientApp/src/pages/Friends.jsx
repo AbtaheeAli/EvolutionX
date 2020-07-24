@@ -31,6 +31,8 @@ export function Friends(props) {
 
   const user = getUser()
 
+  const [loading, setLoading] = useState(false)
+
   const [filterText, setFilterText] = useState('')
 
   function loadFriends() {
@@ -45,6 +47,7 @@ export function Friends(props) {
       .then(response => response.json())
       .then(apiData => {
         setFriends(apiData)
+        setLoading(true)
       })
   }
 
@@ -54,6 +57,11 @@ export function Friends(props) {
 
   return (
     <div className="friend-cards">
+      {loading === false && (
+        <div className="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      )}
       <div className="search-bar">
         <form className=" form-inline my-2 my-lg-0">
           <input
