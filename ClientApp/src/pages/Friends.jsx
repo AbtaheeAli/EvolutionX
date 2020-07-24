@@ -46,7 +46,6 @@ export function Friends(props) {
       .then(response => response.json())
       .then(apiData => {
         setFriends(apiData)
-        console.log(apiData)
       })
   }
 
