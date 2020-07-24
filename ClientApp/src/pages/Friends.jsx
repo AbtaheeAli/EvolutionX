@@ -77,7 +77,6 @@ export function Friends(props) {
           </form>
         </div>
       )}
-
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
@@ -85,7 +84,6 @@ export function Friends(props) {
           </div>
         </div>
       )}
-
       <div className="friend-cards">
         {friends
           .filter(friend => friend.Gamertag.includes(filterText))

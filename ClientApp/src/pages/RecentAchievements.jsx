@@ -54,7 +54,10 @@ export function RecentAchievements() {
   const [achievements, setAchievements] = useState([])
 
   const user = getUser()
+
   const [filterText, setFilterText] = useState('')
+
+  const [loading, setLoading] = useState(false)
 
   function loadAchievements() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
@@ -69,6 +72,7 @@ export function RecentAchievements() {
       .then(response => response.json())
       .then(apiData => {
         setAchievements(apiData.activityItems)
+        setLoading(true)
       })
   }
 
@@ -78,24 +82,33 @@ export function RecentAchievements() {
 
   return (
     <section className="achievements-page">
-      <div className="search-bar">
-        <form className=" form-inline my-2 my-lg-0">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">
-                &#x1F50D;
-              </span>
+      {loading === true && (
+        <div className="search-bar">
+          <form className=" form-inline my-2 my-lg-0">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  &#x1F50D;
+                </span>
+              </div>
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search By Game"
+                aria-label="Search"
+                onChange={event => setFilterText(event.target.value)}
+              />
             </div>
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search By Game"
-              aria-label="Search"
-              onChange={event => setFilterText(event.target.value)}
-            />
+          </form>
+        </div>
+      )}
+      {loading === false && (
+        <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
           </div>
-        </form>
-      </div>
+        </div>
+      )}
       <section className="achievement-cards">
         {achievements
           .filter(achievement => achievement.contentTitle.includes(filterText))

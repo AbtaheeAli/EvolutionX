@@ -74,7 +74,6 @@ export function Messages() {
           </form>
         </div>
       )}
-
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
