@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using EvolutionX.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace EvolutionX.Controllers
 {
@@ -64,15 +65,22 @@ namespace EvolutionX.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
+            var userFromDB = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+
             // If the ID in the URL does not match the ID in the supplied request body, return a bad request
-            if (id != user.Id)
+            if (id != userFromDB.Id)
             {
                 return BadRequest();
             }
 
+            userFromDB.UserName = user.UserName;
+            userFromDB.Email = user.Email;
+            userFromDB.ApiKey = user.ApiKey;
+            userFromDB.XboxProfileUserId = user.XboxProfileUserId;
+
             // Tell the database to consider everything in user to be _updated_ values. When
             // the save happens the database will _replace_ the values in the database with the ones from user
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(userFromDB).State = EntityState.Modified;
 
             try
             {
@@ -103,6 +111,36 @@ namespace EvolutionX.Controllers
             return Ok(user);
             //
             //return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult> Patch(int id, [FromBody] JsonPatchDocument<User> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            var userFromDB = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (userFromDB == null)
+            {
+                return NotFound();
+            }
+
+            patchDoc.ApplyTo(userFromDB, ModelState);
+
+            var isValid = TryValidateModel(userFromDB);
+
+            if (!isValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
 
