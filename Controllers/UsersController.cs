@@ -63,7 +63,6 @@ namespace EvolutionX.Controllers
         {
             var userFromDB = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
-            // If the ID in the URL does not match the ID in the supplied request body, return a bad request
             if (id != userFromDB.Id)
             {
                 return BadRequest();
@@ -74,39 +73,25 @@ namespace EvolutionX.Controllers
             userFromDB.ApiKey = user.ApiKey;
             userFromDB.XboxProfileUserId = user.XboxProfileUserId;
 
-            // Tell the database to consider everything in user to be _updated_ values. When
-            // the save happens the database will _replace_ the values in the database with the ones from user
             _context.Entry(userFromDB).State = EntityState.Modified;
 
             try
             {
-                // Try to save these changes.
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                // Ooops, looks like there was an error, so check to see if the record we were
-                // updating no longer exists.
                 if (!UserExists(id))
                 {
-                    // If the record we tried to update was already deleted by someone else,
-                    // return a `404` not found
                     return NotFound();
                 }
                 else
                 {
-                    // Otherwise throw the error back, which will cause the request to fail
-                    // and generate an error to the client.
                     throw;
                 }
             }
 
-            // return NoContent to indicate the update was done. Alternatively you can use the
-            // following to send back a copy of the updated data.
-            //
             return Ok(user);
-            //
-            //return NoContent();
         }
 
         [HttpPatch("{id}")]
@@ -144,11 +129,9 @@ namespace EvolutionX.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            // Find this user by looking for the specific id
             var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
-                // There wasn't a user with that id so return a `404` not found
                 return NotFound();
             }
 
@@ -156,22 +139,13 @@ namespace EvolutionX.Controllers
             {
                 return NotFound();
             }
-            // Tell the database we want to remove this record
             _context.Users.Remove(user);
 
-            // Tell the database to perform the deletion
             await _context.SaveChangesAsync();
 
-            // return NoContent to indicate the update was done. Alternatively you can use the
-            // following to send back a copy of the deleted data.
-            //
-            // return Ok(user)
-            //
             return NoContent();
         }
 
-
-        // Private helper method that looks up an existing user by the supplied id
         private bool UserExists(int id)
         {
             return _context.Users.Any(user => user.Id == id);
@@ -179,7 +153,6 @@ namespace EvolutionX.Controllers
 
         private int GetCurrentUserId()
         {
-            // Get the User Id from the claim and then parse it as an integer.
             return int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id").Value);
         }
     }
