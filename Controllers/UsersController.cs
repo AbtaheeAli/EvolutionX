@@ -47,17 +47,13 @@ namespace EvolutionX.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            // Find the user in the database using `FindAsync` to look it up by id
             var user = await _context.Users.FindAsync(id);
 
-            // If we didn't find anything, we receive a `null` in return
             if (user == null)
             {
-                // Return a `404` response to the client indicating we could not find a user with this id
                 return NotFound();
             }
 
-            //  Return the user as a JSON object.
             return user;
         }
 
