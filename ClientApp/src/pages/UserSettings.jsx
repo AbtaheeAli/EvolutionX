@@ -82,12 +82,14 @@ export function UserSettings() {
             {userDetails.xboxProfileUserId}
           </li>
         </ul>
-        <button className="btn" onClick={handleDelete}>
-          Delete
-        </button>
-        <Link className="btn" to={`/settings/${user.id}/edit`}>
-          Update Account
-        </Link>
+        <div className="buttons">
+          <Link className="btn update" to={`/settings/${user.id}/edit`}>
+            Update Account
+          </Link>
+          <button className="btn delete" onClick={handleDelete}>
+            Delete Account
+          </button>
+        </div>
       </div>
     </section>
   )

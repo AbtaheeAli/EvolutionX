@@ -676,8 +676,16 @@ footer {
   margin-top: 3rem;
   padding-right: 1.5rem;
   border-radius: 20px;
+  padding-bottom: 1rem;
 }
 
+.user-container {
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
 .user-container {
   display: flex;
   justify-content: center;
