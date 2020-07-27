@@ -59,7 +59,7 @@ export function Friends(props) {
     <section className="friend-page">
       {loading === true && (
         <div className="search-bar">
-          <form className=" form-inline my-2 my-lg-0">
+          <form className="form-inline my-2 my-lg-0">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">
