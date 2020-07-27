@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../auth'
-import { useParams } from 'react-router-dom'
 import { useHistory } from 'react-router'
+import logo from '../images/Login Image.png'
 
 export function UpdateAccount() {
   const user = getUser()
@@ -17,10 +17,6 @@ export function UpdateAccount() {
   console.log(updatingUser)
 
   const history = useHistory()
-
-  const params = useParams()
-
-  const id = parseInt(params.id)
 
   useEffect(() => {
     fetchUser()
@@ -39,12 +35,10 @@ export function UpdateAccount() {
     const updatedUser = { ...updatingUser, [fieldName]: value }
 
     setUpdatingUser(updatedUser)
-    console.log(updatedUser)
   }
 
   const handleFormSubmit = event => {
     event.preventDefault()
-    console.log(updatingUser)
 
     fetch(`/api/Users/${user.id}`, {
       method: 'PUT',
@@ -65,12 +59,7 @@ export function UpdateAccount() {
     <div className="signup-card-container">
       <section className="signup-card">
         <div className="signup-img">
-          <img
-            src="https://lh3.googleusercontent.com/xu-mhdu9qDSlyTzNsNBCrKXss4LRfyB95ElQymkF3jSF1UJ3I6mbvoey6_QADDtmUeDHiReUurfIGqYG-r0qlhZrSgyhvsgnKpeyYgrNgVDlR88NYcYLL_S7YCFdmVCVFsTZDY2AOo0=w1920-h1080"
-            width="130rem"
-            height="80rem"
-            alt="GHLogo"
-          />
+          <img src={logo} alt="EXLogo" />
         </div>
         <div className="signup-title">
           <h2>Evolution X</h2>
