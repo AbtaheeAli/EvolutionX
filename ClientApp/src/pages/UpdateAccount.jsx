@@ -35,12 +35,10 @@ export function UpdateAccount() {
     const updatedUser = { ...updatingUser, [fieldName]: value }
 
     setUpdatingUser(updatedUser)
-    console.log(updatedUser)
   }
 
   const handleFormSubmit = event => {
     event.preventDefault()
-    console.log(updatingUser)
 
     fetch(`/api/Users/${user.id}`, {
       method: 'PUT',
