@@ -746,6 +746,7 @@ footer {
 
 @media (max-width: 630px) {
   //Login Start
+
   .login-card-container {
     padding-top: 2rem;
     margin-left: 1rem;
@@ -756,7 +757,9 @@ footer {
     padding: unset;
     padding-top: 0.5rem;
   }
+
   //Login End
+
   .sidenav {
     padding-top: 5px;
     width: 90px;
@@ -932,6 +935,7 @@ footer {
   // Gamercard ends
 
   //achievements starts//
+
   .achievement-card {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -990,6 +994,7 @@ footer {
     justify-content: center;
     align-content: center;
   }
+
   //x1 games starts
 
   .xbox-one-game-card {
@@ -1043,11 +1048,7 @@ footer {
 
   //user setting starts
 
-  .user-container {
-    margin-right: 12rem;
-    margin-left: 12rem;
-    display: unset;
-    align-items: center;
+  .user-page {
   }
 
   .gamer-card-img {
