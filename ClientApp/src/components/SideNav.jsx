@@ -43,6 +43,13 @@ export function SideNav() {
           </li>
         </ul>
         <ul className="logout-button">
+          <li className="setting-button">
+            <Link to="/settings">
+              <button type="button" className="setting  btn">
+                User Settings
+              </button>
+            </Link>
+          </li>
           <li className="about-button">
             <Link to="/about">
               <button type="button" className="about btn ">

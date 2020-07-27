@@ -135,10 +135,18 @@ ul {
 }
 
 .about {
-  display: none;
+  visibility: hidden;
+}
+
+.setting {
+  visibility: hidden;
 }
 
 .about:hover {
+  text-decoration: none;
+}
+
+.setting:hover {
   text-decoration: none;
 }
 
@@ -778,11 +786,15 @@ footer {
   }
 
   .about {
-    display: block;
+    visibility: visible;
     width: 4.5rem;
     height: 2rem;
     font-size: 8px;
     text-decoration: none;
+  }
+
+  .about-button {
+    margin-top: 0.1rem;
   }
 
   .about:hover {
@@ -794,6 +806,21 @@ footer {
     display: flex;
     justify-content: center;
     text-decoration: none;
+  }
+
+  .setting {
+    visibility: visible;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 8px;
+    text-decoration: none;
+  }
+
+  .setting-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .sidenav .navLogo img {

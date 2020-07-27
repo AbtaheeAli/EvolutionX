@@ -58,6 +58,8 @@ export function UserSettings() {
     })
   }
 
+  const [showText, setShowText] = useState(false)
+
   return (
     <section className="user-page">
       {loading === false && (
@@ -85,11 +87,16 @@ export function UserSettings() {
                 <strong>Email:</strong> {userDetails.email}
               </li>
               <li className="API">
-                <strong> X API Key:</strong> {userDetails.apiKey}
+                <button className="btn" onClick={() => setShowText(!showText)}>
+                  API Key
+                </button>
+                {showText && <div>{userDetails.apiKey}</div>}
               </li>
               <li>
-                <strong>Xbox Profile User ID: </strong>
-                {userDetails.xboxProfileUserId}
+                <button className="btn" onClick={() => setShowText(!showText)}>
+                  Xbox Profile User ID
+                </button>
+                {showText && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
             </ul>
             <div className="buttons">
