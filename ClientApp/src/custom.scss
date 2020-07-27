@@ -1,4 +1,3 @@
-
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
@@ -658,6 +657,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.signin-instead {
+  padding-bottom: 0.5rem;
+}
+
+.signin-instead-link {
+  color: rgb(198, 13, 13);
 }
 
 //signup page finish
