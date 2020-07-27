@@ -1,3 +1,4 @@
+
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
@@ -183,6 +184,7 @@ footer {
   color: rgb(31, 31, 31);
   padding: 1rem;
   border-radius: 20px;
+  width: 30rem;
 }
 
 .gamercard-gamertag {
@@ -519,7 +521,7 @@ footer {
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   color: rgb(31, 31, 31);
   background-color: rgb(245, 245, 245);
-  padding: 1rem;
+  padding: 3rem;
   border-radius: 20px;
 }
 
@@ -613,7 +615,7 @@ footer {
   box-shadow: 4.5px 4.5px 5px 5px rgba(0, 0, 0, 0.75);
   color: rgb(31, 31, 31);
   background-color: rgb(245, 245, 245);
-  padding: 1rem;
+  padding: 3rem;
   border-radius: 20px;
 }
 
@@ -902,6 +904,7 @@ footer {
 
   .gamer-card {
     margin: 1rem;
+    width: 15rem;
   }
 
   .gamer-card-header h4 {
@@ -1101,4 +1104,3 @@ footer {
     padding-bottom: 1.2rem;
   }
 }
-
