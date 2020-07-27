@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import logo from '../images/logo.png'
+import logo from '../images/Login Image.png'
 import { Link } from 'react-router-dom'
 
 export function SignUp() {
@@ -47,7 +47,7 @@ export function SignUp() {
     <div className="signup-card-container">
       <section className="signup-card">
         <div className="signup-img">
-          <img src={logo} width="130rem" height="150em" alt="GHLogo" />
+          <img src={logo} alt="GHLogo" />
         </div>
         <div className="signup-title">
           <h2>Evolution X</h2>

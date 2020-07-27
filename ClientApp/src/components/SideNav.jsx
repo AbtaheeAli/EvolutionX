@@ -52,15 +52,13 @@ export function SideNav() {
           </li>
           <li className="logout">
             {isLoggedIn() && (
-              <Link>
-                <button
-                  type="button"
-                  className="logout btn"
-                  onClick={handleLogout}
-                >
-                  Log Out
-                </button>
-              </Link>
+              <button
+                type="button"
+                className="logout btn"
+                onClick={handleLogout}
+              >
+                Log Out
+              </button>
             )}
           </li>
         </ul>
