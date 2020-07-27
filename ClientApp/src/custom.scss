@@ -679,13 +679,11 @@ footer {
   padding-bottom: 1rem;
 }
 
-.user-container {
-}
-
 .buttons {
   display: flex;
   justify-content: space-evenly;
 }
+
 .user-container {
   display: flex;
   justify-content: center;
@@ -784,6 +782,7 @@ footer {
     height: 3rem;
     margin-bottom: 0.25rem;
   }
+
   .logout-button {
     align-items: center;
     display: flex;
@@ -1027,6 +1026,51 @@ footer {
   }
 
   //login ends
+
+  //user setting starts
+
+  .user-container {
+    margin-right: 12rem;
+    margin-left: 12rem;
+    display: unset;
+    align-items: center;
+  }
+
+  .gamer-card-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .account-settings-card {
+    font-size: 10px;
+  }
+
+  .user-settings-username {
+    font-size: 10px;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .API {
+    word-wrap: break-word;
+  }
+
+  .update {
+    width: 50px;
+    height: 30px;
+    font-size: 7px;
+  }
+
+  .delete {
+    width: 50px;
+    height: 30px;
+    font-size: 7px;
+  }
+
+  //user setting ends
 }
 
 @media (min-width: 631px) and (max-width: 715px) {

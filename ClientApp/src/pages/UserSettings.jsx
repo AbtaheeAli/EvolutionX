@@ -68,13 +68,13 @@ export function UserSettings() {
             height="180rem"
             alt="UserXboxLogo"
           />
-          <h3>{userDetails.userName}</h3>
+          <h3 className="user-settings-username">{userDetails.userName}</h3>
         </div>
-        <ul>
+        <ul className="settings-list">
           <li>
             <strong>Email:</strong> {userDetails.email}
           </li>
-          <li>
+          <li className="API">
             <strong> X API Key:</strong> {userDetails.apiKey}
           </li>
           <li>
