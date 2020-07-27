@@ -6,7 +6,7 @@ main {
 }
 
 .main {
-  margin-left: 160px; /* Same as the width of the sidebar */
+  margin-left: 160px;
   position: relative;
   min-height: 100vh;
   padding-bottom: 8rem;
@@ -17,7 +17,6 @@ body {
   font-family: 'ABeeZee', sans-serif;
 }
 
-//Header start 176 42 33
 header {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -86,26 +85,24 @@ ul {
   color: rgb(240, 240, 240);
   transition: 0.8s;
 }
-
 //header finish
 
-/* SideNav Start */
+//SideNav Start
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  background-color: rgb(255, 255, 255); /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
   border-right: 0.1rem solid rgb(233, 230, 230);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-/* The navigation menu links */
 .sidenav .navLink {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -142,15 +139,14 @@ ul {
   text-decoration: none;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   background-color: rgb(198, 13, 13);
   transition: 0.8s;
   color: white;
 }
-/* SideNav End */
+// SideNav End
 
-// footer starts //
+//footer starts
 footer {
   text-align: center;
   display: flex;
@@ -164,11 +160,9 @@ footer {
   bottom: 0;
   width: 100%;
 }
+//footer ends
 
-// footer ends//
-
-/* GamerCard Start */
-
+// GamerCard Start
 .gamer-card-container {
   display: flex;
   justify-content: center;
@@ -229,11 +223,9 @@ footer {
 .gamer-card-footer {
   padding-top: 0.5rem;
 }
+// GamerCard End
 
-/* GamerCard End */
-
-//friends starts//
-
+//friends starts
 .friend-cards {
   display: flex;
   flex-direction: row;
@@ -282,10 +274,9 @@ footer {
   justify-content: center;
   align-content: center;
 }
-//friends end//
+//friends end
 
-//achievements starts//
-
+//achievements starts
 .achievement-cards {
   display: flex;
   flex-direction: column;
@@ -355,11 +346,9 @@ footer {
 .achievement-gamertag {
   color: rgb(198, 13, 13);
 }
+//achievements end
 
-//achievements end//
-
-//messages start//
-
+//messages start
 .message-cards {
   display: flex;
   justify-content: center;
@@ -385,6 +374,7 @@ footer {
   margin-right: 1rem;
   width: 25rem;
 }
+
 .message-header {
   display: flex;
   flex-direction: row;
@@ -408,11 +398,9 @@ footer {
 .message-body-text p {
   margin-block-end: 0;
 }
-
 //mesages end
 
 //x1 games starts
-
 .xbox-one-games-card {
   display: flex;
   flex-direction: row;
@@ -459,11 +447,9 @@ footer {
   color: rgb(198, 13, 13);
   text-align: center;
 }
-
 //x1 game ends
 
 //about me start
-
 .about-container {
   display: flex;
   justify-content: center;
@@ -505,7 +491,6 @@ footer {
 //about box ends
 
 // login start
-
 .login-card-container {
   display: flex;
   justify-content: center;
@@ -589,11 +574,9 @@ footer {
 .login-page-signup:hover {
   color: rgb(198, 13, 13);
 }
-
 // login finish
 
 //sign up page start
-
 .signup-card-container {
   display: flex;
   justify-content: center;
@@ -658,11 +641,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 //signup page finish
 
 // user settings start
-
 .account-settings-card {
   -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
@@ -692,11 +673,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 //user settings finish
 
 //instructions page start
-
 .instructions-container {
   display: flex;
   justify-content: center;
@@ -742,7 +721,6 @@ footer {
   align-content: center;
   padding-top: 1rem;
 }
-
 // instructions page end
 
 @media (max-width: 630px) {
@@ -750,6 +728,7 @@ footer {
     padding-top: 5px;
     width: 90px;
   }
+
   .sidenav .navLink {
     font-size: 12px;
   }
@@ -795,12 +774,11 @@ footer {
 
   .main {
     margin-left: 90px;
-    overflow-x: hidden; /* Same as the width of the sidebar */
+    overflow-x: hidden;
     padding-bottom: 15rem;
   }
 
   //Search Bar Start
-
   .form-inline {
     width: 11rem;
   }
@@ -808,14 +786,13 @@ footer {
   .form-control {
     font-size: 0.7rem;
   }
+
   .input-group-text {
     font-size: 0.7rem;
   }
-
   //Search Bar End
 
   // friends start
-
   .friend-card {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
@@ -834,7 +811,6 @@ footer {
   .friend-list h4 {
     font-size: 1rem;
   }
-
   // friends end
 
   //header starts
@@ -855,11 +831,9 @@ footer {
   .left-header small {
     padding-left: 0rem;
   }
-
   //header ends
 
   //message inbox starts
-
   .message-card {
     width: 12rem;
   }
@@ -869,6 +843,7 @@ footer {
     font-size: 15px;
     align-items: unset;
   }
+
   .message-date {
     font-size: 12px;
   }
@@ -879,13 +854,11 @@ footer {
   }
 
   //message inbox ends
-
   footer {
     font-size: 10px;
   }
 
   // Gamercard starts
-
   .gamer-card {
     margin: 1rem;
   }
@@ -905,6 +878,7 @@ footer {
   .gamer-card-footer h4 {
     font-size: 14px;
   }
+
   .gamer-card-friends-followers h4 {
     font-size: 14px;
   }
@@ -917,7 +891,6 @@ footer {
   .gamer-card-text img {
     width: 20px;
   }
-
   // Gamercard ends
 
   //achievements starts//
@@ -971,7 +944,6 @@ footer {
     width: 40%;
     height: 40%;
   }
-
   //achievements end//
 
   .spinner {
@@ -979,8 +951,8 @@ footer {
     justify-content: center;
     align-content: center;
   }
-  //x1 games starts
 
+  //x1 games starts
   .xbox-one-game-card {
     flex-direction: column-reverse;
     align-items: center;
@@ -1012,11 +984,9 @@ footer {
     width: 8rem;
     height: 8rem;
   }
-
   //x1 game ends
 
   //about me starts
-
   .about-container {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -1027,19 +997,15 @@ footer {
     width: 100%;
     height: 100%;
   }
-
   //about me ends
 
   //login starts
-
   .card {
     margin: 1rem;
   }
-
   //login ends
 
   //user setting starts
-
   .user-container {
     margin-right: 12rem;
     margin-left: 12rem;
@@ -1080,7 +1046,6 @@ footer {
     height: 30px;
     font-size: 7px;
   }
-
   //user setting ends
 }
 
