@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { isLoggedIn, logout } from '../auth'
-import logo from '../images/small-logo.png'
+import logo from '../images/Login Image.png'
 
 export function SideNav() {
   {

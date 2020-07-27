@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { recordAuthentication } from '../auth'
 import { Link } from 'react-router-dom'
-import logo from '../images/logo.png'
+import logo from '../images/Login Image.png'
 
 export function Login() {
   const history = useHistory()
@@ -46,7 +46,7 @@ export function Login() {
     <div className="login-card-container">
       <section className="card">
         <div className="login-img">
-          <img src={logo} width="130rem" height="150rem" alt="GHLogo" />
+          <img src={logo} alt="EXLogo" />
         </div>
         <div className="login-title">
           <h2>Evolution X</h2>
