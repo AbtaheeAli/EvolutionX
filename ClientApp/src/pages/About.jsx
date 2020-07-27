@@ -1,16 +1,15 @@
 import React from 'react'
-import about from '../images/aboutLogo.png'
+import about from '../images/aboutLogoSmall.png'
 
 export function About() {
   return (
     <div className="about-container">
       <section className="about-box">
-        {/* <article> */}
         <img
           className="Game"
           src={about}
           width="500rem"
-          height="300rem"
+          height="250rem"
           alt="GHLogo"
         />
         <p>
@@ -51,7 +50,6 @@ export function About() {
           for involving us in this project.
         </p>
         <small>We are not affiliated with Microsoft or XAPI.</small>
-        {/* </article> */}
       </section>
     </div>
   )
