@@ -132,7 +132,7 @@ ul {
 }
 
 .about {
-  display: none;
+  visibility: hidden;
 }
 
 .about:hover {
@@ -734,22 +734,16 @@ footer {
   }
 
   .about {
-    display: block;
-    width: 4.5rem;
+    visibility: visible;
+    width: 3.5rem;
     height: 2rem;
-    font-size: 8px;
-    text-decoration: none;
-  }
-
-  .about:hover {
-    text-decoration: none;
+    font-size: 6.3px;
   }
 
   .about-button {
     align-items: center;
     display: flex;
     justify-content: center;
-    text-decoration: none;
   }
 
   .sidenav .navLogo img {
