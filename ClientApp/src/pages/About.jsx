@@ -23,28 +23,19 @@ export function About() {
           <a
             className="aboutme-links"
             href="https://www.linkedin.com/in/michaelcgrubbs/"
-            target="_blank"
           >
             Michael Grubbs
           </a>{' '}
           for making our website logo, to{' '}
-          <a
-            className="aboutme-links"
-            href="https://icons8.com/icons"
-            target="_blank"
-          >
+          <a className="aboutme-links" href="https://icons8.com/icons">
             Icons 8
           </a>{' '}
           for providing Evolution X with icons, to{' '}
-          <a className="aboutme-links" href="https://xapi.us/" target="_blank">
+          <a className="aboutme-links" href="https://xapi.us/">
             XAPI
           </a>{' '}
           for providing an API for Evolution X, and to{' '}
-          <a
-            className="aboutme-links"
-            href="https://streetlight.ufhealth.org/"
-            target="_blank"
-          >
+          <a className="aboutme-links" href="https://streetlight.ufhealth.org/">
             Streetlight
           </a>{' '}
           for involving us in this project.

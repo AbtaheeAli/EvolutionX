@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom'
 export function UserSettings() {
   const user = getUser()
 
-  const [account, setAccount] = useState({})
+  const [xboxAccount, setXboxAccount] = useState({})
 
   const history = useHistory()
 
   const [userDetails, setUserDetails] = useState({})
+
+  const [loading, setLoading] = useState(false)
 
   function loadAccountInfo() {
     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
@@ -23,7 +25,8 @@ export function UserSettings() {
     })
       .then(response => response.json())
       .then(account => {
-        setAccount(account)
+        setXboxAccount(account)
+        setLoading(true)
       })
   }
 
@@ -42,8 +45,6 @@ export function UserSettings() {
     fetchUser()
   }, [])
 
-  console.log(userDetails)
-
   const handleDelete = event => {
     event.preventDefault()
 
@@ -58,39 +59,50 @@ export function UserSettings() {
   }
 
   return (
-    <section className="user-container">
-      <div className="account-settings-card">
-        <div className="user-account-img-name">
-          <img
-            className="gamer-card-img"
-            src={account.displayPicRaw}
-            width="180rem"
-            height="180rem"
-            alt="UserXboxLogo"
-          />
-          <h3 className="user-settings-username">{userDetails.userName}</h3>
+    <section className="user-page">
+      {loading === false && (
+        <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-danger" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
         </div>
-        <ul className="settings-list">
-          <li>
-            <strong>Email:</strong> {userDetails.email}
-          </li>
-          <li className="API">
-            <strong> X API Key:</strong> {userDetails.apiKey}
-          </li>
-          <li>
-            <strong>Xbox Profile User ID: </strong>
-            {userDetails.xboxProfileUserId}
-          </li>
-        </ul>
-        <div className="buttons">
-          <Link className="btn update" to={`/settings/${user.id}/edit`}>
-            Update Account
-          </Link>
-          <button className="btn delete" onClick={handleDelete}>
-            Delete Account
-          </button>
-        </div>
-      </div>
+      )}
+      {loading === true && (
+        <section className="user-container">
+          <div className="account-settings-card">
+            <div className="user-account-img-name">
+              <img
+                className="gamer-card-img"
+                src={xboxAccount.displayPicRaw}
+                width="180rem"
+                height="180rem"
+                alt="UserXboxLogo"
+              />
+              <h3 className="user-settings-username">{userDetails.userName}</h3>
+            </div>
+            <ul className="settings-list">
+              <li>
+                <strong>Email:</strong> {userDetails.email}
+              </li>
+              <li className="API">
+                <strong> X API Key:</strong> {userDetails.apiKey}
+              </li>
+              <li>
+                <strong>Xbox Profile User ID: </strong>
+                {userDetails.xboxProfileUserId}
+              </li>
+            </ul>
+            <div className="buttons">
+              <Link className="btn update" to={`/settings/${user.id}/edit`}>
+                Update Account
+              </Link>
+              <button className="btn delete" onClick={handleDelete}>
+                Delete Account
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
     </section>
   )
 }
