@@ -581,7 +581,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 4rem;
 }
 
 .signup-form {
@@ -603,6 +603,17 @@ footer {
 .signup-img {
   display: flex;
   justify-content: center;
+}
+
+.signin-instead {
+  margin-bottom: 0.5rem;
+}
+.signin-instead-link {
+  color: rgb(198, 13, 13);
+}
+
+.signin-instead-link:hover {
+  color: rgb(198, 13, 13);
 }
 
 .signup-title {
@@ -641,6 +652,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 //signup page finish
 
 // user settings start
@@ -993,13 +1005,11 @@ footer {
   }
   //about me ends
 
-
   //login starts
   .card {
     margin: 1rem;
   }
   //login ends
-
 
   //user setting starts
   .user-container {
