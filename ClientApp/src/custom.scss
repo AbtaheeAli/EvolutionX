@@ -625,7 +625,6 @@ footer {
 .signup-title {
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
 }
 
 .signup-form-group {
@@ -746,6 +745,18 @@ footer {
 // instructions page end
 
 @media (max-width: 630px) {
+  //Login Start
+  .login-card-container {
+    padding-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .card {
+    padding: unset;
+    padding-top: 0.5rem;
+  }
+  //Login End
   .sidenav {
     padding-top: 5px;
     width: 90px;
