@@ -125,7 +125,7 @@ export function SignUp() {
             </div>
           </form>
           <div className="login-or-signup">
-            - OR -<div>Have Not Signed Up XAPI?</div>
+            - OR -<div>Not Signed Up for XAPI?</div>
             <Link className="signup-link" to="/instructions">
               <a className="login-page-signup" href="/foobar">
                 Click Here For Instructions
