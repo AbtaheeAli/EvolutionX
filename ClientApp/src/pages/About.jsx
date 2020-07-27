@@ -9,7 +9,7 @@ export function About() {
           className="Game"
           src={about}
           width="500rem"
-          height="300rem"
+          height="250rem"
           alt="GHLogo"
         />
         <p>
