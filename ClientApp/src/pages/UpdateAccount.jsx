@@ -18,10 +18,6 @@ export function UpdateAccount() {
 
   const history = useHistory()
 
-  const params = useParams()
-
-  const id = parseInt(params.id)
-
   useEffect(() => {
     fetchUser()
   }, [user.id])

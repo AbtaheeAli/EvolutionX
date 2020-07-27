@@ -16,11 +16,7 @@ export function Instructions() {
             <li>
               {' '}
               Step 1: Go to{' '}
-              <a
-                className="aboutme-links"
-                href="https://xapi.us/"
-                target="_blank"
-              >
+              <a className="aboutme-links" href="https://xapi.us/">
                 XAPI.com
               </a>{' '}
             </li>
