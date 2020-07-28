@@ -14,8 +14,6 @@ export function UpdateAccount() {
     xboxProfileUserId: '',
   })
 
-  console.log(updatingUser)
-
   const history = useHistory()
 
   useEffect(() => {
