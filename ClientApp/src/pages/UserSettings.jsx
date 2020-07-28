@@ -60,6 +60,7 @@ export function UserSettings() {
 
   const [showApiKey, setShowApiKey] = useState(false)
   const [showXboxId, setShowXboxId] = useState(false)
+  const [showEmail, setShowEmail] = useState(false)
 
   return (
     <section className="user-page">
@@ -85,7 +86,13 @@ export function UserSettings() {
             </div>
             <ul className="settings-list">
               <li>
-                <strong>Email:</strong> {userDetails.email}
+                <button
+                  className="btn"
+                  onClick={() => setShowEmail(!showEmail)}
+                >
+                  Email
+                </button>
+                {showEmail && <div>{userDetails.email}</div>}
               </li>
               <li className="API">
                 <button
@@ -101,7 +108,7 @@ export function UserSettings() {
                   className="btn"
                   onClick={() => setShowXboxId(!showXboxId)}
                 >
-                  Xbox Profile User ID
+                  Xbox ID
                 </button>
                 {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
