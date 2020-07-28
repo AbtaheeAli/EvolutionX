@@ -58,7 +58,8 @@ export function UserSettings() {
     })
   }
 
-  const [showText, setShowText] = useState(false)
+  const [showApiKey, setShowApiKey] = useState(false)
+  const [showXboxId, setShowXboxId] = useState(false)
 
   return (
     <section className="user-page">
@@ -87,16 +88,22 @@ export function UserSettings() {
                 <strong>Email:</strong> {userDetails.email}
               </li>
               <li className="API">
-                <button className="btn" onClick={() => setShowText(!showText)}>
+                <button
+                  className="btn"
+                  onClick={() => setShowApiKey(!showApiKey)}
+                >
                   API Key
                 </button>
-                {showText && <div>{userDetails.apiKey}</div>}
+                {showApiKey && <div>{userDetails.apiKey}</div>}
               </li>
               <li>
-                <button className="btn" onClick={() => setShowText(!showText)}>
+                <button
+                  className="btn"
+                  onClick={() => setShowXboxId(!showXboxId)}
+                >
                   Xbox Profile User ID
                 </button>
-                {showText && <div>{userDetails.xboxProfileUserId}</div>}
+                {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
             </ul>
             <div className="buttons">
