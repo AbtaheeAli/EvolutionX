@@ -75,7 +75,7 @@ export function UserSettings() {
         <section className="user-container">
           <div className="account-settings-card">
             <ul className="settings-list">
-              <div className="user-account-img-name">
+              <li>
                 <img
                   className="gamer-card-img"
                   src={xboxAccount.displayPicRaw}
@@ -86,8 +86,7 @@ export function UserSettings() {
                 <h3 className="user-settings-username">
                   {userDetails.userName}
                 </h3>
-              </div>
-
+              </li>
               <li>
                 <button
                   className="btn"
