@@ -111,8 +111,8 @@ export function RecentAchievements() {
       )}
       <section className="achievement-cards">
         {achievements
-          .filter(achievement => achievement.contentTitle.includes(filterText))
           .filter(activity => activity.activityItemType === 'Achievement')
+          .filter(achievement => achievement.contentTitle.includes(filterText))
           .map(achievement => (
             <SingleRecentAchievement
               Key={achievement.achievementId}
