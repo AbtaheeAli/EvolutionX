@@ -800,6 +800,8 @@ footer {
 
   //signup end
 
+  //sidenav start
+
   .sidenav {
     padding-top: 5px;
     width: 90px;
@@ -871,6 +873,8 @@ footer {
     overflow-x: hidden; /* Same as the width of the sidebar */
     padding-bottom: 15rem;
   }
+
+  //sidenav end
 
   //Search Bar Start
 
@@ -1108,18 +1112,9 @@ footer {
 
   //user setting starts
 
-  .user-page {
-  }
-
   .gamer-card-img {
     width: 80px;
     height: 80px;
-  }
-
-  .account-settings-card {
-    font-size: 10px;
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 
   .user-settings-username {
@@ -1142,6 +1137,27 @@ footer {
   }
 
   //user setting ends
+
+  //update page start
+
+  .update-container {
+    margin-right: 3.5rem;
+    margin-left: 3rem;
+  }
+
+  .update-img img {
+    width: 8rem;
+  }
+
+  .update-title h2 {
+    font-size: 25px;
+  }
+
+  .update-form-group {
+    width: 178px;
+  }
+
+  //update page end
 }
 
 @media (min-width: 631px) and (max-width: 715px) {
