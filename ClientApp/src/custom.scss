@@ -774,7 +774,6 @@ footer {
 
 @media (max-width: 630px) {
   //Login Start
-
   .login-card-container {
     padding-top: 2rem;
     margin-left: 1rem;
@@ -785,8 +784,21 @@ footer {
     padding: unset;
     padding-top: 0.5rem;
   }
-
   //Login End
+
+  //signup start
+
+  .signup-card-container {
+    padding-top: 2rem;
+  }
+
+  .signup-card {
+    padding: unset;
+    padding-top: 0.5rem;
+    margin-bottom: 4rem;
+  }
+
+  //signup end
 
   .sidenav {
     padding-top: 5px;
