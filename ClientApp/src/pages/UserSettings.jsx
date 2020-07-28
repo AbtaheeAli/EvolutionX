@@ -89,7 +89,7 @@ export function UserSettings() {
               </li>
               <li>
                 <button
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowEmail(!showEmail)}
                 >
                   Email
@@ -99,7 +99,7 @@ export function UserSettings() {
               <li className="key">
                 <button
                   className="apiKey"
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowApiKey(!showApiKey)}
                 >
                   API Key
@@ -108,7 +108,7 @@ export function UserSettings() {
               </li>
               <li>
                 <button
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowXboxId(!showXboxId)}
                 >
                   Xbox ID
@@ -117,10 +117,13 @@ export function UserSettings() {
               </li>
             </ul>
             <div className="buttons">
-              <Link className="btn update" to={`/settings/${user.id}/edit`}>
+              <Link
+                className="btn settings-button"
+                to={`/settings/${user.id}/edit`}
+              >
                 Update Account
               </Link>
-              <button className="btn delete" onClick={handleDelete}>
+              <button className="btn settings-button" onClick={handleDelete}>
                 Delete Account
               </button>
             </div>
