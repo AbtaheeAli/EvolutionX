@@ -74,17 +74,20 @@ export function UserSettings() {
       {loading === true && (
         <section className="user-container">
           <div className="account-settings-card">
-            <div className="user-account-img-name">
-              <img
-                className="gamer-card-img"
-                src={xboxAccount.displayPicRaw}
-                width="180rem"
-                height="180rem"
-                alt="UserXboxLogo"
-              />
-              <h3 className="user-settings-username">{userDetails.userName}</h3>
-            </div>
             <ul className="settings-list">
+              <div className="user-account-img-name">
+                <img
+                  className="gamer-card-img"
+                  src={xboxAccount.displayPicRaw}
+                  width="180rem"
+                  height="180rem"
+                  alt="UserXboxLogo"
+                />
+                <h3 className="user-settings-username">
+                  {userDetails.userName}
+                </h3>
+              </div>
+
               <li>
                 <button
                   className="btn"
@@ -94,14 +97,17 @@ export function UserSettings() {
                 </button>
                 {showEmail && <div>{userDetails.email}</div>}
               </li>
-              <li className="API">
+              <li className="key">
                 <button
+                  className="apiKey"
                   className="btn"
                   onClick={() => setShowApiKey(!showApiKey)}
                 >
                   API Key
                 </button>
-                {showApiKey && <div>{userDetails.apiKey}</div>}
+                {showApiKey && (
+                  <div className="apiKey">{userDetails.apiKey}</div>
+                )}
               </li>
               <li>
                 <button
