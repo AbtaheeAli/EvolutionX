@@ -63,9 +63,9 @@ export function Friends(props) {
       {loading === true && (
         <div className="search-bar">
           <form className="form-inline my-2 my-lg-0">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text" id="basic-addon1">
                   &#x1F50D;
                 </span>
               </div>
@@ -83,7 +83,7 @@ export function Friends(props) {
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )}
