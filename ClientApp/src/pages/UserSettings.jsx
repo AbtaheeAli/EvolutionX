@@ -89,7 +89,7 @@ export function UserSettings() {
               </li>
               <li>
                 <button
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowEmail(!showEmail)}
                 >
                   Email
@@ -99,7 +99,7 @@ export function UserSettings() {
               <li className="key">
                 <button
                   className="apiKey"
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowApiKey(!showApiKey)}
                 >
                   API Key
@@ -108,7 +108,7 @@ export function UserSettings() {
               </li>
               <li>
                 <button
-                  className="btn"
+                  className="btn settings-button"
                   onClick={() => setShowXboxId(!showXboxId)}
                 >
                   Xbox ID
