@@ -105,9 +105,7 @@ export function UserSettings() {
                 >
                   API Key
                 </button>
-                {showApiKey && (
-                  <div className="apiKey">{userDetails.apiKey}</div>
-                )}
+                {showApiKey && <div>{userDetails.apiKey}</div>}
               </li>
               <li>
                 <button
