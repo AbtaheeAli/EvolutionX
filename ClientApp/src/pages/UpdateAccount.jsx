@@ -5,6 +5,7 @@ import logo from '../images/Login Image.png'
 
 export function UpdateAccount() {
   const user = getUser()
+
   const [errorMessage, setErrorMessage] = useState()
 
   const [updatingUser, setUpdatingUser] = useState({

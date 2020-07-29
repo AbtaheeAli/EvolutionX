@@ -1,0 +1,40 @@
+.account-settings-card {
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.75);
+  background-color: rgb(245, 245, 245);
+  color: rgb(31, 31, 31);
+  margin-top: 3rem;
+  border-radius: 20px;
+  padding-bottom: 1rem;
+  width: 25rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-inline-start: 0;
+}
+
+.settings-list button {
+  margin-top: 0.5rem;
+}
+
+.settings-list li div {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}

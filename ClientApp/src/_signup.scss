@@ -1,0 +1,71 @@
+.signup-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-card {
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.75);
+  color: rgb(31, 31, 31);
+  background-color: rgb(245, 245, 245);
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.signup-img {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-title {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-form-group {
+  position: relative;
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+}
+
+.signup-form-group input {
+  border: none;
+  background-color: #fff;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+.signup-form-group img {
+  top: 0.5px;
+  left: 5px;
+  padding-right: 0.5rem;
+}
+
+.signup-btn {
+  background-color: rgb(198, 13, 13);
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-instead {
+  padding-bottom: 0.5rem;
+}
+
+.signin-instead-link {
+  color: rgb(198, 13, 13);
+}

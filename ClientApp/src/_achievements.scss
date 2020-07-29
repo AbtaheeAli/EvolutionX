@@ -1,0 +1,74 @@
+.achievement-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.75);
+  color: rgb(31, 31, 31);
+  max-width: 50rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.achievement-title {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(245, 245, 245);
+  align-items: center;
+}
+
+.achievement-date {
+  padding-right: 1rem;
+}
+
+.achievement-text {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.achievement-image-container {
+  position: relative;
+  text-align: center;
+}
+
+.achievement-gamerscore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: white;
+}
+
+.achievement-image {
+  width: 100%;
+  height: 100%;
+}
+
+.achievement-footer {
+  background-color: rgb(245, 245, 245);
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid rgb(212, 213, 214);
+}
+
+.user-image {
+  border-radius: 50%;
+  margin: 0.8rem;
+}
+
+.achievement-gamertag {
+  color: rgb(198, 13, 13);
+}
