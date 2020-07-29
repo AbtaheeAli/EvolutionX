@@ -14,33 +14,39 @@ export function UserSettings() {
 
   const [loading, setLoading] = useState(false)
 
-  function loadAccountInfo() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
+  const [showApiKey, setShowApiKey] = useState(false)
 
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(account => {
-        setXboxAccount(account)
-        setLoading(true)
-      })
-  }
+  const [showXboxId, setShowXboxId] = useState(false)
 
-  const fetchUser = async () => {
-    const response = await fetch(`/api/Users/${user.id}`)
-    const apiData = await response.json()
-
-    setUserDetails(apiData)
-  }
+  const [showEmail, setShowEmail] = useState(false)
 
   useEffect(() => {
+    function loadAccountInfo() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(account => {
+          setXboxAccount(account)
+          setLoading(true)
+        })
+    }
+
+    const fetchUser = async () => {
+      const response = await fetch(`/api/Users/${user.id}`)
+      const apiData = await response.json()
+
+      setUserDetails(apiData)
+    }
+
     loadAccountInfo()
     fetchUser()
-  }, [])
+  }, [user.apiKey, user.xboxProfileUserId, user.id])
 
   const handleDelete = event => {
     event.preventDefault()
@@ -54,10 +60,6 @@ export function UserSettings() {
       }
     })
   }
-
-  const [showApiKey, setShowApiKey] = useState(false)
-  const [showXboxId, setShowXboxId] = useState(false)
-  const [showEmail, setShowEmail] = useState(false)
 
   return (
     <section className="user-page">
