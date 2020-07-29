@@ -13,7 +13,6 @@
 @import 'scss/signup';
 @import 'scss/usersettings';
 @import 'scss/instructions';
-@import 'scss/media';
 
 main {
   font-family: 'ABeeZee', sans-serif;
@@ -29,4 +28,415 @@ main {
 body {
   background-color: rgb(235, 235, 235);
   font-family: 'ABeeZee', sans-serif;
+}
+
+@media (max-width: 630px) {
+  //Login Start
+
+  .login-card-container {
+    padding-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .card {
+    padding: unset;
+    padding-top: 0.5rem;
+  }
+
+  //Login End
+
+  //signup start
+
+  .signup-card-container {
+    padding-top: 2rem;
+  }
+
+  .signup-card {
+    padding: unset;
+    padding-top: 0.5rem;
+    margin-bottom: 4rem;
+  }
+
+  //signup end
+
+  //sidenav start
+
+  .sidenav {
+    padding-top: 5px;
+    width: 90px;
+  }
+  .sidenav .navLink {
+    font-size: 12px;
+  }
+
+  .about {
+    visibility: visible;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 8px;
+    text-decoration: none;
+  }
+
+  .about-button {
+    margin-top: 0.1rem;
+  }
+
+  .about:hover {
+    text-decoration: none;
+  }
+
+  .about-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .setting {
+    visibility: visible;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 8px;
+    text-decoration: none;
+  }
+
+  .setting-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .sidenav .navLogo img {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .logout-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .logout {
+    width: 5\3rem;
+    height: 1.5rem;
+    font-size: 8px;
+    margin-top: 0.4rem;
+  }
+
+  .main {
+    margin-left: 90px;
+    overflow-x: hidden; /* Same as the width of the sidebar */
+    padding-bottom: 15rem;
+  }
+
+  //sidenav end
+
+  //Search Bar Start
+
+  .form-inline {
+    width: 11rem;
+  }
+
+  .form-control {
+    font-size: 0.7rem;
+  }
+  .input-group-text {
+    font-size: 0.7rem;
+  }
+
+  //Search Bar End
+
+  // friends start
+
+  .friend-card {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 11rem;
+  }
+
+  .friend-gt {
+    font-size: 1.1rem;
+  }
+
+  .friendAvatar {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .friend-list h4 {
+    font-size: 1rem;
+  }
+
+  // friends end
+
+  //header starts
+
+  header {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    padding-left: 0.5rem;
+  }
+
+  .right-header {
+    display: none;
+  }
+
+  .left-header h2 {
+    font-size: 22px;
+    padding-right: 2rem;
+  }
+
+  .left-header small {
+    padding-left: 0rem;
+  }
+
+  //header ends
+
+  //message inbox starts
+
+  .message-card {
+    width: 12rem;
+  }
+
+  .message-header {
+    flex-direction: column;
+    font-size: 15px;
+    align-items: unset;
+  }
+
+  .message-date {
+    font-size: 12px;
+  }
+
+  .message-body-text {
+    padding-top: 0.25rem;
+    font-size: 12px;
+  }
+
+  //message inbox ends
+
+  //foot starts
+
+  footer {
+    font-size: 10px;
+  }
+
+  //footer ends
+
+  // Gamercard starts
+
+  .gamer-card {
+    margin: 1rem;
+    width: 15rem;
+  }
+
+  .gamer-card-header h4 {
+    font-size: 11px;
+  }
+
+  .gamer-card-text h3 {
+    font-size: 14px;
+  }
+
+  .gamer-card-gamertag h2 {
+    font-size: 18px;
+  }
+
+  .gamer-card-footer h4 {
+    font-size: 14px;
+  }
+  .gamer-card-friends-followers h4 {
+    font-size: 14px;
+  }
+
+  .gamer-card-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gamer-card-text img {
+    width: 20px;
+  }
+
+  // Gamercard ends
+
+  //achievements starts//
+
+  .achievement-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .achievement-title {
+    flex-direction: row-reverse;
+    padding-left: 0.5rem;
+    align-items: unset;
+  }
+
+  .achievement-text {
+    flex-direction: column;
+    justify-content: unset;
+    font-size: 15px;
+    padding-top: 0.5rem;
+  }
+
+  .achievement-gamertag {
+    font-size: 15px;
+  }
+
+  .achievement-text p {
+    font-size: 10px;
+    margin-block-end: 0;
+    margin-bottom: 0.2rem;
+  }
+
+  .achievement-date {
+    font-size: 10px;
+  }
+
+  .user-image {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .achievement-footer {
+    font-size: 11px;
+    padding-left: 0.5rem;
+  }
+
+  .achievement-gamerscore {
+    font-size: 12px;
+  }
+
+  .achievement-gamerscore img {
+    width: 40%;
+    height: 40%;
+  }
+
+  //achievements end//
+
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  //x1 games starts
+
+  .xbox-one-game-card {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .xbox-one-game-title h3 {
+    font-size: 20px;
+  }
+
+  .xbox-one-game-achievements p {
+    font-size: 12px;
+  }
+
+  .xbox-one-game-achievements img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .xbox-one-game-info {
+    padding-left: 0;
+  }
+
+  .xbox-one-game-lastPlayed {
+    font-size: 12px;
+  }
+
+  .game-img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  //x1 game ends
+
+  //about me starts
+
+  .about-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .about-box img {
+    width: 100%;
+    height: 100%;
+  }
+
+  //about me ends
+
+  //user setting starts
+
+  .gamer-card-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-settings-username {
+    font-size: 10px;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .API {
+    word-wrap: break-word;
+  }
+
+  .settings-button {
+    width: 50px;
+    height: 30px;
+    font-size: 7px;
+  }
+
+  //user setting ends
+
+  //update page start
+
+  .update-container {
+    margin-right: 3.5rem;
+    margin-left: 3rem;
+  }
+
+  .update-img img {
+    width: 8rem;
+  }
+
+  .update-title h2 {
+    font-size: 25px;
+  }
+
+  .update-form-group {
+    width: 178px;
+  }
+
+  //update page end
+}
+
+@media (min-width: 631px) and (max-width: 715px) {
+  .right-header {
+    display: none;
+  }
+
+  .left-header {
+    padding-top: 0.9rem;
+  }
+
+  header {
+    padding-bottom: 1.2rem;
+  }
 }
