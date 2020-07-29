@@ -1,19 +1,19 @@
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
-@import 'header';
-@import 'sidenav';
-@import 'friends';
-@import 'footer';
-@import 'gamercard';
-@import 'achievements';
-@import 'messages';
-@import 'xboxgames';
-@import 'aboutme';
-@import 'login';
-@import 'signup';
-@import 'usersettings';
-@import 'instructions';
-@import 'media';
+@import 'scss/header';
+@import 'scss/sidenav';
+@import 'scss/friends';
+@import 'scss/footer';
+@import 'scss/gamercard';
+@import 'scss/achievements';
+@import 'scss/messages';
+@import 'scss/xboxgames';
+@import 'scss/aboutme';
+@import 'scss/login';
+@import 'scss/signup';
+@import 'scss/usersettings';
+@import 'scss/instructions';
+@import 'scss/media';
 
 main {
   font-family: 'ABeeZee', sans-serif;
