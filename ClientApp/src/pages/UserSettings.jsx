@@ -97,7 +97,6 @@ export function UserSettings() {
               </li>
               <li className="key">
                 <button
-                  className="apiKey"
                   className="btn settings-button"
                   onClick={() => setShowApiKey(!showApiKey)}
                 >
