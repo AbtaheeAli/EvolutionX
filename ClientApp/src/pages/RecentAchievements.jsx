@@ -62,26 +62,25 @@ export function RecentAchievements() {
 
   const [loading, setLoading] = useState(false)
 
-  function loadAchievements() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(apiData => {
-        setAchievements(apiData.activityItems)
-        setLoading(true)
-      })
-  }
-
   useEffect(() => {
+    function loadAchievements() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(apiData => {
+          setAchievements(apiData.activityItems)
+          setLoading(true)
+        })
+    }
     loadAchievements()
-  }, [])
+  }, [user.apiKey, user.xboxProfileUserId])
 
   return (
     <section className="achievements-page">
@@ -123,7 +122,7 @@ export function RecentAchievements() {
           .filter(achievement => achievement.contentTitle.includes(filterText))
           .map(achievement => (
             <SingleRecentAchievement
-              Key={achievement.achievementId}
+              key={achievement.achievementId}
               GamerTag={achievement.gamertag}
               ShortDescription={achievement.shortDescription}
               AchievementIcon={achievement.achievementIcon}

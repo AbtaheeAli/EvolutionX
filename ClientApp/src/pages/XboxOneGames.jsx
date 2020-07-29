@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { format, addYears, differenceInDays } from 'date-fns/'
+import { format } from 'date-fns/'
 import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
 function SingleXboxOneGame(props) {
-  // const todaysDate = Date.now()
-  // const achieveDate = new Date(props.LastUnlockedAchievementDate)
-  // const daysBetween = differenceInDays(todaysDate, achieveDate)
-
-  // console.log(daysBetween)
   return (
     <section className="xbox-one-game-card">
       <article className="game-img-container">
@@ -61,26 +56,25 @@ export function XboxOneGames() {
 
   const [loading, setLoading] = useState(false)
 
-  function loadGames() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/title-history/`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(apiData => {
-        setGames(apiData.titles)
-        setLoading(true)
-      })
-  }
-
   useEffect(() => {
+    function loadGames() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/title-history/`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(apiData => {
+          setGames(apiData.titles)
+          setLoading(true)
+        })
+    }
     loadGames()
-  }, [])
+  }, [user.apiKey, user.xboxProfileUserId ])
 
   return (
     <section className="games-page">
