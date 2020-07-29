@@ -90,7 +90,12 @@ export function RecentAchievements() {
           <form className=" form-inline my-2 my-lg-0">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
+                <span
+                  role="img"
+                  aria-label="magnifying glass"
+                  className="input-group-text"
+                  id="basic-addon1"
+                >
                   &#x1F50D;
                 </span>
               </div>
