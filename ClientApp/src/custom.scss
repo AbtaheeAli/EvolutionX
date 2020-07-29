@@ -241,65 +241,15 @@ footer {
 
 /* GamerCard End */
 
-//friends starts//
-
-.friend-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-flow: wrap;
-}
-
-.friend-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.75);
-  color: rgb(31, 31, 31);
-  background-color: rgb(245, 245, 245);
-  width: 15rem;
-  margin: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 30px;
-}
-
-.friend-card-img {
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-}
-
-.friend-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.friendAvatar {
-  border-radius: 50%;
-}
-
-.friend-gt {
-  color: rgb(198, 13, 13);
-  font-weight: 1000;
-}
-
-.search-bar {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-//friends end//
+@import 'friends';
 
 //achievements starts//
 
 .achievement-cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  flex-flow: wrap;
   align-items: center;
 }
 

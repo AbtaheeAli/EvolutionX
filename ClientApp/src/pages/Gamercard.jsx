@@ -12,46 +12,42 @@ export function Gamercard() {
 
   const user = getUser()
 
-  function loadGamerCard() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/gamercard`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(gamerCardInfo => {
-        setGamerCard(gamerCardInfo)
-        setLoading(true)
-      })
-  }
-
-  function loadAccountInfo() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(account => {
-        setAccount(account)
-        setAccountDetails(account.detail)
-        setLoading(true)
-      })
-  }
-
   useEffect(() => {
+    function loadGamerCard() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/gamercard`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(gamerCardInfo => {
+          setGamerCard(gamerCardInfo)
+          setLoading(true)
+        })
+    }
+
+    function loadAccountInfo() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(account => {
+          setAccount(account)
+          setAccountDetails(account.detail)
+          setLoading(true)
+        })
+    }
     loadAccountInfo()
-  }, [])
-
-  useEffect(() => {
     loadGamerCard()
-  }, [])
+  }, [user.apiKey, user.xboxProfileUserId])
 
   return (
     <div className="gamer-card-container">
