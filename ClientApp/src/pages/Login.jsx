@@ -16,6 +16,7 @@ export function Login() {
 
   const handleFieldChange = event => {
     const value = event.target.value
+
     const fieldName = event.target.id
 
     const updatedUser = { ...loginUser, [fieldName]: value }
