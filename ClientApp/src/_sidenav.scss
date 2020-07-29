@@ -1,0 +1,64 @@
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  border-right: 0.1rem solid rgb(233, 230, 230);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.sidenav .navLink {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+}
+
+.sidenav .navLogo {
+  padding: 0px 8px 0px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+}
+
+.sidenav ul {
+  padding-inline-start: 0;
+}
+
+.logout {
+  text-align: center;
+}
+
+.about {
+  visibility: hidden;
+}
+
+.setting {
+  visibility: hidden;
+}
+
+.about:hover {
+  text-decoration: none;
+}
+
+.setting:hover {
+  text-decoration: none;
+}
+
+.sidenav a:hover {
+  background-color: rgb(198, 13, 13);
+  transition: 0.8s;
+  color: white;
+}
