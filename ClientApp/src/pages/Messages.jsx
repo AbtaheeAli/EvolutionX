@@ -31,26 +31,25 @@ export function Messages() {
 
   const [loading, setLoading] = useState(false)
 
-  function loadMessages() {
-    const url = `https://xapi.us/v2/messages`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(apiData => {
-        setMessages(apiData)
-        setLoading(true)
-      })
-  }
-
   useEffect(() => {
+    function loadMessages() {
+      const url = `https://xapi.us/v2/messages`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(apiData => {
+          setMessages(apiData)
+          setLoading(true)
+        })
+    }
     loadMessages()
-  }, [])
+  }, [user.apiKey])
 
   return (
     <section className="messages-page">
@@ -59,7 +58,12 @@ export function Messages() {
           <form className=" form-inline my-2 my-lg-0">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
+                <span
+                  role="img"
+                  aria-label="magnifying glass"
+                  className="input-group-text"
+                  id="basic-addon1"
+                >
                   &#x1F50D;
                 </span>
               </div>
