@@ -111,7 +111,7 @@ body {
   }
 
   .about {
-    visibility: visible;
+    display: block;
     width: 4.5rem;
     height: 2rem;
     font-size: 8px;
@@ -134,7 +134,7 @@ body {
   }
 
   .setting {
-    visibility: visible;
+    display: block;
     width: 4.5rem;
     height: 2rem;
     font-size: 8px;
@@ -405,8 +405,8 @@ body {
   //about me starts
 
   .about-container {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     font-size: 0.8rem;
   }
 
@@ -416,6 +416,18 @@ body {
   }
 
   //about me ends
+
+  .instructions-title {
+    padding-left: 1.5rem;
+  }
+
+  .instructions-list {
+    padding-inline-start: 25px;
+  }
+
+  .instructions-subtitle {
+    padding-bottom: 1rem;
+  }
 
   //user setting starts
 
