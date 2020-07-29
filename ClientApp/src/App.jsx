@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Login } from './pages/Login'
 import { SignUp } from './pages/SignUp'
 import { Instructions } from './pages/Instructions'
-import { isLoggedIn, logout } from './auth'
+import { isLoggedIn } from './auth'
 
 export function App() {
   return (

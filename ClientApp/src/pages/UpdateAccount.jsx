@@ -18,15 +18,15 @@ export function UpdateAccount() {
   const history = useHistory()
 
   useEffect(() => {
+    const fetchUser = async () => {
+      const response = await fetch(`/api/Users/${user.id}`)
+      const apiData = await response.json()
+
+      setUpdatingUser(apiData)
+    }
     fetchUser()
   }, [user.id])
 
-  const fetchUser = async () => {
-    const response = await fetch(`/api/Users/${user.id}`)
-    const apiData = await response.json()
-
-    setUpdatingUser(apiData)
-  }
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id

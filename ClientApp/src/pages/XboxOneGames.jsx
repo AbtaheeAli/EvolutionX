@@ -74,7 +74,7 @@ export function XboxOneGames() {
         })
     }
     loadGames()
-  }, [user.apiKey, user.xboxProfileUserId ])
+  }, [user.apiKey, user.xboxProfileUserId])
 
   return (
     <section className="games-page">
@@ -115,7 +115,7 @@ export function XboxOneGames() {
           .filter(game => game.name.includes(filterText))
           .map(game => (
             <SingleXboxOneGame
-              Key={game.titleId}
+              key={game.titleId}
               Title={game.name}
               GameImage={game.displayImage}
               CurrentGamerscore={game.achievement.currentGamerscore}
