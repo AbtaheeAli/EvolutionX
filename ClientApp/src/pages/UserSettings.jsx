@@ -39,9 +39,6 @@ export function UserSettings() {
 
   useEffect(() => {
     loadAccountInfo()
-  }, [])
-
-  useEffect(() => {
     fetchUser()
   }, [])
 
