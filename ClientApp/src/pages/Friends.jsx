@@ -29,7 +29,7 @@ export function SingleFriend(props) {
   )
 }
 
-export function Friends(props) {
+export function Friends() {
   const [friends, setFriends] = useState([])
 
   const user = getUser()
@@ -38,25 +38,24 @@ export function Friends(props) {
 
   const [filterText, setFilterText] = useState('')
 
-  function loadFriends() {
-    const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-AUTH': user.apiKey,
-      },
-    })
-      .then(response => response.json())
-      .then(apiData => {
-        setFriends(apiData)
-        setLoading(true)
-      })
-  }
-
   useEffect(() => {
+    function loadFriends() {
+      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
+
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-AUTH': user.apiKey,
+        },
+      })
+        .then(response => response.json())
+        .then(apiData => {
+          setFriends(apiData)
+          setLoading(true)
+        })
+    }
     loadFriends()
-  }, [])
+  }, [user.apiKey, user.xboxProfileUserId])
 
   return (
     <section className="friend-page">
