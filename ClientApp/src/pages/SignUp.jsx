@@ -18,6 +18,7 @@ export function SignUp() {
 
   const handleFieldChange = event => {
     const value = event.target.value
+
     const fieldName = event.target.id
 
     const updatedUser = { ...newUser, [fieldName]: value }
