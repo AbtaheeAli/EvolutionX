@@ -74,9 +74,13 @@ body {
   //Login Start
 
   .login-card-container {
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .login-form div {
+    width: 100%;
   }
 
   .card {
@@ -89,13 +93,17 @@ body {
   //signup start
 
   .signup-card-container {
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   .signup-card {
     padding: unset;
-    padding-top: 0.5rem;
+    width: 15rem;
     margin-bottom: 4rem;
+  }
+
+  .signup-form-group {
+    width: 100%;
   }
 
   //signup end
