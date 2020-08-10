@@ -53,9 +53,11 @@ export function MainPage() {
           <Route exact path="/settings">
             {demo === false && <UserSettings />}
           </Route>
-          <Route exact path={`/settings/${user.id}/edit`}>
-            {demo === false && <UpdateAccount />}
-          </Route>
+          {demo === false && (
+            <Route exact path={`/settings/${user.id}/edit`}>
+              <UpdateAccount />
+            </Route>
+          )}
         </Switch>
       </body>
       <Footer />
