@@ -15,6 +15,7 @@ import { DemoGamercard } from '../pages/Demo/DemoGamerCard'
 import { DemoFriends } from '../pages/Demo/DemoFriends'
 import { DemoMessages } from '../pages/Demo/DemoMessages'
 import { DemoRecentAchievements } from '../pages/Demo/DemoRecentAchievements'
+import { DemoXboxOneGames } from '../pages/Demo/DemoXboxOneGames'
 import { getUser } from '../auth'
 
 export function MainPage() {
