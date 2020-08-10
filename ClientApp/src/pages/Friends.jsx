@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../auth'
 
-export function SingleFriend(props) {
+function SingleFriend(props) {
   return (
     <section className="friend-card">
       <h4 className="friend-gt">

@@ -13,6 +13,8 @@ import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
 import { DemoGamercard } from '../pages/Demo/DemoGamerCard'
 import { DemoFriends } from '../pages/Demo/DemoFriends'
+import { DemoMessages } from '../pages/Demo/DemoMessages'
+import { DemoRecentAchievements } from '../pages/Demo/DemoRecentAchievements'
 import { getUser } from '../auth'
 
 export function MainPage() {
