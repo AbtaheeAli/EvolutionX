@@ -11,12 +11,16 @@ import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
-import { DemoGamercard } from '../pages/DemoGamerCard'
+import { DemoGamercard } from '../pages/Demo/DemoGamerCard'
+import { DemoFriends } from '../pages/Demo/DemoFriends'
+import { DemoMessages } from '../pages/Demo/DemoMessages'
+import { DemoRecentAchievements } from '../pages/Demo/DemoRecentAchievements'
+import { DemoXboxOneGames } from '../pages/Demo/DemoXboxOneGames'
 import { getUser } from '../auth'
 
 export function MainPage() {
   const user = getUser()
-  const [demo, setDemo] = useState(false)
+  const [demo, setDemo] = useState(true)
   return (
     <div className="main">
       <SideNav />
@@ -28,26 +32,32 @@ export function MainPage() {
             {demo === true && <DemoGamercard />}
           </Route>
           <Route exact path="/friends">
-            <Friends />
+            {demo === false && <Friends />}
+            {demo === true && <DemoFriends />}
           </Route>
           <Route exact path="/message-inbox">
-            <Messages />
+            {demo === false && <Messages />}
+            {demo === true && <DemoMessages />}
           </Route>
           <Route exact path="/recent-achievements">
-            <RecentAchievements />
+            {demo === false && <RecentAchievements />}
+            {demo === true && <DemoRecentAchievements />}
           </Route>
           <Route exact path="/xbox-one-games">
-            <XboxOneGames />
+            {demo === false && <XboxOneGames />}
+            {demo === true && <DemoXboxOneGames />}
           </Route>
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/settings">
-            <UserSettings />
+            {demo === false && <UserSettings />}
           </Route>
-          <Route exact path={`/settings/${user.id}/edit`}>
-            <UpdateAccount />
-          </Route>
+          {demo === false && (
+            <Route exact path={`/settings/${user.id}/edit`}>
+              <UpdateAccount />
+            </Route>
+          )}
         </Switch>
       </body>
       <Footer />
