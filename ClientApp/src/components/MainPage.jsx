@@ -12,6 +12,7 @@ import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
 import { DemoGamercard } from '../pages/Demo/DemoGamerCard'
+import { DemoFriends } from '../pages/Demo/DemoFriends'
 import { getUser } from '../auth'
 
 export function MainPage() {
