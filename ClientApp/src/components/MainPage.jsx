@@ -11,7 +11,7 @@ import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
-import { DemoGamercard } from '../pages/DemoGamerCard'
+import { DemoGamercard } from '../pages/Demo/DemoGamerCard'
 import { getUser } from '../auth'
 
 export function MainPage() {
@@ -28,25 +28,29 @@ export function MainPage() {
             {demo === true && <DemoGamercard />}
           </Route>
           <Route exact path="/friends">
-            <Friends />
+            {demo === false && <Friends />}
+            {demo === true && <DemoFriends />}
           </Route>
           <Route exact path="/message-inbox">
-            <Messages />
+            {demo === false && <Messages />}
+            {demo === true && <DemoMessages />}
           </Route>
           <Route exact path="/recent-achievements">
-            <RecentAchievements />
+            {demo === false && <RecentAchievements />}
+            {demo === true && <DemoRecentAchievements />}
           </Route>
           <Route exact path="/xbox-one-games">
-            <XboxOneGames />
+            {demo === false && <XboxOneGames />}
+            {demo === true && <DemoXboxOneGames />}
           </Route>
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/settings">
-            <UserSettings />
+            {demo === false && <UserSettings />}
           </Route>
           <Route exact path={`/settings/${user.id}/edit`}>
-            <UpdateAccount />
+            {demo === false && <UpdateAccount />}
           </Route>
         </Switch>
       </body>
