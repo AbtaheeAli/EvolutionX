@@ -20,7 +20,8 @@ export function App() {
         <Route exact path="/instructions">
           <Instructions />
         </Route>
-        {isLoggedIn() && <MainPage />}
+        <MainPage />
+        {/* {isLoggedIn() && <MainPage />} */}
       </Switch>
     </main>
   )

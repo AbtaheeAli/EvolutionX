@@ -39,6 +39,8 @@ export function Login() {
       })
   }
 
+  const [demo, setDemo] = useState(false)
+
   return (
     <div className="login-card-container">
       <section className="card">
@@ -93,6 +95,15 @@ export function Login() {
             <Link className="signup-link" to="/signup">
               <a className="login-page-signup" href="/foobar">
                 Sign Up!
+              </a>
+            </Link>
+            <Link className="signup-link" to="/gamercard">
+              <a
+                className="login-page-signup"
+                href="/foobar"
+                onClick={() => setDemo(true)}
+              >
+                Demo Our Application
               </a>
             </Link>
           </div>
