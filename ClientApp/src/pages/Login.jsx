@@ -101,7 +101,7 @@ export function Login() {
               <a
                 className="login-page-signup"
                 href="/foobar"
-                onClick={setDemo(true)}
+                onClick={() => setDemo(true)}
               >
                 Demo Our Application
               </a>
