@@ -1,3 +1,2 @@
 # EvolutionX
-
-Work in progress, more to come soon :)
+Developed a full-stack application, that utilizes a third-party Xbox API to access a user's Xbox Live Accounts Information. The user can create an account, update their credentials, or delete their account. The application will show the user's gamer card, friends, messages, recent achievements, and Xbox One games owned by the user. Evolution X will let the user know which game they played recently, what day they earned achievement, and displaysthe date when a message was received.
