@@ -20,7 +20,7 @@ import { getUser } from '../auth'
 
 export function MainPage() {
   const user = getUser()
-  const [demo, setDemo] = useState(false)
+  const [demo, setDemo] = useState(true)
   return (
     <div className="main">
       <SideNav />
