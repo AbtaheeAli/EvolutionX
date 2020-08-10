@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SideNav } from './SideNav'
 import { Header } from './Header'
 import { Route, Switch } from 'react-router-dom'
@@ -11,10 +11,12 @@ import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
+import { DemoGamercard } from '../pages/DemoGamerCard'
 import { getUser } from '../auth'
 
 export function MainPage() {
   const user = getUser()
+  const [demo, setDemo] = useState(false)
   return (
     <div className="main">
       <SideNav />
@@ -22,7 +24,8 @@ export function MainPage() {
       <body>
         <Switch>
           <Route exact path="/gamercard">
-            <Gamercard />
+            {demo === false && <Gamercard />}
+            {demo === true && <DemoGamercard />}
           </Route>
           <Route exact path="/friends">
             <Friends />
