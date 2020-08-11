@@ -45,7 +45,7 @@ export function DemoGamercard() {
         </div>
         <div className="gamer-card-footer">
           <h4>Location: Somewhere With Master Chief </h4>
-          <h4>Bio: Game Over Man! Game Over! </h4>
+          <h4>Bio: Game Over, Man! Game Over! </h4>
         </div>
       </section>
     </div>
