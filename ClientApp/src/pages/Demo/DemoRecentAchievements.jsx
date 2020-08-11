@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
 import DemoRecentAchievementsData from '../../Data/RecentAchievements.json'
+import DemoImage from '../../images/Demo Pic.jpg'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -11,7 +12,7 @@ function SingleRecentAchievement(props) {
         <div>
           <img
             className="user-image"
-            src={props.UserImg}
+            src={DemoImage}
             width="65rem"
             height="65rem"
             alt="GHLogo"
@@ -19,7 +20,9 @@ function SingleRecentAchievement(props) {
         </div>
         <div className="achievement-text">
           <div>
-            <strong className="achievement-gamertag">{props.GamerTag}</strong>
+            <strong className="achievement-gamertag">
+              ThisIsMyCoolGamerTag
+            </strong>
             <p>{props.ShortDescription}</p>
           </div>
           <div className="achievement-date">
