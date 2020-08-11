@@ -6,6 +6,7 @@ import { Login } from './pages/Login'
 import { SignUp } from './pages/SignUp'
 import { Instructions } from './pages/Instructions'
 import { isLoggedIn } from './auth'
+import DemoMainPage from './pages/Demo/DemoMainPage'
 
 export function App() {
   const [demo, setDemo] = useState(false)
@@ -22,8 +23,8 @@ export function App() {
         <Route exact path="/instructions">
           <Instructions />
         </Route>
-        <MainPage demo={demo} setDemo={setDemo} />
-        {/* {isLoggedIn() && <MainPage />} */}
+        {demo === false && isLoggedIn() && <MainPage />}
+        {demo === true && <DemoMainPage demo={demo} setDemo={setDemo} />}
       </Switch>
     </main>
   )

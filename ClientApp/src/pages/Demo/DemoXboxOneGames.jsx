@@ -48,8 +48,6 @@ function SingleXboxOneGame(props) {
 }
 
 export function DemoXboxOneGames() {
-  const [games, setGames] = useState([])
-
   const [filterText, setFilterText] = useState('')
 
   return (
