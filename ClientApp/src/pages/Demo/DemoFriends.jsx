@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import FriendsData from '../../Data/Friends.json'
+import DemoFriendsData from '../../Data/Friends.json'
 
 function SingleFriend(props) {
   return (
@@ -59,18 +59,18 @@ export function DemoFriends() {
       </div>
 
       <div className="friend-cards">
-        {FriendsData.filter(friend => friend.Gamertag.includes(filterText)).map(
-          friend => (
-            <SingleFriend
-              key={friend.id}
-              Gamertag={friend.Gamertag}
-              XboxOneRep={friend.XboxOneRep}
-              Gamerscore={friend.Gamerscore}
-              TenureLevel={friend.TenureLevel}
-              GameDisplayPicRaw={friend.GameDisplayPicRaw}
-            />
-          )
-        )}
+        {DemoFriendsData.filter(friend =>
+          friend.Gamertag.includes(filterText)
+        ).map(friend => (
+          <SingleFriend
+            key={friend.id}
+            Gamertag={friend.Gamertag}
+            XboxOneRep={friend.XboxOneRep}
+            Gamerscore={friend.Gamerscore}
+            TenureLevel={friend.TenureLevel}
+            GameDisplayPicRaw={friend.GameDisplayPicRaw}
+          />
+        ))}
       </div>
     </section>
   )
