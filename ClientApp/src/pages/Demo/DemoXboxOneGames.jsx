@@ -52,10 +52,6 @@ export function DemoXboxOneGames() {
 
   const [filterText, setFilterText] = useState('')
 
-  useEffect(() => {
-    setGames(DemoXboxOneGamesData)
-  }, [])
-
   return (
     <section className="games-page">
       <div className="search-bar">
@@ -83,7 +79,7 @@ export function DemoXboxOneGames() {
       </div>
 
       <section className="xbox-one-games-card">
-        {/* {games
+        {DemoXboxOneGamesData.titles
           .filter(game => game.name.includes(filterText))
           .map(game => (
             <SingleXboxOneGame
@@ -95,7 +91,7 @@ export function DemoXboxOneGames() {
               LastPlayed={game.titleHistory.lastTimePlayed}
               EarnedAchievements={game.achievement.currentAchievements}
             />
-          ))} */}
+          ))}
       </section>
     </section>
   )
