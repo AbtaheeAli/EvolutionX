@@ -22,7 +22,7 @@ export function DemoGamercard() {
           </h3>
         </div>
         <div className="gamer-card-gamertag">
-          <h2 className="gamercard-gamertag">ThisIsMyCoolGamerTag</h2>
+          <h2 className="gamercard-gamertag">MyCoolGamerTag</h2>
         </div>
         <div className="gamer-card-img-container">
           <img
