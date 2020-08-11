@@ -18,9 +18,9 @@ import { DemoRecentAchievements } from '../pages/Demo/DemoRecentAchievements'
 import { DemoXboxOneGames } from '../pages/Demo/DemoXboxOneGames'
 import { getUser } from '../auth'
 
-export function MainPage() {
+export function MainPage(props) {
   const user = getUser()
-  const [demo, setDemo] = useState(true)
+  // const [demo, setDemo] = useState(true)
   return (
     <div className="main">
       <SideNav />
@@ -28,32 +28,32 @@ export function MainPage() {
       <body>
         <Switch>
           <Route exact path="/gamercard">
-            {demo === false && <Gamercard />}
-            {demo === true && <DemoGamercard />}
+            {props.demo === false && <Gamercard />}
+            {props.demo === true && <DemoGamercard />}
           </Route>
           <Route exact path="/friends">
-            {demo === false && <Friends />}
-            {demo === true && <DemoFriends />}
+            {props.demo === false && <Friends />}
+            {props.demo === true && <DemoFriends />}
           </Route>
           <Route exact path="/message-inbox">
-            {demo === false && <Messages />}
-            {demo === true && <DemoMessages />}
+            {props.demo === false && <Messages />}
+            {props.demo === true && <DemoMessages />}
           </Route>
           <Route exact path="/recent-achievements">
-            {demo === false && <RecentAchievements />}
-            {demo === true && <DemoRecentAchievements />}
+            {props.demo === false && <RecentAchievements />}
+            {props.demo === true && <DemoRecentAchievements />}
           </Route>
           <Route exact path="/xbox-one-games">
-            {demo === false && <XboxOneGames />}
-            {demo === true && <DemoXboxOneGames />}
+            {props.demo === false && <XboxOneGames />}
+            {props.demo === true && <DemoXboxOneGames />}
           </Route>
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/settings">
-            {demo === false && <UserSettings />}
+            {props.demo === false && <UserSettings />}
           </Route>
-          {demo === false && (
+          {props.demo === false && (
             <Route exact path={`/settings/${user.id}/edit`}>
               <UpdateAccount />
             </Route>

@@ -3,7 +3,7 @@ import { recordAuthentication } from '../auth'
 import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
-export function Login() {
+export function Login(props) {
   const [errorMessage, setErrorMessage] = useState()
 
   const [loginUser, setLoginUser] = useState({
@@ -39,7 +39,7 @@ export function Login() {
       })
   }
 
-  const [demo, setDemo] = useState(false)
+  // const [demo, setDemo] = useState(false)
 
   return (
     <div className="login-card-container">
@@ -101,7 +101,7 @@ export function Login() {
               <a
                 className="login-page-signup"
                 href="/foobar"
-                onClick={() => setDemo(true)}
+                onClick={() => props.setDemo(true)}
               >
                 Demo Our Application
               </a>
