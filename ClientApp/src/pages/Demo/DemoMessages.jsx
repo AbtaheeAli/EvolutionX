@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
+import DemoMessagesData from '../../Data/MessageInbox.json'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -8,20 +9,20 @@ function SingleMessage(props) {
     <section className="message-card">
       <article className="message-header">
         <strong>
-          {/* From: <span className="message-sender">{props.Sender}</span> */}
+          From: <span className="message-sender">{props.Sender}</span>
         </strong>
         <strong className="message-date">
-          {/* {format(new Date(props.Sent), dateFormat)} */}
+          {format(new Date(props.Sent), dateFormat)}
         </strong>
       </article>
-      <div className="message-body-text">{/* <p>{props.Summary}</p> */}</div>
+      <div className="message-body-text">
+        <p>{props.Summary}</p>
+      </div>
     </section>
   )
 }
 
 export function DemoMessages() {
-  const [messages, setMessages] = useState([])
-
   const [filterText, setFilterText] = useState('')
 
   return (
@@ -51,16 +52,16 @@ export function DemoMessages() {
       </div>
 
       <div className="message-cards">
-        {/* {messages
-          .filter(sender => sender.header.sender.includes(filterText))
-          .map(message => (
-            <SingleMessage
-              key={message.header.id}
-              Sender={message.header.sender}
-              Sent={message.header.sent}
-              Summary={message.messageSummary}
-            />
-          ))} */}
+        {DemoMessagesData.filter(sender =>
+          sender.header.sender.includes(filterText)
+        ).map(message => (
+          <SingleMessage
+            key={message.header.id}
+            Sender={message.header.sender}
+            Sent={message.header.sent}
+            Summary={message.messageSummary}
+          />
+        ))}
       </div>
     </section>
   )

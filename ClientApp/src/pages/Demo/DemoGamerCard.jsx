@@ -22,7 +22,7 @@ export function DemoGamercard() {
           </h3>
         </div>
         <div className="gamer-card-gamertag">
-          <h2 className="gamercard-gamertag"></h2>
+          <h2 className="gamercard-gamertag">MyCoolGamerTag</h2>
         </div>
         <div className="gamer-card-img-container">
           <img
@@ -44,8 +44,8 @@ export function DemoGamercard() {
           </div>
         </div>
         <div className="gamer-card-footer">
-          <h4>Location: Florida </h4>
-          <h4>Bio: Game Over Man! Game Over! </h4>
+          <h4>Location: Somewhere With Master Chief </h4>
+          <h4>Bio: Game Over, Man! Game Over! </h4>
         </div>
       </section>
     </div>
