@@ -39,8 +39,6 @@ export function Login(props) {
       })
   }
 
-  // const [demo, setDemo] = useState(false)
-
   return (
     <div className="login-card-container">
       <section className="card">

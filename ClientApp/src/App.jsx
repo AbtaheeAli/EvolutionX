@@ -21,12 +21,10 @@ export function App() {
         <Route exact path="/instructions">
           <Instructions />
         </Route>
-        <Route exact path="/demo-gamercard">
-          <DemoMainPage />
-        </Route>
-        <Route exact path="/gamercard">
-          {isLoggedIn() && <MainPage />}
-        </Route>
+
+        {isLoggedIn() === false && <DemoMainPage />}
+
+        {isLoggedIn() && <MainPage />}
       </Switch>
     </main>
   )

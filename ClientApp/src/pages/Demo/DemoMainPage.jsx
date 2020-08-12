@@ -9,13 +9,12 @@ import { DemoFriends } from './DemoFriends'
 import { DemoMessages } from './DemoMessages'
 import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
-import { DemoHeader } from './DemoHeader'
 
 export default function DemoMainPage() {
   return (
     <div className="main">
       <DemoSideNav />
-      <DemoHeader />
+      <Header />
       <body>
         <Switch>
           <Route exact path="/demo-gamercard">
