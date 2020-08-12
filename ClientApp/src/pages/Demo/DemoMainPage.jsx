@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { SideNav } from '../../components/SideNav'
+import { DemoSideNav } from './DemoSideNav'
 import { Header } from '../../components/Header'
 import { Route, Switch } from 'react-router-dom'
 import { Footer } from '../../components/Footer'
@@ -9,30 +9,31 @@ import { DemoFriends } from './DemoFriends'
 import { DemoMessages } from './DemoMessages'
 import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
+import { DemoHeader } from './DemoHeader'
 
 export default function DemoMainPage() {
   return (
     <div className="main">
-      <SideNav />
-      <Header />
+      <DemoSideNav />
+      <DemoHeader />
       <body>
         <Switch>
-          <Route exact path="/gamercard">
+          <Route exact path="/demo-gamercard">
             <DemoGamercard />
           </Route>
-          <Route exact path="/friends">
+          <Route exact path="/demo-friends">
             <DemoFriends />
           </Route>
-          <Route exact path="/message-inbox">
+          <Route exact path="/demo-message-inbox">
             <DemoMessages />
           </Route>
-          <Route exact path="/recent-achievements">
+          <Route exact path="/demo-recent-achievements">
             <DemoRecentAchievements />
           </Route>
-          <Route exact path="/xbox-one-games">
+          <Route exact path="/demo-xbox-one-games">
             <DemoXboxOneGames />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/demo-about">
             <About />
           </Route>
         </Switch>
