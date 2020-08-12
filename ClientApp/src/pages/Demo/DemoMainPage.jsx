@@ -18,7 +18,7 @@ export default function DemoMainPage(props) {
   return (
     <div className="main">
       <DemoSideNav />
-      <Header />
+      <DemoHeader />
       <body>
         <Switch>
           <Route exact path="/gamercard">
