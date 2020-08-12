@@ -15,6 +15,7 @@ import { getUser } from '../auth'
 
 export function MainPage() {
   const user = getUser()
+
   return (
     <div className="main">
       <SideNav />
