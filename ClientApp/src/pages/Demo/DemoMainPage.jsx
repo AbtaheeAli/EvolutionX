@@ -10,11 +10,7 @@ import { DemoMessages } from './DemoMessages'
 import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
 
-export default function DemoMainPage(props) {
-  // const [demo, setDemo] = useState()
-  // setDemo(props.demo)
-  // console.log(demo)
-
+export default function DemoMainPage() {
   return (
     <div className="main">
       <DemoSideNav />
