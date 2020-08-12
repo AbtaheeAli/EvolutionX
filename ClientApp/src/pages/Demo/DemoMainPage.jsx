@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { SideNav } from '../../components/SideNav'
+import { DemoSideNav } from './DemoSideNav'
 import { Header } from '../../components/Header'
 import { Route, Switch } from 'react-router-dom'
 import { Footer } from '../../components/Footer'
@@ -10,10 +10,14 @@ import { DemoMessages } from './DemoMessages'
 import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
 
-export default function DemoMainPage() {
+export default function DemoMainPage(props) {
+  // const [demo, setDemo] = useState()
+  // setDemo(props.demo)
+  // console.log(demo)
+
   return (
     <div className="main">
-      <SideNav />
+      <DemoSideNav />
       <Header />
       <body>
         <Switch>
