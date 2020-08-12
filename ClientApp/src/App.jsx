@@ -9,13 +9,11 @@ import { isLoggedIn } from './auth'
 import DemoMainPage from './pages/Demo/DemoMainPage'
 
 export function App() {
-  const [demo, setDemo] = useState(false)
-
   return (
     <main>
       <Switch>
         <Route exact path="/">
-          <Login demo={demo} setDemo={setDemo} />
+          <Login />
         </Route>
         <Route exact path="/signup">
           <SignUp />
@@ -23,8 +21,12 @@ export function App() {
         <Route exact path="/instructions">
           <Instructions />
         </Route>
-        {demo === false && isLoggedIn() && <MainPage />}
-        {demo === true && <DemoMainPage demo={demo} setDemo={setDemo} />}
+        <Route exact path="/demo-gamercard">
+          <DemoMainPage />
+        </Route>
+        <Route exact path="/gamercard">
+          {isLoggedIn() && <MainPage />}
+        </Route>
       </Switch>
     </main>
   )

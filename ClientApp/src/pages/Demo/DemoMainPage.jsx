@@ -11,33 +11,29 @@ import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
 import { DemoHeader } from './DemoHeader'
 
-export default function DemoMainPage(props) {
-  // const [demo, setDemo] = useState()
-  // setDemo(props.demo)
-  // console.log(demo)
-
+export default function DemoMainPage() {
   return (
     <div className="main">
       <DemoSideNav />
       <DemoHeader />
       <body>
         <Switch>
-          <Route exact path="/gamercard">
+          <Route exact path="/demo-gamercard">
             <DemoGamercard />
           </Route>
-          <Route exact path="/friends">
+          <Route exact path="/demo-friends">
             <DemoFriends />
           </Route>
-          <Route exact path="/message-inbox">
+          <Route exact path="/demo-message-inbox">
             <DemoMessages />
           </Route>
-          <Route exact path="/recent-achievements">
+          <Route exact path="/demo-recent-achievements">
             <DemoRecentAchievements />
           </Route>
-          <Route exact path="/xbox-one-games">
+          <Route exact path="/demo-xbox-one-games">
             <DemoXboxOneGames />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/demo-about">
             <About />
           </Route>
         </Switch>

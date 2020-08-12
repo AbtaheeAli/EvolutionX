@@ -14,27 +14,27 @@ export function DemoSideNav() {
           <img src={logo} width="130rem" height="90rem" alt="GHLogo" />
         </li>
         <li>
-          <Link className="navLink" to="/gamercard">
+          <Link className="navLink" to="/demo-gamercard">
             Gamer Card
           </Link>
         </li>
         <li>
-          <Link className="navLink" to="/friends">
+          <Link className="navLink" to="/demo-friends">
             Friends
           </Link>
         </li>
         <li>
-          <Link className="navLink" to="/message-inbox">
+          <Link className="navLink" to="/demo-message-inbox">
             Message Inbox
           </Link>
         </li>
         <li>
-          <Link className="navLink" to="/recent-achievements">
+          <Link className="navLink" to="/demo-recent-achievements">
             Recent Achievements
           </Link>
         </li>
         <li>
-          <Link className="navLink" to="/xbox-one-games">
+          <Link className="navLink" to="/demo-xbox-one-games">
             Xbox One Games
           </Link>
         </li>

@@ -97,12 +97,8 @@ export function Login(props) {
                 Sign Up!
               </a>
             </Link>
-            <Link className="signup-link" to="/gamercard">
-              <a
-                className="login-page-signup"
-                href="/foobar"
-                onClick={() => props.setDemo(true)}
-              >
+            <Link className="signup-link" to="/demo-gamercard">
+              <a className="login-page-signup" href="/foobar">
                 Demo Our Application
               </a>
             </Link>
