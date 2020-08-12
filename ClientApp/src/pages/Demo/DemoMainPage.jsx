@@ -9,6 +9,7 @@ import { DemoFriends } from './DemoFriends'
 import { DemoMessages } from './DemoMessages'
 import { DemoRecentAchievements } from './DemoRecentAchievements'
 import { DemoXboxOneGames } from './DemoXboxOneGames'
+import { DemoHeader } from './DemoHeader'
 
 export default function DemoMainPage(props) {
   // const [demo, setDemo] = useState()

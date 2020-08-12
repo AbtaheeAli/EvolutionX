@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export function Header() {
+export function DemoHeader() {
   return (
     <header>
       <nav className="left-header">
