@@ -21,22 +21,22 @@ export default function DemoMainPage(props) {
       <Header />
       <body>
         <Switch>
-          <Route exact path="/gamercard">
+          <Route exact path="/demo-gamercard">
             <DemoGamercard />
           </Route>
-          <Route exact path="/friends">
+          <Route exact path="/demo-friends">
             <DemoFriends />
           </Route>
-          <Route exact path="/message-inbox">
+          <Route exact path="/demo-message-inbox">
             <DemoMessages />
           </Route>
-          <Route exact path="/recent-achievements">
+          <Route exact path="/demo-recent-achievements">
             <DemoRecentAchievements />
           </Route>
-          <Route exact path="/xbox-one-games">
+          <Route exact path="/demo-xbox-one-games">
             <DemoXboxOneGames />
           </Route>
-          <Route exact path="/about">
+          <Route exact path="/demo-about">
             <About />
           </Route>
         </Switch>
