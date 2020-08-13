@@ -23,14 +23,6 @@ namespace EvolutionX.Controllers
             _context = context;
         }
 
-        // [HttpGet]
-        // public ActionResult<IEnumerable<User>> GetAllUsersBySuperUser()
-        // {
-        //     var allTheUsers = _context.Users.Where(user => user);
-
-        //     return Ok(allTheUsers);
-        // }
-
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
