@@ -16,13 +16,6 @@ namespace EvolutionX.Models
         [Required]
         public string Email { get; set; }
 
-        [Required]
-        public string ApiKey { get; set; }
-
-        [Required]
-        public string XboxProfileUserId { get; set; }
-
-
         [JsonIgnore]
         public string HashedPassword { get; set; }
 
