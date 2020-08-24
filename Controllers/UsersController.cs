@@ -70,8 +70,7 @@ namespace EvolutionX.Controllers
 
             userFromDB.UserName = user.UserName;
             userFromDB.Email = user.Email;
-            userFromDB.ApiKey = user.ApiKey;
-            userFromDB.XboxProfileUserId = user.XboxProfileUserId;
+
 
             _context.Entry(userFromDB).State = EntityState.Modified;
 
