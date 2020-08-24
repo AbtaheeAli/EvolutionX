@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +16,8 @@ namespace EvolutionX.Models
 
         [Required]
         public string Email { get; set; }
+
+        public List<Account> Accounts { get; set; }
 
         [JsonIgnore]
         public string HashedPassword { get; set; }
