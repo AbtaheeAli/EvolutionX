@@ -28,7 +28,7 @@ namespace EvolutionX.Controllers
 
         // GET: api/Accounts
         //
-        // Returns a list of all your Accounts
+        // Returns a list of all Accounts
         //
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
