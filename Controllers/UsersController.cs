@@ -94,36 +94,6 @@ namespace EvolutionX.Controllers
             return Ok(user);
         }
 
-        [HttpPatch("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult> Patch(int id, [FromBody] JsonPatchDocument<User> patchDoc)
-        {
-            if (patchDoc == null)
-            {
-                return BadRequest();
-            }
-
-            var userFromDB = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (userFromDB == null)
-            {
-                return NotFound();
-            }
-
-            patchDoc.ApplyTo(userFromDB, ModelState);
-
-            var isValid = TryValidateModel(userFromDB);
-
-            if (!isValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
 
         [HttpDelete("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
