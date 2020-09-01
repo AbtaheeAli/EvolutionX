@@ -48,18 +48,18 @@ export function UserSettings() {
   //   fetchUser()
   // }, [user.apiKey, user.xboxProfileUserId, user.id])
 
-  // const handleDelete = event => {
-  //   event.preventDefault()
+  const handleDelete = event => {
+    event.preventDefault()
 
-  //   fetch(`/api/Users/${user.id}`, {
-  //     method: 'DELETE',
-  //     headers: { ...authHeader() },
-  //   }).then(response => {
-  //     if (response.status === 204) {
-  //       history.push('/')
-  //     }
-  //   })
-  // }
+    fetch(`/api/Users/${user.id}`, {
+      method: 'DELETE',
+      headers: { ...authHeader() },
+    }).then(response => {
+      if (response.status === 204) {
+        history.push('/')
+      }
+    })
+  }
 
   return (
     <section className="user-page">
