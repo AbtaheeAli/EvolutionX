@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../auth'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
 export function UpdateAccount() {
@@ -131,6 +132,15 @@ export function UpdateAccount() {
               />
             </div>
             <div className="signup-btn-container">
+              <Link
+                className="btn settings-button"
+                to={`/settings/${user.id}/edit`}
+              >
+                View All Accounts
+              </Link>
+              <button type="submit" className="btn signup-btn">
+                Add an Account
+              </button>
               <button type="submit" className="btn signup-btn">
                 Update
               </button>

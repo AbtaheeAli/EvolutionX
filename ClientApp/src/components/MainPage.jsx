@@ -46,6 +46,7 @@ export function MainPage() {
           <Route exact path={`/settings/${user.id}/edit`}>
             <UpdateAccount />
           </Route>
+          <Route exact path={`/view-accounts`}></Route>
         </Switch>
       </body>
       <Footer />
