@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../auth'
+import { getUser, getAccounts } from '../auth'
 
 export function Gamercard() {
   const [account, setAccount] = useState({})
@@ -11,6 +11,10 @@ export function Gamercard() {
   const [loading, setLoading] = useState(false)
 
   const user = getUser()
+
+  const accounts = getAccounts()
+
+  console.log(accounts)
 
   useEffect(() => {
     function loadGamerCard() {
