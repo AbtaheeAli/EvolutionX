@@ -21,9 +21,7 @@ export function App() {
         <Route exact path="/instructions">
           <Instructions />
         </Route>
-
         {isLoggedIn() === false && <DemoMainPage />}
-
         {isLoggedIn() && <MainPage />}
       </Switch>
     </main>
