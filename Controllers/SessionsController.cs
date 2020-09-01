@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,13 +34,14 @@ namespace EvolutionX.Controllers
         public async Task<ActionResult> Login(LoginUser loginUser)
         {
             var foundUser = await _context.Users.FirstOrDefaultAsync(user => user.Email == loginUser.Email);
+            var foundAccounts = _context.Accounts.Where(account => account.UserId == foundUser.Id);
             if (foundUser != null && foundUser.IsValidPassword(loginUser.Password))
             {
                 var response = new
                 {
                     token = new TokenGenerator(JWT_KEY).TokenFor(foundUser),
                     user = foundUser,
-                    accounts = _context.Accounts.Where(account => account.UserId == foundUser.Id),
+                    accounts = foundAccounts
                 };
 
                 return Ok(response);

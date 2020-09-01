@@ -5,9 +5,12 @@ import logo from '../images/Login Image.png'
 
 function UserAccount(props) {
   return (
-    <div className="dropdown-content">
-      <a href="#">{props.AccountName}</a>
-    </div>
+    <li className="dropdown">
+      <button className="dropbtn">Accounts</button>
+      <div className="dropdown-content">
+        <a href="#">{props.Id}</a>
+      </div>
+    </li>
   )
 }
 
@@ -18,6 +21,7 @@ export function SideNav() {
   }
 
   const accounts = getAccounts()
+  console.log(accounts)
 
   return (
     <div className="sidenav">
@@ -25,13 +29,9 @@ export function SideNav() {
         <li className="navLogo">
           <img src={logo} width="130rem" height="90rem" alt="GHLogo" />
         </li>
-        <li className="dropdown">
-          <button className="dropbtn">Accounts</button>
-          {accounts.map(account => (
-            <UserAccount key={account.Id} AccountName={account.AccountName} />
-          ))}
-          <UserAccount />
-        </li>
+        {accounts.map(account => (
+          <UserAccount key={account.Id} AccountName={account.AccountName} />
+        ))}
         <li>
           <Link className="navLink" to="/gamercard">
             Gamer Card
