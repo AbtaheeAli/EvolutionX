@@ -1,13 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { isLoggedIn, logout } from '../auth'
+import { isLoggedIn, logout, getAccounts } from '../auth'
 import logo from '../images/Login Image.png'
+
+function UserAccount(props) {
+  return (
+    <div className="dropdown-content">
+      <a href="#">{props.AccountName}</a>
+    </div>
+  )
+}
 
 export function SideNav() {
   const handleLogout = () => {
     logout()
     window.location = '/'
   }
+
+  const accounts = getAccounts()
 
   return (
     <div className="sidenav">
@@ -17,11 +27,10 @@ export function SideNav() {
         </li>
         <li className="dropdown">
           <button className="dropbtn">Accounts</button>
-          <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
+          {accounts.map(account => (
+            <UserAccount key={account.Id} AccountName={account.AccountName} />
+          ))}
+          <UserAccount />
         </li>
         <li>
           <Link className="navLink" to="/gamercard">
