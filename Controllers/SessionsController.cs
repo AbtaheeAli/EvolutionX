@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EvolutionX.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +38,8 @@ namespace EvolutionX.Controllers
                 var response = new
                 {
                     token = new TokenGenerator(JWT_KEY).TokenFor(foundUser),
-                    user = foundUser
+                    user = foundUser,
+                    accounts = _context.Accounts.Where(account => account.UserId == foundUser.Id),
                 };
                 return Ok(response);
             }
