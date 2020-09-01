@@ -110,12 +110,12 @@ export function SignUp() {
                 Sign In Instead
               </Link>
             </div>
-            - OR -<div>Not Signed Up For XAPI?</div>
+            {/* - OR -<div>Not Signed Up For XAPI?</div>
             <Link className="signup-link" to="/instructions">
               <a className="login-page-signup" href="/foobar">
                 Click Here For Instructions
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

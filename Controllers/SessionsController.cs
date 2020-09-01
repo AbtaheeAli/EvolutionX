@@ -41,6 +41,7 @@ namespace EvolutionX.Controllers
                     user = foundUser,
                     accounts = _context.Accounts.Where(account => account.UserId == foundUser.Id),
                 };
+
                 return Ok(response);
             }
             else
