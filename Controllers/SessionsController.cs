@@ -39,6 +39,7 @@ namespace EvolutionX.Controllers
                     token = new TokenGenerator(JWT_KEY).TokenFor(foundUser),
                     user = foundUser
                 };
+
                 return Ok(response);
             }
             else
