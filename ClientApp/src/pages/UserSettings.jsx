@@ -121,6 +121,12 @@ export function UserSettings() {
               >
                 Update Account
               </Link>
+              <Link className="btn settings-button" to={`/add-account`}>
+                Add an Account
+              </Link>
+              <Link className="btn settings-button" to={`/view-accounts`}>
+                View Accounts
+              </Link>
               <button className="btn settings-button" onClick={handleDelete}>
                 Delete Account
               </button>
