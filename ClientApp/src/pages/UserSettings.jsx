@@ -88,9 +88,7 @@ export function UserSettings() {
               <button
                 className="btn settings-button"
                 onClick={() => setShowEmail(!showEmail)}
-              >
-                Update Account
-              </Link>
+              />
               <Link className="btn settings-button" to={`/add-account`}>
                 Add an Account
               </Link>
@@ -100,7 +98,6 @@ export function UserSettings() {
               <button className="btn settings-button" onClick={handleDelete}>
                 Delete Account
               </button>
-              {showEmail && <div>{userDetails.email}</div>}
             </li>
             <li className="key">
               <button
