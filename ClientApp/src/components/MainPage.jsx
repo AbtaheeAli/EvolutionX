@@ -12,6 +12,7 @@ import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
 import { ViewAccounts } from '../pages/ViewAccounts'
+import { AddAccount } from '../pages/AddAccount'
 import { getUser } from '../auth'
 
 export function MainPage() {
@@ -50,7 +51,9 @@ export function MainPage() {
           <Route exact path={`/view-accounts`}>
             <ViewAccounts />
           </Route>
-          <Route exact path={`/add-account`}></Route>
+          <Route exact path={`/add-account`}>
+            <AddAccount />
+          </Route>
         </Switch>
       </body>
       <Footer />
