@@ -60,6 +60,12 @@ export const getUser = () => {
   return auth.user
 }
 
+export const getAccounts = () => {
+  const auth = authFromStorage()
+
+  return auth.accounts
+}
+
 // Removes the authentication data, effectively "forgetting" the
 // session information and logging the user out.
 export const logout = () => {

@@ -20,104 +20,74 @@ export function UserSettings() {
 
   const [showEmail, setShowEmail] = useState(false)
 
-  useEffect(() => {
-    function loadAccountInfo() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
+  // useEffect(() => {
+  //   function loadAccountInfo() {
+  //     const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
 
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          'X-AUTH': user.apiKey,
-        },
-      })
-        .then(response => response.json())
-        .then(account => {
-          setXboxAccount(account)
-          setLoading(true)
-        })
-    }
+  //     fetch(url, {
+  //       method: 'GET',
+  //       headers: {
+  //         'X-AUTH': user.apiKey,
+  //       },
+  //     })
+  //       .then(response => response.json())
+  //       .then(account => {
+  //         setXboxAccount(account)
+  //         setLoading(true)
+  //       })
+  //   }
 
-    const fetchUser = async () => {
-      const response = await fetch(`/api/Users/${user.id}`)
-      const apiData = await response.json()
+  //   const fetchUser = async () => {
+  //     const response = await fetch(`/api/Users/${user.id}`)
+  //     const apiData = await response.json()
 
-      setUserDetails(apiData)
-    }
+  //     setUserDetails(apiData)
+  //   }
 
-    loadAccountInfo()
-    fetchUser()
-  }, [user.apiKey, user.xboxProfileUserId, user.id])
+  //   loadAccountInfo()
+  //   fetchUser()
+  // }, [user.apiKey, user.xboxProfileUserId, user.id])
 
-  const handleDelete = event => {
-    event.preventDefault()
+  // const handleDelete = event => {
+  //   event.preventDefault()
 
-    fetch(`/api/Users/${user.id}`, {
-      method: 'DELETE',
-      headers: { ...authHeader() },
-    }).then(response => {
-      if (response.status === 204) {
-        history.push('/')
-      }
-    })
-  }
+  //   fetch(`/api/Users/${user.id}`, {
+  //     method: 'DELETE',
+  //     headers: { ...authHeader() },
+  //   }).then(response => {
+  //     if (response.status === 204) {
+  //       history.push('/')
+  //     }
+  //   })
+  // }
 
   return (
     <section className="user-page">
-      {loading === false && (
+      {/* {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
             <span className="sr-only">Loading...</span>
           </div>
         </div>
-      )}
-      {loading === true && (
-        <section className="user-container">
-          <div className="account-settings-card">
-            <ul className="settings-list">
-              <li>
-                <img
-                  className="gamer-card-img"
-                  src={xboxAccount.displayPicRaw}
-                  width="180rem"
-                  height="180rem"
-                  alt="UserXboxLogo"
-                />
-                <h3 className="user-settings-username">
-                  {userDetails.userName}
-                </h3>
-              </li>
-              <li>
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowEmail(!showEmail)}
-                >
-                  Email
-                </button>
-                {showEmail && <div>{userDetails.email}</div>}
-              </li>
-              <li className="key">
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowApiKey(!showApiKey)}
-                >
-                  API Key
-                </button>
-                {showApiKey && <div>{userDetails.apiKey}</div>}
-              </li>
-              <li>
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowXboxId(!showXboxId)}
-                >
-                  Xbox ID
-                </button>
-                {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
-              </li>
-            </ul>
-            <div className="buttons">
-              <Link
+      )} */}
+      {/* {loading === true && ( */}
+      <section className="user-container">
+        <div className="account-settings-card">
+          <ul className="settings-list">
+            <li>
+              <img
+                className="gamer-card-img"
+                src={xboxAccount.displayPicRaw}
+                width="180rem"
+                height="180rem"
+                alt="UserXboxLogo"
+              />
+              <h3 className="user-settings-username">{userDetails.userName}</h3>
+            </li>
+            <li>
+              <button
                 className="btn settings-button"
-                to={`/settings/${user.id}/edit`}
+                onClick={() => setShowEmail(!showEmail)}
               >
                 Update Account
               </Link>
@@ -130,10 +100,41 @@ export function UserSettings() {
               <button className="btn settings-button" onClick={handleDelete}>
                 Delete Account
               </button>
-            </div>
+              {showEmail && <div>{userDetails.email}</div>}
+            </li>
+            <li className="key">
+              <button
+                className="btn settings-button"
+                onClick={() => setShowApiKey(!showApiKey)}
+              >
+                API Key
+              </button>
+              {showApiKey && <div>{userDetails.apiKey}</div>}
+            </li>
+            <li>
+              <button
+                className="btn settings-button"
+                onClick={() => setShowXboxId(!showXboxId)}
+              >
+                Xbox ID
+              </button>
+              {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
+            </li>
+          </ul>
+          <div className="buttons">
+            <Link
+              className="btn settings-button"
+              to={`/settings/${user.id}/edit`}
+            >
+              Update Account
+            </Link>
+            {/* <button className="btn settings-button" onClick={handleDelete}>
+                Delete Account
+              </button> */}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+      {/* )} */}
     </section>
   )
 }

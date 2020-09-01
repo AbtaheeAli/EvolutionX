@@ -4,7 +4,9 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
-export function AddAccount() {
+
+export function ViewAccounts() {
+>>>>>>> a4e9f4b1e91f37d7b9512bc5c2b8e72105c15f19
   const user = getUser()
 
   const [errorMessage, setErrorMessage] = useState()
