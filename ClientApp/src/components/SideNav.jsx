@@ -15,6 +15,14 @@ export function SideNav() {
         <li className="navLogo">
           <img src={logo} width="130rem" height="90rem" alt="GHLogo" />
         </li>
+        <li className="dropdown">
+          <button className="dropbtn">Accounts</button>
+          <div className="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
         <li>
           <Link className="navLink" to="/gamercard">
             Gamer Card
