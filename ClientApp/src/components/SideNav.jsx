@@ -21,9 +21,9 @@ function UserAccount(props) {
     <li className="dropdown">
       <button className="dropbtn">Accounts</button>
       <div className="dropdown-content">
-        <a href="#" onClick={handleAccountChange}>
+        <button type="button" onClick={handleAccountChange}>
           {props.AccountName}{' '}
-        </a>
+        </button>
       </div>
     </li>
   )
