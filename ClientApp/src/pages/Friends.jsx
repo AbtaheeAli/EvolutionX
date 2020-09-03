@@ -38,6 +38,8 @@ export function Friends() {
 
   const [filterText, setFilterText] = useState('')
 
+  console.log(friends)
+
   useEffect(() => {
     function loadFriends() {
       const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
