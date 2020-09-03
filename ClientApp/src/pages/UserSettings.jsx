@@ -95,9 +95,9 @@ export function UserSettings() {
               <Link className="btn settings-button" to={`/view-accounts`}>
                 View Accounts
               </Link>
-              <button className="btn settings-button" onClick={handleDelete}>
+              {/* <button className="btn settings-button" onClick={handleDelete}>
                 Delete Account
-              </button>
+              </button> */}
             </li>
             <li className="key">
               <button
