@@ -8,7 +8,7 @@ function UserAccount(props) {
     <li className="dropdown">
       <button className="dropbtn">Accounts</button>
       <div className="dropdown-content">
-        <a href="#">{props.Id}</a>
+        <a href="#">{props.AccountName}</a>
       </div>
     </li>
   )
@@ -30,7 +30,7 @@ export function SideNav() {
           <img src={logo} width="130rem" height="90rem" alt="GHLogo" />
         </li>
         {accounts.map(account => (
-          <UserAccount key={account.Id} AccountName={account.AccountName} />
+          <UserAccount key={account.Id} AccountName={account.accountName} />
         ))}
         <li>
           <Link className="navLink" to="/gamercard">
