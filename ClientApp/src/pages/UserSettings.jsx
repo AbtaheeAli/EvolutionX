@@ -99,7 +99,7 @@ export function UserSettings() {
                 Delete Account
               </button> */}
             </li>
-            <li className="key">
+            {/* <li className="key">
               <button
                 className="btn settings-button"
                 onClick={() => setShowApiKey(!showApiKey)}
@@ -116,7 +116,7 @@ export function UserSettings() {
                 Xbox ID
               </button>
               {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
-            </li>
+            </li> */}
           </ul>
           <div className="buttons">
             <Link
