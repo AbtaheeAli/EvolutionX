@@ -50,7 +50,7 @@ export function ViewAccounts() {
   return (
     <div className="update-container signup-card-container">
       <section className="update-card signup-card">
-        <li>
+        <li className="key">
           <img
             className="gamer-card-img"
             src={xboxAccount.displayPicRaw}
@@ -76,7 +76,7 @@ export function ViewAccounts() {
           </button>
           {showApiKey && <div>{userDetails.apiKey}</div>}
         </li>
-        <li>
+        <li className="key">
           <button
             className="btn settings-button"
             onClick={() => setShowXboxId(!showXboxId)}
