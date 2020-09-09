@@ -4,25 +4,20 @@ import { isLoggedIn, logout, getAccounts } from '../auth'
 import logo from '../images/Login Image.png'
 
 function UserAccount(props) {
-  const [chosenAccountApiKey, setChosenAccountApiKey] = useState('')
+  const [chosenAccount, setChosenAccount] = useState()
 
-  const [chosenAccountXboxProfileId, setChosenAccountXboxProfileId] = useState(
-    ''
-  )
+  console.log(chosenAccount)
 
-  const handleAccountChange = () => {
-    setChosenAccountApiKey(props.ApiKey)
-    setChosenAccountXboxProfileId(props.XboxProfileUserId)
-    console.log(chosenAccountApiKey)
-    console.log(chosenAccountXboxProfileId)
+  const handleAccountChange = props => {
+    setChosenAccount(props)
   }
 
   return (
     <li className="dropdown">
       <button className="dropbtn">Accounts</button>
       <div className="dropdown-content">
-        <button type="button" onClick={handleAccountChange}>
-          {props.AccountName}{' '}
+        <button type="button" onClick={handleAccountChange.bind(this, props)}>
+          {props.AccountName}
         </button>
       </div>
     </li>
@@ -36,8 +31,6 @@ export function SideNav() {
   }
 
   const accounts = getAccounts()
-
-  console.log(accounts)
 
   return (
     <div className="sidenav">
