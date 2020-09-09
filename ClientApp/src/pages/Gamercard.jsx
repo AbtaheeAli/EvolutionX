@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getUser, getAccounts } from '../auth'
+import { set } from 'date-fns'
 
-export function Gamercard() {
+export function Gamercard(props) {
+  const [chosenAccount, setChosenAccount] = useState({})
+
   const [account, setAccount] = useState({})
 
   const [accountDetails, setAccountDetails] = useState({})
@@ -14,16 +17,21 @@ export function Gamercard() {
 
   const accounts = getAccounts()
 
-  console.log(accounts)
+  console.log(props)
+  console.log(chosenAccount)
 
   useEffect(() => {
+    function loadChosenAccount() {
+      setChosenAccount(props.chosenAccount)
+    }
+
     function loadGamerCard() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/gamercard`
+      const url = `https://xapi.us/v2/${chosenAccount.xboxProfileUserId}/gamercard`
 
       fetch(url, {
         method: 'GET',
         headers: {
-          'X-AUTH': user.apiKey,
+          'X-AUTH': chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -34,12 +42,12 @@ export function Gamercard() {
     }
 
     function loadAccountInfo() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
+      const url = `https://xapi.us/v2/${chosenAccount.xboxProfileUserId}/new-profile`
 
       fetch(url, {
         method: 'GET',
         headers: {
-          'X-AUTH': user.apiKey,
+          'X-AUTH': chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -49,9 +57,10 @@ export function Gamercard() {
           setLoading(true)
         })
     }
+    loadChosenAccount()
     loadAccountInfo()
     loadGamerCard()
-  }, [user.apiKey, user.xboxProfileUserId])
+  }, [chosenAccount.apiKey, chosenAccount.xboxProfileUserId])
 
   return (
     <div className="gamer-card-container">

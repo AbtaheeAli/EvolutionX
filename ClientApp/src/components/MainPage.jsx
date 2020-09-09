@@ -13,19 +13,29 @@ import { UserSettings } from '../pages/UserSettings'
 import { UpdateAccount } from '../pages/UpdateAccount'
 import { AddAccount } from '../pages/AddAccount'
 import { ViewAccounts } from '../pages/ViewAccounts'
-import { getUser } from '../auth'
+import { getUser, getFirstAccount } from '../auth'
 
 export function MainPage() {
   const user = getUser()
 
+  const defaultAccount = getFirstAccount()
+
+  const [chosenAccount, setChosenAccount] = useState(defaultAccount)
+
   return (
     <div className="main">
-      <SideNav />
+      <SideNav
+        chosenAccount={chosenAccount}
+        setChosenAccount={setChosenAccount}
+      />
       <Header />
       <body>
         <Switch>
           <Route exact path="/gamercard">
-            <Gamercard />
+            <Gamercard
+              chosenAccount={chosenAccount}
+              setChosenAccount={setChosenAccount}
+            />
           </Route>
           <Route exact path="/friends">
             <Friends />

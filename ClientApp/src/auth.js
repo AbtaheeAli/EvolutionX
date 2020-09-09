@@ -66,6 +66,15 @@ export const getAccounts = () => {
   return auth.accounts
 }
 
+export const getFirstAccount = () => {
+  const auth = authFromStorage()
+
+  const AllAccounts = auth.accounts
+  const firstAccount = AllAccounts[0]
+
+  return firstAccount
+}
+
 // Removes the authentication data, effectively "forgetting" the
 // session information and logging the user out.
 export const logout = () => {
