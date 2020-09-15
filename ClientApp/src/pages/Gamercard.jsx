@@ -13,12 +13,9 @@ export function Gamercard(props) {
 
   const [loading, setLoading] = useState(false)
 
-  function loadChosenAccount() {
-    setChosenAccount(props.chosenAccount)
-  }
-
   useEffect(() => {
     function loadGamerCard() {
+      setLoading(false)
       const url = `https://xapi.us/v2/${props.chosenAccount.xboxProfileUserId}/gamercard`
 
       fetch(url, {
@@ -50,7 +47,7 @@ export function Gamercard(props) {
           setLoading(true)
         })
     }
-    loadChosenAccount()
+
     loadAccountInfo()
     loadGamerCard()
   }, [props.chosenAccount.xboxProfileUserId, props.chosenAccount.apiKey])
