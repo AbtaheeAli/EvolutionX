@@ -10,7 +10,7 @@ export function UserAccount(props) {
 
   return (
     <button type="button" onClick={() => handleAccountChange(props)}>
-      {props.AccountName}
+      {props.accountName}
     </button>
   )
 }
@@ -40,7 +40,7 @@ export function SideNav(props) {
   //   handleAccountChange()
   // }, [chosenAccount])
 
-  console.log(chosenAccount)
+  // console.log(chosenAccount)
 
   return (
     <div className="sidenav">
@@ -54,9 +54,9 @@ export function SideNav(props) {
             {accounts.map(account => (
               <UserAccount
                 key={account.Id}
-                AccountName={account.accountName}
-                ApiKey={account.apiKey}
-                XboxProfileUserId={account.xboxProfileUserId}
+                accountName={account.accountName}
+                apiKey={account.apiKey}
+                xboxProfileUserId={account.xboxProfileUserId}
                 handleAccountChange={handleAccountChange}
               />
             ))}
