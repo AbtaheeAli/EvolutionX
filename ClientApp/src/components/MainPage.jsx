@@ -24,8 +24,8 @@ export function MainPage() {
 
   const handleAccountChange = switchedAccount => {
     setChosenAccount(switchedAccount)
-    console.log(chosenAccount)
   }
+  console.log(chosenAccount)
 
   return (
     <div className="main">

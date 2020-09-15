@@ -13,7 +13,11 @@ export function Gamercard(props) {
 
   const [loading, setLoading] = useState(false)
 
-  // console.log(chosenAccount)
+  function loadChosenAccount() {
+    setChosenAccount(props.chosenAccount)
+  }
+
+  console.log(chosenAccount)
 
   // const handleAccountChange = switchedAccount => {
   //   setChosenAccount(switchedAccount)
@@ -21,10 +25,6 @@ export function Gamercard(props) {
   // }
 
   useEffect(() => {
-    function loadChosenAccount() {
-      setChosenAccount(props.chosenAccount)
-    }
-
     function loadGamerCard() {
       const url = `https://xapi.us/v2/${chosenAccount.xboxProfileUserId}/gamercard`
 
