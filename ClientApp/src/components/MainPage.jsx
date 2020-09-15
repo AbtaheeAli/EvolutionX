@@ -22,20 +22,23 @@ export function MainPage() {
 
   const [chosenAccount, setChosenAccount] = useState(defaultAccount)
 
+  const handleAccountChange = switchedAccount => {
+    setChosenAccount(switchedAccount)
+    console.log(chosenAccount)
+  }
+
   return (
     <div className="main">
       <SideNav
         chosenAccount={chosenAccount}
         setChosenAccount={setChosenAccount}
+        handleAccountChange={handleAccountChange}
       />
       <Header />
       <body>
         <Switch>
           <Route exact path="/gamercard">
-            <Gamercard
-              chosenAccount={chosenAccount}
-              setChosenAccount={setChosenAccount}
-            />
+            <Gamercard chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/friends">
             <Friends />

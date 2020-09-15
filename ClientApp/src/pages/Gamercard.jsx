@@ -13,12 +13,12 @@ export function Gamercard(props) {
 
   const [loading, setLoading] = useState(false)
 
-  const user = getUser()
+  // console.log(chosenAccount)
 
-  const accounts = getAccounts()
-
-  console.log(props)
-  console.log(chosenAccount)
+  // const handleAccountChange = switchedAccount => {
+  //   setChosenAccount(switchedAccount)
+  //   console.log(chosenAccount)
+  // }
 
   useEffect(() => {
     function loadChosenAccount() {
@@ -60,7 +60,7 @@ export function Gamercard(props) {
     loadChosenAccount()
     loadAccountInfo()
     loadGamerCard()
-  }, [chosenAccount.apiKey, chosenAccount.xboxProfileUserId])
+  }, [chosenAccount])
 
   return (
     <div className="gamer-card-container">
