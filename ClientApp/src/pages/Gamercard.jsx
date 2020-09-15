@@ -3,8 +3,6 @@ import { getUser, getAccounts } from '../auth'
 import { set } from 'date-fns'
 
 export function Gamercard(props) {
-  const [chosenAccount, setChosenAccount] = useState({})
-
   const [account, setAccount] = useState({})
 
   const [accountDetails, setAccountDetails] = useState({})
@@ -27,7 +25,6 @@ export function Gamercard(props) {
         .then(response => response.json())
         .then(gamerCardInfo => {
           setGamerCard(gamerCardInfo)
-          setLoading(true)
         })
     }
 
