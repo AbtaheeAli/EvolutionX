@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { isLoggedIn, logout, getAccounts, getFirstAccount } from '../auth'
+import { isLoggedIn, logout, getAccounts } from '../auth'
 import logo from '../images/Login Image.png'
 
 export function UserAccount(props) {
@@ -18,13 +18,13 @@ export function UserAccount(props) {
 export function SideNav(props) {
   const accounts = getAccounts()
 
+  const handleAccountChange = switchedAccount => {
+    props.handleAccountChange(switchedAccount)
+  }
+
   const handleLogout = () => {
     logout()
     window.location = '/'
-  }
-
-  const handleAccountChange = switchedAccount => {
-    props.handleAccountChange(switchedAccount)
   }
 
   return (
