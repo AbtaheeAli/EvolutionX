@@ -25,7 +25,6 @@ export function MainPage() {
   const handleAccountChange = switchedAccount => {
     setChosenAccount(switchedAccount)
   }
-  // console.log(chosenAccount)
 
   return (
     <div className="main">
@@ -41,16 +40,16 @@ export function MainPage() {
             <Gamercard chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/friends">
-            <Friends />
+            <Friends chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/message-inbox">
-            <Messages />
+            <Messages chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/recent-achievements">
-            <RecentAchievements />
+            <RecentAchievements chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/xbox-one-games">
-            <XboxOneGames />
+            <XboxOneGames chosenAccount={chosenAccount} />
           </Route>
           <Route exact path="/about">
             <About />

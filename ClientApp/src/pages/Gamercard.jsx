@@ -17,19 +17,10 @@ export function Gamercard(props) {
     setChosenAccount(props.chosenAccount)
   }
 
-  // console.log(chosenAccount)
-
-  // const handleAccountChange = switchedAccount => {
-  //   setChosenAccount(switchedAccount)
-  //   console.log(chosenAccount)
-  // }
-
   useEffect(() => {
     function loadGamerCard() {
-      // console.log(props)
       const url = `https://xapi.us/v2/${props.chosenAccount.xboxProfileUserId}/gamercard`
-      console.log(props)
-      console.log(props.chosenAccount.apiKey)
+
       fetch(url, {
         method: 'GET',
         headers: {
@@ -40,7 +31,6 @@ export function Gamercard(props) {
         .then(gamerCardInfo => {
           setGamerCard(gamerCardInfo)
           setLoading(true)
-          // console.log(props)
         })
     }
 
