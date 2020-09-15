@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
-import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -22,24 +21,23 @@ function SingleMessage(props) {
   )
 }
 
-export function Messages() {
+export function Messages(props) {
   const [messages, setMessages] = useState([])
 
   const [filterText, setFilterText] = useState('')
-
-  const user = getUser()
 
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     function loadMessages() {
+      setLoading(false)
       const url = `https://xapi.us/v2/messages`
 
       fetch(url, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
-          'X-AUTH': user.apiKey,
+          'X-AUTH': props.chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -49,7 +47,7 @@ export function Messages() {
         })
     }
     loadMessages()
-  }, [user.apiKey])
+  }, [props.chosenAccount.xboxProfileUserId, props.chosenAccount.apiKey])
 
   return (
     <section className="messages-page">
@@ -85,18 +83,20 @@ export function Messages() {
           </div>
         </div>
       )}
-      <div className="message-cards">
-        {messages
-          .filter(sender => sender.header.sender.includes(filterText))
-          .map(message => (
-            <SingleMessage
-              key={message.header.id}
-              Sender={message.header.sender}
-              Sent={message.header.sent}
-              Summary={message.messageSummary}
-            />
-          ))}
-      </div>
+      {loading === true && (
+        <div className="message-cards">
+          {messages
+            .filter(sender => sender.header.sender.includes(filterText))
+            .map(message => (
+              <SingleMessage
+                key={message.header.id}
+                Sender={message.header.sender}
+                Sent={message.header.sent}
+                Summary={message.messageSummary}
+              />
+            ))}
+        </div>
+      )}
     </section>
   )
 }

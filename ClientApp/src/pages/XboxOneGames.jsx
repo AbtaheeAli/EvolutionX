@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { format } from 'date-fns/'
-import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -47,10 +46,8 @@ function SingleXboxOneGame(props) {
   )
 }
 
-export function XboxOneGames() {
+export function XboxOneGames(props) {
   const [games, setGames] = useState([])
-
-  const user = getUser()
 
   const [filterText, setFilterText] = useState('')
 
@@ -58,13 +55,14 @@ export function XboxOneGames() {
 
   useEffect(() => {
     function loadGames() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/title-history/`
+      setLoading(false)
+      const url = `https://xapi.us/v2/${props.chosenAccount.xboxProfileUserId}/title-history/`
 
       fetch(url, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
-          'X-AUTH': user.apiKey,
+          'X-AUTH': props.chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -74,7 +72,7 @@ export function XboxOneGames() {
         })
     }
     loadGames()
-  }, [user.apiKey, user.xboxProfileUserId])
+  }, [props.chosenAccount.xboxProfileUserId, props.chosenAccount.apiKey])
 
   return (
     <section className="games-page">
@@ -110,21 +108,23 @@ export function XboxOneGames() {
           </div>
         </div>
       )}
-      <section className="xbox-one-games-card">
-        {games
-          .filter(game => game.name.includes(filterText))
-          .map(game => (
-            <SingleXboxOneGame
-              key={game.titleId}
-              Title={game.name}
-              GameImage={game.displayImage}
-              CurrentGamerscore={game.achievement.currentGamerscore}
-              MaxGamerscore={game.achievement.totalGamerscore}
-              LastPlayed={game.titleHistory.lastTimePlayed}
-              EarnedAchievements={game.achievement.currentAchievements}
-            />
-          ))}
-      </section>
+      {loading === true && (
+        <section className="xbox-one-games-card">
+          {games
+            .filter(game => game.name.includes(filterText))
+            .map(game => (
+              <SingleXboxOneGame
+                key={game.titleId}
+                Title={game.name}
+                GameImage={game.displayImage}
+                CurrentGamerscore={game.achievement.currentGamerscore}
+                MaxGamerscore={game.achievement.totalGamerscore}
+                LastPlayed={game.titleHistory.lastTimePlayed}
+                EarnedAchievements={game.achievement.currentAchievements}
+              />
+            ))}
+        </section>
+      )}
     </section>
   )
 }

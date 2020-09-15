@@ -29,25 +29,22 @@ function SingleFriend(props) {
   )
 }
 
-export function Friends() {
+export function Friends(props) {
   const [friends, setFriends] = useState([])
-
-  const user = getUser()
 
   const [loading, setLoading] = useState(false)
 
   const [filterText, setFilterText] = useState('')
 
-  console.log(friends)
-
   useEffect(() => {
     function loadFriends() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/friends`
+      setLoading(false)
+      const url = `https://xapi.us/v2/${props.chosenAccount.xboxProfileUserId}/friends`
 
       fetch(url, {
         method: 'GET',
         headers: {
-          'X-AUTH': user.apiKey,
+          'X-AUTH': props.chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -57,7 +54,7 @@ export function Friends() {
         })
     }
     loadFriends()
-  }, [user.apiKey, user.xboxProfileUserId])
+  }, [props.chosenAccount.xboxProfileUserId, props.chosenAccount.apiKey])
 
   return (
     <section className="friend-page">
@@ -93,20 +90,22 @@ export function Friends() {
           </div>
         </div>
       )}
-      <div className="friend-cards">
-        {friends
-          .filter(friend => friend.Gamertag.includes(filterText))
-          .map(friend => (
-            <SingleFriend
-              key={friend.id}
-              Gamertag={friend.Gamertag}
-              XboxOneRep={friend.XboxOneRep}
-              Gamerscore={friend.Gamerscore}
-              TenureLevel={friend.TenureLevel}
-              GameDisplayPicRaw={friend.GameDisplayPicRaw}
-            />
-          ))}
-      </div>
+      {loading === true && (
+        <div className="friend-cards">
+          {friends
+            .filter(friend => friend.Gamertag.includes(filterText))
+            .map(friend => (
+              <SingleFriend
+                key={friend.id}
+                Gamertag={friend.Gamertag}
+                XboxOneRep={friend.XboxOneRep}
+                Gamerscore={friend.Gamerscore}
+                TenureLevel={friend.TenureLevel}
+                GameDisplayPicRaw={friend.GameDisplayPicRaw}
+              />
+            ))}
+        </div>
+      )}
     </section>
   )
 }

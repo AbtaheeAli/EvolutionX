@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { isLoggedIn, logout, getAccounts } from '../auth'
 import logo from '../images/Login Image.png'
 
-function UserAccount(props) {
-  const [chosenAccount, setChosenAccount] = useState()
-
-  const handleAccountChange = props => {
-    setChosenAccount(props)
-    console.log(chosenAccount)
+export function UserAccount(props) {
+  const handleAccountChange = event => {
+    props.handleAccountChange(event)
   }
 
   return (
-    <button type="button" onClick={handleAccountChange.bind(this, props)}>
-      {props.AccountName}
+    <button type="button" onClick={() => handleAccountChange(props)}>
+      {props.accountName}
     </button>
   )
 }
 
-export function SideNav() {
+export function SideNav(props) {
+  const accounts = getAccounts()
+
+  const handleAccountChange = switchedAccount => {
+    props.handleAccountChange(switchedAccount)
+  }
+
   const handleLogout = () => {
     logout()
     window.location = '/'
   }
-
-  const accounts = getAccounts()
-  console.log(accounts)
 
   return (
     <div className="sidenav">
@@ -39,9 +39,10 @@ export function SideNav() {
             {accounts.map(account => (
               <UserAccount
                 key={account.Id}
-                AccountName={account.accountName}
-                ApiKey={account.apiKey}
-                XboxProfileUserId={account.xboxProfileUserId}
+                accountName={account.accountName}
+                apiKey={account.apiKey}
+                xboxProfileUserId={account.xboxProfileUserId}
+                handleAccountChange={handleAccountChange}
               />
             ))}
           </div>
