@@ -16,10 +16,6 @@ export function UserAccount(props) {
 }
 
 export function SideNav(props) {
-  const defaultAccount = getFirstAccount()
-
-  const [chosenAccount, setChosenAccount] = useState(defaultAccount)
-
   const accounts = getAccounts()
 
   const handleLogout = () => {
@@ -28,19 +24,8 @@ export function SideNav(props) {
   }
 
   const handleAccountChange = switchedAccount => {
-    setChosenAccount(switchedAccount)
     props.handleAccountChange(switchedAccount)
   }
-
-  // useEffect(() => {
-  //   function loadChosenAccount() {
-  //     setChosenAccount(props.chosenAccount)
-  //   }
-  //   loadChosenAccount()
-  //   handleAccountChange()
-  // }, [chosenAccount])
-
-  // console.log(chosenAccount)
 
   return (
     <div className="sidenav">
