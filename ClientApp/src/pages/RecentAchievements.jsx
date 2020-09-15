@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
-import { getUser } from '../auth'
 
 const dateFormat = `MMMM do, yyyy`
 
@@ -53,10 +52,8 @@ function SingleRecentAchievement(props) {
   )
 }
 
-export function RecentAchievements() {
+export function RecentAchievements(props) {
   const [achievements, setAchievements] = useState([])
-
-  const user = getUser()
 
   const [filterText, setFilterText] = useState('')
 
@@ -64,13 +61,13 @@ export function RecentAchievements() {
 
   useEffect(() => {
     function loadAchievements() {
-      const url = `https://xapi.us/v2/${user.xboxProfileUserId}/activity`
+      const url = `https://xapi.us/v2/${props.chosenAccount.xboxProfileUserId}/activity`
 
       fetch(url, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
-          'X-AUTH': user.apiKey,
+          'X-AUTH': props.chosenAccount.apiKey,
         },
       })
         .then(response => response.json())
@@ -80,7 +77,7 @@ export function RecentAchievements() {
         })
     }
     loadAchievements()
-  }, [user.apiKey, user.xboxProfileUserId])
+  }, [props.chosenAccount.xboxProfileUserId, props.chosenAccount.apiKey])
 
   return (
     <section className="achievements-page">
@@ -116,27 +113,31 @@ export function RecentAchievements() {
           </div>
         </div>
       )}
-      <section className="achievement-cards">
-        {achievements
-          .filter(activity => activity.activityItemType === 'Achievement')
-          .filter(achievement => achievement.contentTitle.includes(filterText))
-          .map(achievement => (
-            <SingleRecentAchievement
-              key={achievement.achievementId}
-              GamerTag={achievement.gamertag}
-              ShortDescription={achievement.shortDescription}
-              AchievementIcon={achievement.achievementIcon}
-              AchievementName={achievement.achievementName}
-              AchievementDescriptionOfActivity={
-                achievement.achievementDescription
-              }
-              AchievementContentTitle={achievement.contentTitle}
-              UserImg={achievement.userImageUri}
-              GamerScore={achievement.gamerscore}
-              Date={achievement.date}
-            />
-          ))}
-      </section>
+      {loading === true && (
+        <section className="achievement-cards">
+          {achievements
+            .filter(activity => activity.activityItemType === 'Achievement')
+            .filter(achievement =>
+              achievement.contentTitle.includes(filterText)
+            )
+            .map(achievement => (
+              <SingleRecentAchievement
+                key={achievement.achievementId}
+                GamerTag={achievement.gamertag}
+                ShortDescription={achievement.shortDescription}
+                AchievementIcon={achievement.achievementIcon}
+                AchievementName={achievement.achievementName}
+                AchievementDescriptionOfActivity={
+                  achievement.achievementDescription
+                }
+                AchievementContentTitle={achievement.contentTitle}
+                UserImg={achievement.userImageUri}
+                GamerScore={achievement.gamerscore}
+                Date={achievement.date}
+              />
+            ))}
+        </section>
+      )}
     </section>
   )
 }
