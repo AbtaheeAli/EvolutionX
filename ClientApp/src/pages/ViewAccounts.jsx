@@ -18,34 +18,37 @@ export function ViewAccounts() {
   const [showXboxId, setShowXboxId] = useState(false)
 
   const [userDetails, setUserDetails] = useState({})
+  const [showEmail, setShowEmail] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const response = await fetch(`/api/Users/${user.id}`)
-  //     const apiData = await response.json()
+  useEffect(() => {
+    // function loadAccountInfo() {
+    //   const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
 
-  //     setUpdatingUser(apiData)
-  //   }
-  //   fetchUser()
-  // }, [user.id])
+    //   fetch(url, {
+    //     method: 'GET',
+    //     headers: {
+    //       'X-AUTH': user.apiKey,
+    //     },
+    //   })
+    //     .then(response => response.json())
+    //     .then(account => {
+    //       setXboxAccount(account)
+    //       setLoading(true)
+    //     })
+    // }
 
-  // const handleFormSubmit = event => {
-  //   event.preventDefault()
+    const fetchUser = async () => {
+      const response = await fetch(`/api/Users/${user.id}`)
+      const apiData = await response.json()
+      setLoading(true)
 
-  //   fetch(`/api/Users/${user.id}`, {
-  //     method: 'PUT',
-  //     headers: { 'content-type': 'application/json' },
-  //     body: JSON.stringify(updatingUser),
-  //   })
-  //     .then(response => response.json())
-  //     .then(apiResponse => {
-  //       if (apiResponse.status === 400) {
-  //         setErrorMessage(Object.values(apiResponse.errors).join(' '))
-  //       } else {
-  //         history.push('/settings')
-  //       }
-  //     })
-  // }
+      setUserDetails(apiData)
+    }
+
+    // loadAccountInfo()
+    fetchUser()
+  }, [user.apiKey, user.xboxProfileUserId, user.id])
 
   return (
     <div className="update-container signup-card-container">
@@ -60,13 +63,15 @@ export function ViewAccounts() {
           />
           <h3 className="user-settings-username">{userDetails.userName}</h3>
         </li>
-        <div className="card-body">
-          {errorMessage && (
-            <div className="alert alert-danger" role="alert">
-              {errorMessage}
-            </div>
-          )}
-        </div>
+        <li>
+          <button
+            className="btn settings-button"
+            onClick={() => setShowEmail(!showEmail)}
+          >
+            Email
+          </button>
+          {showEmail && <div>{userDetails.email}</div>}
+        </li>
         <li className="key">
           <button
             className="btn settings-button"
