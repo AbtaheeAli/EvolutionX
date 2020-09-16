@@ -52,6 +52,9 @@ export function ViewAccounts() {
 
   return (
     <div className="update-container signup-card-container">
+      {/* <Link className="btn settings-button" to={`/add-account`}>
+                  Add an Account
+                </Link> */}
       <section className="update-card signup-card">
         <li className="key">
           <img

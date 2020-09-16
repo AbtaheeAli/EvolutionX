@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 export function UserSettings() {
   const user = getUser()
 
-  const [xboxAccount, setXboxAccount] = useState({})
-
   const history = useHistory()
 
   const [userDetails, setUserDetails] = useState({})
@@ -15,22 +13,6 @@ export function UserSettings() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // function loadAccountInfo() {
-    //   const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
-
-    //   fetch(url, {
-    //     method: 'GET',
-    //     headers: {
-    //       'X-AUTH': user.apiKey,
-    //     },
-    //   })
-    //     .then(response => response.json())
-    //     .then(account => {
-    //       setXboxAccount(account)
-    //       setLoading(true)
-    //     })
-    // }
-
     const fetchUser = async () => {
       const response = await fetch(`/api/Users/${user.id}`)
       const apiData = await response.json()
@@ -39,9 +21,8 @@ export function UserSettings() {
       setUserDetails(apiData)
     }
 
-    // loadAccountInfo()
     fetchUser()
-  }, [user.apiKey, user.xboxProfileUserId, user.id])
+  }, [user.id])
 
   const handleDelete = event => {
     event.preventDefault()
@@ -72,7 +53,7 @@ export function UserSettings() {
               <li>
                 <img
                   className="gamer-card-img"
-                  src={xboxAccount.displayPicRaw}
+                  src=""
                   width="180rem"
                   height="180rem"
                   alt="UserXboxLogo"
@@ -84,30 +65,6 @@ export function UserSettings() {
               <li>
                 <div>{userDetails.email}</div>
               </li>
-              {/* <li className="key">
-              <button
-                className="btn settings-button"
-                onClick={() => setShowApiKey(!showApiKey)}
-              >
-                API Key
-              </button>
-              {showApiKey && <div>{userDetails.apiKey}</div>}
-            </li>
-            <li>
-              <button
-                className="btn settings-button"
-                onClick={() => setShowXboxId(!showXboxId)}
-              >
-                Xbox ID
-              </button>
-              {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
-               <Link className="btn settings-button" to={`/add-account`}>
-                  Add an Account
-                </Link>
-                <Link className="btn settings-button" to={`/view-accounts`}>
-                  View Accounts
-                </Link>
-            </li> */}
             </ul>
             <div className="buttons">
               <Link
