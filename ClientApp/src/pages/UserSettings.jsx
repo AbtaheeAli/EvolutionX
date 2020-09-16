@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { getUser, authHeader } from '../auth'
+import { getUser, authHeader, getAccounts } from '../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
 export function UserSettings() {
   const user = getUser()
+
+  const accounts = getAccounts()
 
   const history = useHistory()
 
@@ -65,6 +67,16 @@ export function UserSettings() {
               <li>
                 <div>{userDetails.email}</div>
               </li>
+              <li>
+                <div>{accounts.length} Accounts linked to Profile</div>
+              </li>
+              <li>
+                <div className="buttons">
+                  <Link className="btn settings-button" to={`/view-accounts`}>
+                    View Accounts
+                  </Link>
+                </div>
+              </li>
             </ul>
             <div className="buttons">
               <Link
@@ -76,11 +88,6 @@ export function UserSettings() {
               <button className="btn settings-button" onClick={handleDelete}>
                 Delete Profile
               </button>
-            </div>
-            <div className="buttons">
-              <Link className="btn settings-button" to={`/view-accounts`}>
-                View Accounts
-              </Link>
             </div>
           </div>
         </section>
