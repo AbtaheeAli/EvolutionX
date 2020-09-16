@@ -100,12 +100,6 @@ export function UpdateAccount() {
               />
             </div>
             <div className="signup-btn-container">
-              <Link className="btn settings-button" to={`/view-accounts`}>
-                View All Accounts
-              </Link>
-              <Link className="btn settings-button" to={`/add-account`}>
-                Add an Account
-              </Link>
               <button type="submit" className="btn signup-btn">
                 Update
               </button>
