@@ -14,12 +14,6 @@ export function UserSettings() {
 
   const [loading, setLoading] = useState(false)
 
-  const [showApiKey, setShowApiKey] = useState(false)
-
-  const [showXboxId, setShowXboxId] = useState(false)
-
-  const [showEmail, setShowEmail] = useState(false)
-
   useEffect(() => {
     // function loadAccountInfo() {
     //   const url = `https://xapi.us/v2/${user.xboxProfileUserId}/new-profile`
@@ -40,6 +34,7 @@ export function UserSettings() {
     const fetchUser = async () => {
       const response = await fetch(`/api/Users/${user.id}`)
       const apiData = await response.json()
+      setLoading(true)
 
       setUserDetails(apiData)
     }
@@ -63,43 +58,33 @@ export function UserSettings() {
 
   return (
     <section className="user-page">
-      {/* {loading === false && (
+      {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
             <span className="sr-only">Loading...</span>
           </div>
         </div>
-      )} */}
-      {/* {loading === true && ( */}
-      <section className="user-container">
-        <div className="account-settings-card">
-          <ul className="settings-list">
-            <li>
-              <img
-                className="gamer-card-img"
-                src={xboxAccount.displayPicRaw}
-                width="180rem"
-                height="180rem"
-                alt="UserXboxLogo"
-              />
-              <h3 className="user-settings-username">{userDetails.userName}</h3>
-            </li>
-            <li>
-              <button
-                className="btn settings-button"
-                onClick={() => setShowEmail(!showEmail)}
-              />
-              <Link className="btn settings-button" to={`/add-account`}>
-                Add an Account
-              </Link>
-              <Link className="btn settings-button" to={`/view-accounts`}>
-                View Accounts
-              </Link>
-              {/* <button className="btn settings-button" onClick={handleDelete}>
-                Delete Account
-              </button> */}
-            </li>
-            {/* <li className="key">
+      )}
+      {loading === true && (
+        <section className="user-container">
+          <div className="account-settings-card">
+            <ul className="settings-list">
+              <li>
+                <img
+                  className="gamer-card-img"
+                  src={xboxAccount.displayPicRaw}
+                  width="180rem"
+                  height="180rem"
+                  alt="UserXboxLogo"
+                />
+                <h3 className="user-settings-username">
+                  {userDetails.userName}
+                </h3>
+              </li>
+              <li>
+                <div>{userDetails.email}</div>
+              </li>
+              {/* <li className="key">
               <button
                 className="btn settings-button"
                 onClick={() => setShowApiKey(!showApiKey)}
@@ -116,22 +101,33 @@ export function UserSettings() {
                 Xbox ID
               </button>
               {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
+               <Link className="btn settings-button" to={`/add-account`}>
+                  Add an Account
+                </Link>
+                <Link className="btn settings-button" to={`/view-accounts`}>
+                  View Accounts
+                </Link>
             </li> */}
-          </ul>
-          <div className="buttons">
-            <Link
-              className="btn settings-button"
-              to={`/settings/${user.id}/edit`}
-            >
-              Update Profile
-            </Link>
-            <button className="btn settings-button" onClick={handleDelete}>
-              Delete Profile
-            </button>
+            </ul>
+            <div className="buttons">
+              <Link
+                className="btn settings-button"
+                to={`/settings/${user.id}/edit`}
+              >
+                Update Profile
+              </Link>
+              <button className="btn settings-button" onClick={handleDelete}>
+                Delete Profile
+              </button>
+            </div>
+            <div className="buttons">
+              <Link className="btn settings-button" to={`/view-accounts`}>
+                View Accounts
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-      {/* )} */}
+        </section>
+      )}
     </section>
   )
 }
