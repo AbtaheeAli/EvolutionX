@@ -51,49 +51,52 @@ export function ViewAccounts() {
   }, [user.apiKey, user.xboxProfileUserId, user.id])
 
   return (
-    <div className="update-container signup-card-container">
-      {/* <Link className="btn settings-button" to={`/add-account`}>
-                  Add an Account
-                </Link> */}
-      <section className="update-card signup-card">
-        <li className="key">
-          <img
-            className="gamer-card-img"
-            src={xboxAccount.displayPicRaw}
-            width="180rem"
-            height="180rem"
-            alt="UserXboxLogo"
-          />
-          <h3 className="user-settings-username">{userDetails.userName}</h3>
-        </li>
-        <li>
-          <button
-            className="btn settings-button"
-            onClick={() => setShowEmail(!showEmail)}
-          >
-            Email
-          </button>
-          {showEmail && <div>{userDetails.email}</div>}
-        </li>
-        <li className="key">
-          <button
-            className="btn settings-button"
-            onClick={() => setShowApiKey(!showApiKey)}
-          >
-            API Key
-          </button>
-          {showApiKey && <div>{userDetails.apiKey}</div>}
-        </li>
-        <li className="key">
-          <button
-            className="btn settings-button"
-            onClick={() => setShowXboxId(!showXboxId)}
-          >
-            Xbox ID
-          </button>
-          {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
-        </li>
-      </section>
-    </div>
+    <section className="user-page">
+      {loading === false && (
+        <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
+          <div className="spinner-border text-danger" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      )}
+      {loading === true && (
+        <section className="user-container">
+          <div className="account-settings-card">
+            <ul className="settings-list">
+              <li>
+                <img
+                  className="gamer-card-img"
+                  src=""
+                  width="180rem"
+                  height="180rem"
+                  alt="UserXboxLogo"
+                />
+                <h3 className="user-settings-username">
+                  {userDetails.userName}
+                </h3>
+              </li>
+              <li>
+                <div>{userDetails.email}</div>
+              </li>
+              <li>
+                <div className="buttons">
+                  <Link className="btn settings-button" to={`/view-accounts`}>
+                    View Accounts
+                  </Link>
+                </div>
+              </li>
+            </ul>
+            <div className="buttons">
+              <Link
+                className="btn settings-button"
+                to={`/settings/${user.id}/edit`}
+              >
+                Update Profile
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+    </section>
   )
 }
