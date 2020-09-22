@@ -66,7 +66,7 @@ export function ViewAccounts(props) {
           <div className="account-settings-card">
             <ul className="settings-list">
               <li>
-                <li>Abtahee's Evolution X Account</li>
+                <li className="account-name">Abtahee's Evolution X Account</li>
                 <h3 className="user-settings-username">
                   {userDetails.userName}
                 </h3>
