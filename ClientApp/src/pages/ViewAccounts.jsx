@@ -4,7 +4,9 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
-export function ViewAccounts() {
+export function ViewAccounts(props) {
+  const [account, setAccount] = useState({})
+
   const user = getUser()
 
   const [errorMessage, setErrorMessage] = useState()
@@ -64,13 +66,7 @@ export function ViewAccounts() {
           <div className="account-settings-card">
             <ul className="settings-list">
               <li>
-                <img
-                  className="gamer-card-img"
-                  src=""
-                  width="180rem"
-                  height="180rem"
-                  alt="UserXboxLogo"
-                />
+                <li>Abtahee's Evolution X Account</li>
                 <h3 className="user-settings-username">
                   {userDetails.userName}
                 </h3>
@@ -79,21 +75,36 @@ export function ViewAccounts() {
                 <div>{userDetails.email}</div>
               </li>
               <li>
-                <div className="buttons">
-                  <Link className="btn settings-button" to={`/view-accounts`}>
-                    View Accounts
-                  </Link>
-                </div>
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowEmail(!showEmail)}
+                >
+                  Email
+                </button>
+                {showEmail && <div>{userDetails.email}</div>}
+              </li>
+              <li className="key">
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowApiKey(!showApiKey)}
+                >
+                  API Key
+                </button>
+                {showApiKey && <div>{account.apiKey}</div>}
+              </li>
+              <li>
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowXboxId(!showXboxId)}
+                >
+                  Xbox ID
+                </button>
+                {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
             </ul>
-            <div className="buttons">
-              <Link
-                className="btn settings-button"
-                to={`/settings/${user.id}/edit`}
-              >
-                Update Profile
-              </Link>
-            </div>
+          </div>
+          <div>
+            <h3>{account.realName}</h3>
           </div>
         </section>
       )}
