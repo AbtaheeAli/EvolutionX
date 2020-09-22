@@ -4,7 +4,9 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
-export function ViewAccounts() {
+export function ViewAccounts(props) {
+  const [account, setAccount] = useState({})
+
   const user = getUser()
 
   const [errorMessage, setErrorMessage] = useState()
@@ -65,13 +67,6 @@ export function ViewAccounts() {
             <ul className="settings-list">
               <li>
                 <li>Abtahee's Evolution X Account</li>
-                <img
-                  className="gamer-card-img"
-                  src=""
-                  width="180rem"
-                  height="180rem"
-                  alt="UserXboxLogo"
-                />
                 <h3 className="user-settings-username">
                   {userDetails.userName}
                 </h3>
@@ -95,7 +90,7 @@ export function ViewAccounts() {
                 >
                   API Key
                 </button>
-                {showApiKey && <div>{userDetails.apiKey}</div>}
+                {showApiKey && <div>{account.apiKey}</div>}
               </li>
               <li>
                 <button
@@ -107,6 +102,9 @@ export function ViewAccounts() {
                 {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
             </ul>
+          </div>
+          <div>
+            <h3>{account.realName}</h3>
           </div>
         </section>
       )}
