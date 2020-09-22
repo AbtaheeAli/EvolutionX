@@ -79,21 +79,33 @@ export function ViewAccounts() {
                 <div>{userDetails.email}</div>
               </li>
               <li>
-                <div className="buttons">
-                  <Link className="btn settings-button" to={`/view-accounts`}>
-                    View Accounts
-                  </Link>
-                </div>
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowEmail(!showEmail)}
+                >
+                  Email
+                </button>
+                {showEmail && <div>{userDetails.email}</div>}
+              </li>
+              <li className="key">
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowApiKey(!showApiKey)}
+                >
+                  API Key
+                </button>
+                {showApiKey && <div>{userDetails.apiKey}</div>}
+              </li>
+              <li>
+                <button
+                  className="btn settings-button"
+                  onClick={() => setShowXboxId(!showXboxId)}
+                >
+                  Xbox ID
+                </button>
+                {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
               </li>
             </ul>
-            <div className="buttons">
-              <Link
-                className="btn settings-button"
-                to={`/settings/${user.id}/edit`}
-              >
-                Update Profile
-              </Link>
-            </div>
           </div>
         </section>
       )}
