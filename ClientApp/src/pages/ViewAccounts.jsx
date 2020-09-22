@@ -64,6 +64,7 @@ export function ViewAccounts() {
           <div className="account-settings-card">
             <ul className="settings-list">
               <li>
+                <li>Abtahee's Evolution X Account</li>
                 <img
                   className="gamer-card-img"
                   src=""
