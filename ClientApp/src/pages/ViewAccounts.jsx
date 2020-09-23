@@ -1,26 +1,67 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../auth'
+import { getUser, getAccounts } from '../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import logo from '../images/Login Image.png'
 
-export function ViewAccounts(props) {
-  const [account, setAccount] = useState({})
-
-  const user = getUser()
-
-  const [errorMessage, setErrorMessage] = useState()
-
-  const history = useHistory()
-
-  const [xboxAccount, setXboxAccount] = useState({})
-
+export function UserAccount(props) {
   const [showApiKey, setShowApiKey] = useState(false)
 
   const [showXboxId, setShowXboxId] = useState(false)
 
-  const [userDetails, setUserDetails] = useState({})
   const [showEmail, setShowEmail] = useState(false)
+
+  return (
+    <div className="account-settings-card">
+      <ul className="settings-list">
+        <li>
+          <h3 className="user-settings-username">{props.accountName}</h3>
+        </li>
+        <li>
+          <div>{props.email}</div>
+        </li>
+        <li>
+          <button
+            className="btn settings-button"
+            onClick={() => setShowEmail(!showEmail)}
+          >
+            Email
+          </button>
+          {showEmail && <div>{props.email}</div>}
+        </li>
+        <li className="key">
+          <button
+            className="btn settings-button"
+            onClick={() => setShowApiKey(!showApiKey)}
+          >
+            API Key
+          </button>
+          {showApiKey && <div>{props.apiKey}</div>}
+        </li>
+        <li>
+          <button
+            className="btn settings-button"
+            onClick={() => setShowXboxId(!showXboxId)}
+          >
+            Xbox ID
+          </button>
+          {showXboxId && <div>{props.xboxProfileUserId}</div>}
+        </li>
+      </ul>
+    </div>
+  )
+}
+
+export function ViewAccounts() {
+  const [account, setAccount] = useState({})
+  const user = getUser()
+
+  const accounts = getAccounts()
+
+  const [errorMessage, setErrorMessage] = useState()
+
+  const [userDetails, setUserDetails] = useState({})
+
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -63,49 +104,14 @@ export function ViewAccounts(props) {
       )}
       {loading === true && (
         <section className="user-container">
-          <div className="account-settings-card">
-            <ul className="settings-list">
-              <li>
-                <li className="account-name">Abtahee's Evolution X Account</li>
-                <h3 className="user-settings-username">
-                  {userDetails.userName}
-                </h3>
-              </li>
-              <li>
-                <div>{userDetails.email}</div>
-              </li>
-              <li>
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowEmail(!showEmail)}
-                >
-                  Email
-                </button>
-                {showEmail && <div>{userDetails.email}</div>}
-              </li>
-              <li className="key">
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowApiKey(!showApiKey)}
-                >
-                  API Key
-                </button>
-                {showApiKey && <div>{account.apiKey}</div>}
-              </li>
-              <li>
-                <button
-                  className="btn settings-button"
-                  onClick={() => setShowXboxId(!showXboxId)}
-                >
-                  Xbox ID
-                </button>
-                {showXboxId && <div>{userDetails.xboxProfileUserId}</div>}
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3>{account.realName}</h3>
-          </div>
+          {accounts.map(account => (
+            <UserAccount
+              key={account.Id}
+              accountName={account.accountName}
+              apiKey={account.apiKey}
+              xboxProfileUserId={account.xboxProfileUserId}
+            />
+          ))}
         </section>
       )}
     </section>
