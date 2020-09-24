@@ -39,6 +39,19 @@ namespace EvolutionX.Controllers
             return account;
         }
 
+        [HttpGet("userId")]
+        public async Task<ActionResult<Account>> GetUserAccounts(int userId)
+        {
+            var accounts = await _context.Accounts.FindAsync(userId);
+
+            if (accounts == null)
+            {
+                return NotFound();
+            }
+
+            return accounts;
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAccount(int id, Account account)
         {
