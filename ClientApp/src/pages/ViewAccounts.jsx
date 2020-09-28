@@ -17,9 +17,7 @@ export function UserAccount(props) {
         <li>
           <h3 className="user-settings-username">{props.accountName}</h3>
         </li>
-        <li>
-          <div>{props.email}</div>
-        </li>
+
         <li>
           <button
             className="btn settings-button"
@@ -27,7 +25,7 @@ export function UserAccount(props) {
           >
             Email
           </button>
-          {showEmail && <div>{props.email}</div>}
+          {showEmail && <div>{props.accountEmail}</div>}
         </li>
         <li className="key">
           <button
@@ -53,14 +51,12 @@ export function UserAccount(props) {
 }
 
 export function ViewAccounts() {
-  const [account, setAccount] = useState({})
   const user = getUser()
-
-  const accounts = getAccounts()
 
   const [errorMessage, setErrorMessage] = useState()
 
-  const [userDetails, setUserDetails] = useState({})
+  const [accounts, setAccounts] = useState()
+  console.log(accounts)
 
   const [loading, setLoading] = useState(false)
 
@@ -82,16 +78,15 @@ export function ViewAccounts() {
     // }
 
     const fetchUser = async () => {
-      const response = await fetch(`/api/Users/${user.id}`)
+      const response = await fetch(`/api/Accounts/UserId/${user.id}`)
       const apiData = await response.json()
+      setAccounts(apiData)
       setLoading(true)
-
-      setUserDetails(apiData)
     }
 
     // loadAccountInfo()
     fetchUser()
-  }, [user.apiKey, user.xboxProfileUserId, user.id])
+  }, [user.id])
 
   return (
     <section className="user-page">
@@ -106,8 +101,9 @@ export function ViewAccounts() {
         <section className="user-container">
           {accounts.map(account => (
             <UserAccount
-              key={account.Id}
+              key={account.id}
               accountName={account.accountName}
+              accountEmail={account.accountEmail}
               apiKey={account.apiKey}
               xboxProfileUserId={account.xboxProfileUserId}
             />
