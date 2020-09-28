@@ -93,7 +93,7 @@ export function UserAccount(props) {
             />
           </div>
           <h2 className="gamer-card-gamertag">{xboxAccount.gamertag}</h2>
-          <div className="gamer-card-text">
+          <div className="gamer-card-text gamer-info">
             <h3 className="user-settings-username accountUsername">
               {xboxAccount.realName}
             </h3>
