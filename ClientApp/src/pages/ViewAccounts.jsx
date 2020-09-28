@@ -12,10 +12,12 @@ export function UserAccount(props) {
   const [showEmail, setShowEmail] = useState(false)
 
   return (
-    <div className="account-settings-card">
+    <div className="account-settings-card viewAccount">
       <ul className="settings-list">
         <li>
-          <h3 className="user-settings-username">{props.accountName}</h3>
+          <h3 className="user-settings-username accountUsername">
+            {props.accountName}
+          </h3>
         </li>
 
         <li>

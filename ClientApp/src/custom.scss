@@ -41,6 +41,18 @@ body {
   width: 25rem;
 }
 
+//viewAccounts starts
+
+.viewAccount {
+  margin: 1rem;
+}
+
+.accountUsername {
+  margin-top: 1rem;
+}
+
+// view ends
+
 .buttons {
   display: flex;
   justify-content: space-evenly;
@@ -100,6 +112,7 @@ body {
     padding-top: 5px;
     width: 90px;
   }
+
   .sidenav .navLink {
     font-size: 12px;
   }
@@ -395,14 +408,6 @@ body {
   }
 
   //x1 game ends
-
-  //viewAccounts starts
-
-  .account-name {
-    margin: 1rem;
-  }
-
-  // view ends
 
   //about me starts
 
