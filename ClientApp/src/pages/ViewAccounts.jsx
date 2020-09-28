@@ -51,14 +51,12 @@ export function UserAccount(props) {
 }
 
 export function ViewAccounts() {
-  const [account, setAccount] = useState({})
   const user = getUser()
-
-  // const accounts = getAccounts()
 
   const [errorMessage, setErrorMessage] = useState()
 
   const [accounts, setAccounts] = useState()
+  console.log(accounts)
 
   const [loading, setLoading] = useState(false)
 
@@ -80,18 +78,15 @@ export function ViewAccounts() {
     // }
 
     const fetchUser = async () => {
-      const response = await fetch(`/api/Accounts/${user.id}`)
+      const response = await fetch(`/api/Accounts/UserId/${user.id}`)
       const apiData = await response.json()
-      setLoading(true)
-
       setAccounts(apiData)
+      setLoading(true)
     }
 
     // loadAccountInfo()
     fetchUser()
-  }, [user.apiKey, user.xboxProfileUserId, user.id])
-
-  console.log(accounts)
+  }, [user.id])
 
   return (
     <section className="user-page">
@@ -106,7 +101,7 @@ export function ViewAccounts() {
         <section className="user-container">
           {accounts.map(account => (
             <UserAccount
-              key={account.Id}
+              key={account.id}
               accountName={account.accountName}
               accountEmail={account.accountEmail}
               apiKey={account.apiKey}

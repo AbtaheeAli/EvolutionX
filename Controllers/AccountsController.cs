@@ -39,6 +39,13 @@ namespace EvolutionX.Controllers
             return account;
         }
 
+        [HttpGet("userId/{userId}")]
+        public async Task<ActionResult<IEnumerable<Account>>> GetAccountsByUserId(int userId)
+        {
+            return await _context.Accounts.Where(account => account.UserId == userId).ToListAsync();
+
+        }
+
 
 
         [HttpPut("{id}")]
