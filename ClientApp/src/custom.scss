@@ -47,13 +47,57 @@ body {
   margin: 1rem;
 }
 
-.accountUsername {
-  margin-top: 1rem;
-}
-
 .gamer-info {
   padding: 1rem;
 }
+
+.account-settings-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  height: 3rem;
+}
+
+.account-settings-dropbtn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #111;
+  border: none;
+  cursor: pointer;
+}
+
+.account-settings-dropdown {
+  text-align: right;
+}
+
+.account-settings-dropdown-content {
+  display: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.account-settings-dropdown-content button {
+  color: black;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  text-decoration: none;
+  border: none;
+  border-bottom: 0.1rem solid rgb(233, 230, 230);
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.account-settings-dropdown-content button:hover {
+  color: rgb(198, 13, 13);
+  background-color: rgb(255, 255, 255);
+}
+
+.account-settings-dropdown:hover .account-settings-dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
 // view ends
 
 .buttons {

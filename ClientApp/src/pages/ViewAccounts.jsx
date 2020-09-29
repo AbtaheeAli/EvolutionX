@@ -12,7 +12,6 @@ export function UserAccount(props) {
   const [showEmail, setShowEmail] = useState(false)
 
   const [xboxAccount, setXboxAccount] = useState()
-  console.log(xboxAccount)
 
   const [loading, setLoading] = useState(false)
 
@@ -45,13 +44,21 @@ export function UserAccount(props) {
           </div>
         </div>
       )}
+      <div className="account-settings-card-header">
+        <h3>{props.accountName}</h3>
 
+        <div className="account-settings-dropdown">
+          <img
+            className="account-settings-dropbtn"
+            src="https://img.icons8.com/ios-filled/24/000000/settings.png"
+          />
+          <div className="account-settings-dropdown-content">
+            <button type="account-settings-button">Update</button>
+            <button type="account-settings-button">Delete</button>
+          </div>
+        </div>
+      </div>
       <ul className="settings-list">
-        <li>
-          <h3 className="user-settings-username accountUsername">
-            {props.accountName}
-          </h3>
-        </li>
         <li>
           <button
             className="btn settings-button"
@@ -61,7 +68,7 @@ export function UserAccount(props) {
           </button>
           {showEmail && <div>{props.accountEmail}</div>}
         </li>
-        <li className="key">
+        <li>
           <button
             className="btn settings-button"
             onClick={() => setShowApiKey(!showApiKey)}
@@ -131,9 +138,17 @@ export function ViewAccounts() {
 
     fetchUser()
   }, [user.id])
+  console.log(user)
 
   return (
     <section className="user-page">
+      <h3>{user.userName}'s Accounts</h3>
+      <button
+        className="btn settings-button"
+        // onClick={() => setShowEmail(!showEmail)}
+      >
+        Add Account
+      </button>
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
