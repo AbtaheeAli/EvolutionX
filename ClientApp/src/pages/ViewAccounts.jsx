@@ -58,7 +58,7 @@ export function UserAccount(props) {
           </div>
         </div>
       </div>
-      <ul className="settings-list">
+      <ul className="account-settings-list">
         <li>
           <button
             className="btn settings-button"
