@@ -64,6 +64,10 @@ body {
   align-items: center;
 }
 
+.account-settings-list {
+  padding-inline-start: 15px;
+}
+
 .account-settings-dropbtn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -116,7 +120,7 @@ body {
 }
 
 .account-settings-data {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 // view ends

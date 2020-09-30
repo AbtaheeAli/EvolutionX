@@ -107,11 +107,7 @@ export function UserAccount(props) {
             <ul className="account-settings-list">
               <li>
                 {!showEmail && <div>____________________</div>}
-                {showEmail && (
-                  <div className="account-settings-data">
-                    {props.accountEmail}
-                  </div>
-                )}
+                {showEmail && <div>{props.accountEmail}</div>}
               </li>
               <li>
                 {!showApiKey && <div>____________________</div>}
@@ -121,11 +117,7 @@ export function UserAccount(props) {
               </li>
               <li>
                 {!showXboxId && <div>____________________</div>}
-                {showXboxId && (
-                  <div className="account-settings-data">
-                    {props.xboxProfileUserId}
-                  </div>
-                )}
+                {showXboxId && <div>{props.xboxProfileUserId}</div>}
               </li>
             </ul>
           </section>
