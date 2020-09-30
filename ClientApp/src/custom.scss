@@ -123,6 +123,25 @@ body {
   font-size: 12px;
 }
 
+.account-settings-xbox {
+  border-top: 0.1rem solid rgb(233, 230, 230);
+  padding: 1rem;
+}
+
+.account-setting-xbox-basic-info {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1rem;
+}
+
+.account-setting-xbox-img {
+  border-radius: 50%;
+}
+
+.account-setting-xbox-gamer-info {
+  padding-left: 1rem;
+}
+
 // view ends
 
 .buttons {
