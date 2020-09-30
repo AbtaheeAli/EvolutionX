@@ -58,6 +58,12 @@ body {
   border-bottom: 0.1rem solid rgb(233, 230, 230);
 }
 
+.account-settings-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .account-settings-dropbtn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -100,20 +106,6 @@ body {
   flex-direction: column;
 }
 
-.account-settings-list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding-inline-start: 0;
-}
-.account-settings-list li {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-
 .account-settings-list button {
   margin-top: 0.5rem;
 }
@@ -121,6 +113,10 @@ body {
 .account-settings-list li div {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+}
+
+.account-settings-data {
+  font-size: 10px;
 }
 
 // view ends
