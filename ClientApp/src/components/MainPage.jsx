@@ -14,6 +14,7 @@ import { UpdateUser } from '../pages/UpdateUser'
 import { AddAccount } from '../pages/AddAccount'
 import { ViewAccounts } from '../pages/ViewAccounts'
 import { getUser, getFirstAccount } from '../auth'
+import { UpdateAccount } from '../pages/UpdateAccount'
 
 export function MainPage() {
   const user = getUser()
@@ -66,8 +67,8 @@ export function MainPage() {
           <Route exact path={`/add-account`}>
             <AddAccount />
           </Route>
-          <Route exact path={`/settings/user/account/edit/:id/`}>
-            <UpdateUser />
+          <Route exact path={`/settings/user/account/edit/:accountId/`}>
+            <UpdateAccount />
           </Route>
         </Switch>
       </body>
