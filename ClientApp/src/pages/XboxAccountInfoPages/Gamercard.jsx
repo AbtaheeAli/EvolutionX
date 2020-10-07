@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getUser, getAccounts } from '../auth'
+import { getUser, getAccounts } from '../../auth'
 import { set } from 'date-fns'
 
 export function Gamercard(props) {
