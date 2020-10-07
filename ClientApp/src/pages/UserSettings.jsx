@@ -72,7 +72,7 @@ export function UserSettings() {
               </li>
               <li>
                 <div className="buttons">
-                  <Link className="btn settings-button" to={`/view-accounts`}>
+                  <Link className="btn settings-button" to={`/accounts`}>
                     View Accounts
                   </Link>
                 </div>
