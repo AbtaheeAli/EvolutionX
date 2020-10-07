@@ -10,7 +10,7 @@ import { Messages } from '../pages/Messages'
 import { XboxOneGames } from '../pages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
-import { UpdateAccount } from '../pages/UpdateAccount'
+import { UpdateUser } from '../pages/UpdateUser'
 import { AddAccount } from '../pages/AddAccount'
 import { ViewAccounts } from '../pages/ViewAccounts'
 import { getUser, getFirstAccount } from '../auth'
@@ -58,7 +58,7 @@ export function MainPage() {
             <UserSettings />
           </Route>
           <Route exact path={`/settings/${user.id}/edit`}>
-            <UpdateAccount />
+            <UpdateUser />
           </Route>
           <Route exact path={`/view-accounts`}>
             <ViewAccounts />
