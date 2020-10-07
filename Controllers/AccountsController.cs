@@ -75,7 +75,7 @@ namespace EvolutionX.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(account);
         }
 
         [HttpPost]

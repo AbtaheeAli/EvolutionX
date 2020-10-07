@@ -12,6 +12,7 @@ export function UpdateAccount() {
     apiKey: '',
     xboxProfileUserId: '',
   })
+
   console.log(updatingAccount)
 
   const history = useHistory()
@@ -24,7 +25,6 @@ export function UpdateAccount() {
       const apiData = await response.json()
 
       setUpdatingAccount(apiData)
-      console.log(apiData)
     }
     fetchAccount()
   }, [accountId])
@@ -32,7 +32,6 @@ export function UpdateAccount() {
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
-    console.log(fieldName)
 
     const updatedAccount = { ...updatingAccount, [fieldName]: value }
 
@@ -41,7 +40,6 @@ export function UpdateAccount() {
 
   const handleFormSubmit = event => {
     event.preventDefault()
-
     fetch(`/api/Accounts/${accountId}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
