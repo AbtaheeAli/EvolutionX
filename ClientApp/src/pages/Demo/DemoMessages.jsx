@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
-import DemoMessagesData from '../../Data/MessageInbox.json'
+import DemoMessagesData from '../../StaticData/MessageInbox.json'
 
 const dateFormat = `MMMM do, yyyy`
 

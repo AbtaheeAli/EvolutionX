@@ -70,7 +70,14 @@ export function UserAccount(props) {
                 src="https://img.icons8.com/ios-filled/24/000000/settings.png"
               />
               <div className="account-settings-dropdown-content">
-                <button type="account-settings-button">Update</button>
+                <button type="account-settings-button">
+                  <Link
+                    className="btn settings-button"
+                    to={`/settings/user/account/edit/${props.id}`}
+                  >
+                    Update
+                  </Link>
+                </button>
                 <button type="account-settings-button" onClick={handleDelete}>
                   Delete
                 </button>

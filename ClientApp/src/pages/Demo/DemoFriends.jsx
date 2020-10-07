@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import DemoFriendsData from '../../Data/Friends.json'
+import DemoFriendsData from '../../StaticData/Friends.json'
 
 function SingleFriend(props) {
   return (

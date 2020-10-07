@@ -3,17 +3,18 @@ import { SideNav } from './SideNav'
 import { Header } from './Header'
 import { Route, Switch } from 'react-router-dom'
 import { Footer } from './Footer'
-import { Gamercard } from '../pages/Gamercard'
-import { Friends } from '../pages/Friends'
-import { RecentAchievements } from '../pages/RecentAchievements'
-import { Messages } from '../pages/Messages'
-import { XboxOneGames } from '../pages/XboxOneGames'
+import { Gamercard } from '../pages/XboxAccountInfoPages/Gamercard'
+import { Friends } from '../pages/XboxAccountInfoPages/Friends'
+import { RecentAchievements } from '../pages/XboxAccountInfoPages/RecentAchievements'
+import { Messages } from '../pages/XboxAccountInfoPages/Messages'
+import { XboxOneGames } from '../pages/XboxAccountInfoPages/XboxOneGames'
 import { About } from '../pages/About'
 import { UserSettings } from '../pages/UserSettings'
-import { UpdateAccount } from '../pages/UpdateAccount'
+import { UpdateUser } from '../pages/UpdateUser'
 import { AddAccount } from '../pages/AddAccount'
 import { ViewAccounts } from '../pages/ViewAccounts'
 import { getUser, getFirstAccount } from '../auth'
+import { UpdateAccount } from '../pages/UpdateAccount'
 
 export function MainPage() {
   const user = getUser()
@@ -57,14 +58,17 @@ export function MainPage() {
           <Route exact path="/settings">
             <UserSettings />
           </Route>
-          <Route exact path={`/settings/${user.id}/edit`}>
-            <UpdateAccount />
+          <Route exact path={`/settings/user/edit/${user.id}/`}>
+            <UpdateUser />
           </Route>
-          <Route exact path={`/view-accounts`}>
+          <Route exact path={`/accounts`}>
             <ViewAccounts />
           </Route>
           <Route exact path={`/add-account`}>
             <AddAccount />
+          </Route>
+          <Route exact path={`/settings/user/account/edit/:accountId/`}>
+            <UpdateAccount />
           </Route>
         </Switch>
       </body>

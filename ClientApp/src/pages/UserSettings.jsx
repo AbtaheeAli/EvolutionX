@@ -72,7 +72,7 @@ export function UserSettings() {
               </li>
               <li>
                 <div className="buttons">
-                  <Link className="btn settings-button" to={`/view-accounts`}>
+                  <Link className="btn settings-button" to={`/accounts`}>
                     View Accounts
                   </Link>
                 </div>
@@ -81,7 +81,7 @@ export function UserSettings() {
             <div className="buttons">
               <Link
                 className="btn settings-button"
-                to={`/settings/${user.id}/edit`}
+                to={`/settings/user/edit/${user.id}`}
               >
                 Update Profile
               </Link>
