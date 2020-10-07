@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import format from 'date-fns/format'
-import DemoRecentAchievementsData from '../../Data/RecentAchievements.json'
+import DemoRecentAchievementsData from '../../StaticData/RecentAchievements.json'
 import DemoImage from '../../images/Demo Pic.jpg'
 
 const dateFormat = `MMMM do, yyyy`
