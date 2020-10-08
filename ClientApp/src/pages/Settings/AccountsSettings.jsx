@@ -182,12 +182,11 @@ export function ViewAccounts() {
   return (
     <section className="user-page">
       <h3>{user.userName}'s Accounts</h3>
-      <button
-        className="btn settings-button"
-        // onClick={() => setShowEmail(!showEmail)}
-      >
+
+      <Link className="btn settings-button" to={`/settings/add-account`}>
         Add Account
-      </button>
+      </Link>
+
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">
