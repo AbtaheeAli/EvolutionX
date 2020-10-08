@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { getUser, getAccounts, authHeader } from '../auth'
+import { getUser, getAccounts, authHeader } from '../../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
-import logo from '../images/Login Image.png'
+import logo from '../../images/Login Image.png'
 
 export function UserAccount(props) {
   const [showApiKey, setShowApiKey] = useState(false)
@@ -45,7 +45,7 @@ export function UserAccount(props) {
       headers: { ...authHeader() },
     }).then(response => {
       if (response.status === 204) {
-        history.push('/view-accounts')
+        history.push('/settings/accounts')
       }
     })
   }
@@ -182,12 +182,14 @@ export function ViewAccounts() {
   return (
     <section className="user-page">
       <h3>{user.userName}'s Accounts</h3>
-      <button
+
+      <Link
         className="btn settings-button"
-        // onClick={() => setShowEmail(!showEmail)}
+        to={`/settings/add-account/${user.id}`}
       >
         Add Account
-      </button>
+      </Link>
+
       {loading === false && (
         <div className="spinner mt-5 pt-5 d-flex justify-content-center align-items-center">
           <div className="spinner-border text-danger" role="status">

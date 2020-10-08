@@ -1,56 +1,54 @@
 import React, { useState, useEffect } from 'react'
+import { getUser } from '../../auth'
 import { useHistory } from 'react-router'
-import { Link, useParams } from 'react-router-dom'
-import logo from '../images/Login Image.png'
+import { Link } from 'react-router-dom'
+import logo from '../../images/Login Image.png'
 
-export function UpdateAccount() {
+export function UpdateUser() {
+  const user = getUser()
+
   const [errorMessage, setErrorMessage] = useState()
 
-  const [updatingAccount, setUpdatingAccount] = useState({
-    accountName: '',
-    accountEmail: '',
-    apiKey: '',
-    xboxProfileUserId: '',
+  const [updatingUser, setUpdatingUser] = useState({
+    email: '',
+    userName: '',
   })
-
-  console.log(updatingAccount)
 
   const history = useHistory()
 
-  const { accountId } = useParams()
-
   useEffect(() => {
-    const fetchAccount = async () => {
-      const response = await fetch(`/api/Accounts/${accountId}`)
+    const fetchUser = async () => {
+      const response = await fetch(`/api/Users/${user.id}`)
       const apiData = await response.json()
 
-      setUpdatingAccount(apiData)
+      setUpdatingUser(apiData)
     }
-    fetchAccount()
-  }, [accountId])
+    fetchUser()
+  }, [user.id])
 
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
 
-    const updatedAccount = { ...updatingAccount, [fieldName]: value }
+    const updatedUser = { ...updatingUser, [fieldName]: value }
 
-    setUpdatingAccount(updatedAccount)
+    setUpdatingUser(updatedUser)
   }
 
   const handleFormSubmit = event => {
     event.preventDefault()
-    fetch(`/api/Accounts/${accountId}`, {
+
+    fetch(`/api/Users/${user.id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(updatingAccount),
+      body: JSON.stringify(updatingUser),
     })
       .then(response => response.json())
       .then(apiResponse => {
         if (apiResponse.status === 400) {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
-          history.push('/accounts')
+          history.push('/settings')
         }
       })
   }
@@ -80,8 +78,8 @@ export function UpdateAccount() {
               <input
                 type="text"
                 className="form-control"
-                id="accountName"
-                value={updatingAccount.accountName}
+                id="userName"
+                value={updatingUser.userName}
                 placeholder="User Name"
                 onChange={handleFieldChange}
               />
@@ -95,43 +93,15 @@ export function UpdateAccount() {
               <input
                 type="email"
                 className="form-control"
-                id="accountEmail"
-                value={updatingAccount.accountEmail}
+                id="email"
+                value={updatingUser.email}
                 placeholder="Email"
-                onChange={handleFieldChange}
-              />
-            </div>
-            <div className="update-form-group signup-form-group">
-              <img
-                alt="apiKey"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAAB3klEQVRIie2UP2gUQRSHvzd3HpjszCqIhRCRpA1YmOI8SCCV2gYrwU6E2AlqJSiCBhELwRQKthailYUGRRG59SotxD9VwOYgiITsbhSizrMwB3vjSu5Oy/vBwPKbN++bN/N2YKihNiWh8RyqtSiaMSJ1hV2IZKi+GR0ZebJ/ZWX9v4Cazh0HLovqWEnsqsLVjSy7Pgs/BgIpSOLcoqjOb7lCdanm3NxUu/21H5ABeBVF53uCAIgc+p7nd/qBAEgzjifE+/dALZhbBz4C48DOEuCRRpo+7hVUNd7PawgRWSRNzzbgm4JJrD0tcI3CnYrquVYcf+65osTat8BkwXtxMMtmBbQYmFh7CzjZa+JQBtjXRRZ5EEIAjDH3B4V0QF1JdbNBQv0s+ef6BX3qclTntCSp8f7ov4LCzplpOXczge3wu8LE2jMKJ4K4Z8aYqeIAbgcxy505eRnH4xXvP/D39p4AdvyxRZHDjTRdKlpN5y6K6oWC9a6RZZMAZnptbVlUL5VUOwocKIWo3g0hW6kKUM/zKy3n9qjqqR7WPCLPw2MEoCLy0Ku2Cxta7Xx2XXri3DG8X0Bkb0meLwoLG1l2Y+BHtah7UBmLomkVqQO7VSQ1qq+3Wfu034d0qKFK9Qu6+KCg9sbCaQAAAABJRU5ErkJggg=="
-              />
-              <input
-                type="text"
-                className="form-control"
-                id="apiKey"
-                value={updatingAccount.apiKey}
-                placeholder="API Key"
-                onChange={handleFieldChange}
-              />
-            </div>
-            <div className="update-form-group signup-form-group">
-              <img
-                alt="xProfileId"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAADFElEQVRIibWVTWhcZRSGn/PNlQ6Z+93JZKMu1GAQxC5aTBvS/NKu3CjiIuBGtIKuLCJuYpd2qYEqilmVFqSgIFpEECQt1JkEjSi1RNy0GtRaAmF+bhqSzL2vizRxOk6SqU1e+Bb3fOe8zznnwr2wR/rW++FiZ+cjG89ur0AO3qJeP7ynoGnvnwF6V4Pgm41YsJuAmSh6TNJ4Ck9LGjtaLpd3FVSKoqeQTqTSEYPJRHpiJI4XGnPuCVQKw1HM3pEUGby7ks2OHV1YiO+t7WaI92+WvK9Me//iJ5DZVfMNTYfhWDGK5kveP74nAICLEBSjaL4Yhsfupq7lO5rp6orSev24pP1mdkNJ8tng0tJPAPvCcBApHojjKYBiLnfQMpnnJD1oZlddEJzpX1ysNntac+ByLncg49znQHfT1RTSR3Juv0mHTDons1eB5smuuzR9tn9p6cqWoGI+32NpWgTu334RO+rvxLnB4Url2kZg88twEQJL0/O7AAF4IJMkn87Cff8BZb1/Azjcsuz/yOzJVe9fvwN0OZ8vCMYb8yR9DJy9C+vxxLke4M/G2GyhkN8EBUlyAui8A2Q26Zx7v12KzP6oVyp/AbcawoWVtbXXAJzWz/GGUb5OnOtZq9W+X6xUrt7u8ovtJpE0atIH+7y/aXDJnOsFrgOY2csC52bCcASzhzfLzAqZJOn13oc+n+/IJEkv0LXlJFJpNY6/A2IgkvRDf6Xyo/5dYfd0GA5bMYpOmXSy2SCFkcC5W2mazu6wtSWgDHyZml1w0hnW19fd0PzbgUlDraodTKRpmu4AAcgBudTswlC1+tW09zcEBxoTTBqyYhTNm/RQG4Y7qYzZb0gHW9z9biXvl4Fsm2aXgPNIhtnzwGibdcsBUG0DtIzZ+EC1erohNlmKoheQPmR9fdup4jC7skPSnJMONUEAGKhWzzmpD/hlOwNJPzuDiS3uE6TTuY6Ovv44ntvKpD+O51ay2T6T3gOSVjnm3IQBFL1/yeAU4A2uCaZSmByq1X7drtNm3f7jvmJwTPAoUDU4eaRWO/sPMwE0zuMI/AUAAAAASUVORK5CYII="
-              />
-              <input
-                type="integer"
-                className="form-control"
-                id="xboxProfileUserId"
-                value={updatingAccount.xboxProfileUserId}
-                placeholder="Xbox User Profile ID"
                 onChange={handleFieldChange}
               />
             </div>
             <div className="signup-btn-container">
               <button type="submit" className="btn signup-btn">
-                Update Account
+                Update
               </button>
             </div>
           </form>

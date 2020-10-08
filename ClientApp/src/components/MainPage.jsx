@@ -9,12 +9,12 @@ import { RecentAchievements } from '../pages/XboxAccountInfoPages/RecentAchievem
 import { Messages } from '../pages/XboxAccountInfoPages/Messages'
 import { XboxOneGames } from '../pages/XboxAccountInfoPages/XboxOneGames'
 import { About } from '../pages/About'
-import { UserSettings } from '../pages/UserSettings'
-import { UpdateUser } from '../pages/UpdateUser'
+import { UserSettings } from '../pages/Settings/UserSettings'
+import { UpdateUser } from '../pages/Settings/UpdateUser'
 import { AddAccount } from '../pages/Settings/AddAccount'
-import { ViewAccounts } from '../pages/ViewAccounts'
+import { ViewAccounts } from '../pages/Settings/AccountsSettings'
 import { getUser, getFirstAccount } from '../auth'
-import { UpdateAccount } from '../pages/UpdateAccount'
+import { UpdateAccount } from '../pages/Settings/UpdateAccount'
 
 export function MainPage() {
   const user = getUser()
@@ -61,10 +61,10 @@ export function MainPage() {
           <Route exact path={`/settings/user/edit/${user.id}/`}>
             <UpdateUser />
           </Route>
-          <Route exact path={`/accounts`}>
+          <Route exact path={`/settings/accounts`}>
             <ViewAccounts />
           </Route>
-          <Route exact path={`/add-account`}>
+          <Route exact path={`/settings/add-account/${user.id}/`}>
             <AddAccount />
           </Route>
           <Route exact path={`/settings/user/account/edit/:accountId/`}>
