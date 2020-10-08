@@ -45,7 +45,7 @@ export function UserAccount(props) {
       headers: { ...authHeader() },
     }).then(response => {
       if (response.status === 204) {
-        history.push('/view-accounts')
+        history.push('/settings/accounts')
       }
     })
   }
