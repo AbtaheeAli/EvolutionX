@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getUser, getAccounts, authHeader } from '../../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
-import logo from '../images/Login Image.png'
+import logo from '../../images/Login Image.png'
 
 export function UserAccount(props) {
   const [showApiKey, setShowApiKey] = useState(false)

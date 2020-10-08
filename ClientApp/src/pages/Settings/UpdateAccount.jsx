@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router'
 import { Link, useParams } from 'react-router-dom'
-import logo from '../images/Login Image.png'
+import logo from '../../images/Login Image.png'
 
 export function UpdateAccount() {
   const [errorMessage, setErrorMessage] = useState()

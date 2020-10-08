@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../auth'
+import { getUser } from '../../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
-import logo from '../images/Login Image.png'
+import logo from '../../images/Login Image.png'
 
 export function UpdateUser() {
   const user = getUser()
