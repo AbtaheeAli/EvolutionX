@@ -30,7 +30,7 @@ export function AddAccount() {
   const handleFormSubmit = event => {
     event.preventDefault()
 
-    fetch('/api/Accounts', {
+    fetch(`/api/Accounts/${user.id}`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(newAccount),

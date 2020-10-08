@@ -78,9 +78,10 @@ namespace EvolutionX.Controllers
             return Ok(account);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        [HttpPost("{userId}")]
+        public async Task<ActionResult<Account>> PostAccount(int userId, Account account)
         {
+            account.UserId = userId;
             _context.Accounts.Add(account);
             await _context.SaveChangesAsync();
 
