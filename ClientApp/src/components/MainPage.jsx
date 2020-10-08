@@ -9,12 +9,12 @@ import { RecentAchievements } from '../pages/XboxAccountInfoPages/RecentAchievem
 import { Messages } from '../pages/XboxAccountInfoPages/Messages'
 import { XboxOneGames } from '../pages/XboxAccountInfoPages/XboxOneGames'
 import { About } from '../pages/About'
-import { UserSettings } from '../pages/UserSettings'
+import { UserSettings } from '../pages/Settings/UserSettings'
 import { UpdateUser } from '../pages/UpdateUser'
 import { AddAccount } from '../pages/Settings/AddAccount'
-import { ViewAccounts } from '../pages/ViewAccounts'
+import { ViewAccounts } from '../pages/Settings/ViewAccounts'
 import { getUser, getFirstAccount } from '../auth'
-import { UpdateAccount } from '../pages/UpdateAccount'
+import { UpdateAccount } from '../pages/Settings/UpdateAccount'
 
 export function MainPage() {
   const user = getUser()

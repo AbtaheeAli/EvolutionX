@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getUser, authHeader, getAccounts } from '../auth'
+import { getUser, authHeader, getAccounts } from '../../auth'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
