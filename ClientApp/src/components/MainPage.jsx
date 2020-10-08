@@ -64,7 +64,7 @@ export function MainPage() {
           <Route exact path={`/settings/accounts`}>
             <ViewAccounts />
           </Route>
-          <Route exact path={`/settings/add-account`}>
+          <Route exact path={`/settings/add-account/${user.id}/`}>
             <AddAccount />
           </Route>
           <Route exact path={`/settings/user/account/edit/:accountId/`}>

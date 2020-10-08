@@ -82,7 +82,7 @@ export function UpdateAccount() {
                 className="form-control"
                 id="accountName"
                 value={updatingAccount.accountName}
-                placeholder="User Name"
+                placeholder="Account Name"
                 onChange={handleFieldChange}
               />
             </div>
@@ -97,7 +97,7 @@ export function UpdateAccount() {
                 className="form-control"
                 id="accountEmail"
                 value={updatingAccount.accountEmail}
-                placeholder="Email"
+                placeholder="Account Email"
                 onChange={handleFieldChange}
               />
             </div>

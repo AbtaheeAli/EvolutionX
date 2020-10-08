@@ -183,7 +183,10 @@ export function ViewAccounts() {
     <section className="user-page">
       <h3>{user.userName}'s Accounts</h3>
 
-      <Link className="btn settings-button" to={`/settings/add-account`}>
+      <Link
+        className="btn settings-button"
+        to={`/settings/add-account/${user.id}`}
+      >
         Add Account
       </Link>
 

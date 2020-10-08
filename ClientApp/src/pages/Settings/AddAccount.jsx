@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getUser } from '../../auth'
 import { useHistory } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import logo from '../../images/Login Image.png'
 
 export function AddAccount() {
@@ -9,48 +9,38 @@ export function AddAccount() {
 
   const [errorMessage, setErrorMessage] = useState()
 
-  const [updatingUser, setUpdatingUser] = useState({
-    email: '',
-    userName: '',
+  const [newAccount, setNewAccount] = useState({
+    accountName: '',
+    accountEmail: '',
     apiKey: '',
     xboxProfileUserId: '',
   })
 
   const history = useHistory()
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const response = await fetch(`/api/Users/${user.id}`)
-      const apiData = await response.json()
-
-      setUpdatingUser(apiData)
-    }
-    fetchUser()
-  }, [user.id])
-
   const handleFieldChange = event => {
     const value = event.target.value
     const fieldName = event.target.id
 
-    const updatedUser = { ...updatingUser, [fieldName]: value }
+    const newCreatedAccount = { ...newAccount, [fieldName]: value }
 
-    setUpdatingUser(updatedUser)
+    setNewAccount(newCreatedAccount)
   }
 
   const handleFormSubmit = event => {
     event.preventDefault()
 
-    fetch(`/api/Users/${user.id}`, {
-      method: 'PUT',
+    fetch('/api/Accounts', {
+      method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(updatingUser),
+      body: JSON.stringify(newAccount),
     })
       .then(response => response.json())
       .then(apiResponse => {
         if (apiResponse.status === 400) {
           setErrorMessage(Object.values(apiResponse.errors).join(' '))
         } else {
-          history.push('/settings')
+          history.push('/settings/accounts')
         }
       })
   }
@@ -80,9 +70,9 @@ export function AddAccount() {
               <input
                 type="text"
                 className="form-control"
-                id="userName"
-                value={updatingUser.userName}
-                placeholder="User Name"
+                id="accountName"
+                value={newAccount.accountName}
+                placeholder="Account Name"
                 onChange={handleFieldChange}
               />
             </div>
@@ -95,9 +85,9 @@ export function AddAccount() {
               <input
                 type="email"
                 className="form-control"
-                id="email"
-                value={updatingUser.email}
-                placeholder="Email"
+                id="accountEmail"
+                value={newAccount.accountEmail}
+                placeholder="Account Email"
                 onChange={handleFieldChange}
               />
             </div>
@@ -111,7 +101,7 @@ export function AddAccount() {
                 type="text"
                 className="form-control"
                 id="apiKey"
-                value={updatingUser.apiKey}
+                value={newAccount.apiKey}
                 placeholder="API Key"
                 onChange={handleFieldChange}
               />
@@ -126,7 +116,7 @@ export function AddAccount() {
                 type="integer"
                 className="form-control"
                 id="xboxProfileUserId"
-                value={updatingUser.xboxProfileUserId}
+                value={newAccount.xboxProfileUserId}
                 placeholder="Xbox User Profile ID"
                 onChange={handleFieldChange}
               />
