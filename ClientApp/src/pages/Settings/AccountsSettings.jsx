@@ -60,7 +60,7 @@ export function UserAccount(props) {
         </div>
       )}
       {loading === true && (
-        <div className="account-settings-card viewAccount">
+        <div className="user-account-card">
           <div>
             <section className="account-settings-card-header">
               <h3>{props.accountName}</h3>
@@ -200,7 +200,7 @@ export function ViewAccounts() {
         </div>
       )}
       {loading === true && (
-        <section className="user-container">
+        <section className="user-account-cards">
           {accounts.map(account => (
             <UserAccount
               key={account.id}

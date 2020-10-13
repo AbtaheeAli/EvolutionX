@@ -29,22 +29,25 @@ body {
   font-family: 'ABeeZee', sans-serif;
 }
 
-.account-settings-card {
+//viewAccounts starts
+
+.user-account-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.user-account-card {
   -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.75);
   background-color: rgb(245, 245, 245);
   color: rgb(31, 31, 31);
-  margin-top: 3rem;
+  margin: 1rem;
   border-radius: 20px;
   padding-bottom: 1rem;
   width: 25rem;
-}
-
-//viewAccounts starts
-
-.viewAccount {
-  margin: 1rem;
 }
 
 .gamer-info {
